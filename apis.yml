@@ -1,0 +1,29 @@
+aid: openpipe
+url: https://raw.githubusercontent.com/api-evangelist/openpipe/refs/heads/main/apis.yml
+name: OpenPipe
+x-type: company
+description: >-
+  OpenPipe is a fine-tuning and inference platform for distilling expensive frontier-LLM workloads into smaller, cheaper specialized models. Captures production traces, fine-tunes, and serves the result via OpenAI-compatible API.
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+tags:
+  - AI
+  - LLM
+  - Fine-Tuning
+  - Distillation
+  - Inference
+created: '2026-05-08'
+modified: '2026-05-08'
+specificationVersion: '0.19'
+apis: []
+common:
+  - type: Website
+    url: https://openpipe.ai/
+  - type: Plans
+    url: plans/openpipe-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/openpipe-rate-limits.yml
+  - type: FinOps
+    url: finops/openpipe-finops.yml
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
