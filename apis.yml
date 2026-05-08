@@ -3,7 +3,10 @@ url: https://raw.githubusercontent.com/api-evangelist/openpipe/refs/heads/main/a
 name: OpenPipe
 x-type: company
 description: >-
-  OpenPipe is a fine-tuning and inference platform for distilling expensive frontier-LLM workloads into smaller, cheaper specialized models. Captures production traces, fine-tunes, and serves the result via OpenAI-compatible API.
+  OpenPipe is a fine-tuning and inference platform for distilling expensive frontier-LLM
+  workloads into smaller, cheaper specialized models. Captures production traces (OpenAI
+  and Anthropic), fine-tunes, evaluates with judges, caches results, and serves the result
+  via OpenAI-compatible API. Also supports proxying to external models.
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
   - AI
@@ -11,13 +14,47 @@ tags:
   - Fine-Tuning
   - Distillation
   - Inference
+  - OpenAI Compatible
+  - Anthropic Compatible
+  - Caching
 created: '2026-05-08'
 modified: '2026-05-08'
 specificationVersion: '0.19'
-apis: []
+apis:
+  - aid: openpipe:platform
+    name: OpenPipe Platform API
+    description: >-
+      OpenAI-compatible chat completions, model and dataset management, training jobs,
+      criteria-based judging, request reporting (OpenAI and Anthropic), tag/metadata
+      updates, caching, and Anthropic proxying. Base URL https://api.openpipe.ai/api/v1.
+    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://docs.openpipe.ai/
+    baseURL: https://api.openpipe.ai/api/v1
+    tags:
+      - AI
+      - LLM
+      - Chat Completions
+      - Fine Tuning
+      - Datasets
+      - Judges
+      - Reporting
+      - Caching
+    properties:
+      - type: Documentation
+        url: https://docs.openpipe.ai/
+      - type: OpenAPI
+        url: openapi/openpipe-openapi.json
+      - type: SignUp
+        url: https://app.openpipe.ai/
+      - type: Pricing
+        url: https://openpipe.ai/pricing
+      - type: BaseModels
+        url: https://docs.openpipe.ai/base-models
 common:
   - type: Website
     url: https://openpipe.ai/
+  - type: Documentation
+    url: https://docs.openpipe.ai/
   - type: Plans
     url: plans/openpipe-plans-pricing.yml
   - type: RateLimits
