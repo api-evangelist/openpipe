@@ -1,7 +1,7 @@
 aid: openpipe
 url: https://raw.githubusercontent.com/api-evangelist/openpipe/refs/heads/main/apis.yml
 name: OpenPipe
-x-type: company
+kind: company
 description: >-
   OpenPipe is a fine-tuning and inference platform for distilling expensive frontier-LLM
   workloads into smaller, cheaper specialized models. Captures production traces (OpenAI
