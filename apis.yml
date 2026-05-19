@@ -2,65 +2,65 @@ aid: openpipe
 url: https://raw.githubusercontent.com/api-evangelist/openpipe/refs/heads/main/apis.yml
 name: OpenPipe
 kind: company
-description: >-
-  OpenPipe is a fine-tuning and inference platform for distilling expensive frontier-LLM
-  workloads into smaller, cheaper specialized models. Captures production traces (OpenAI
-  and Anthropic), fine-tunes, evaluates with judges, caches results, and serves the result
-  via OpenAI-compatible API. Also supports proxying to external models.
+description: OpenPipe is a fine-tuning and inference platform for distilling expensive frontier-LLM workloads into smaller,
+  cheaper specialized models. Captures production traces (OpenAI and Anthropic), fine-tunes, evaluates with judges, caches
+  results, and serves the result via OpenAI-compatible API. Also supports proxying to external models.
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
-  - AI
-  - LLM
-  - Fine-Tuning
-  - Distillation
-  - Inference
-  - OpenAI Compatible
-  - Anthropic Compatible
-  - Caching
+- AI
+- LLM
+- Fine-Tuning
+- Distillation
+- Inference
+- OpenAI Compatible
+- Anthropic Compatible
+- Caching
 created: '2026-05-08'
-modified: '2026-05-08'
+modified: '2026-05-19'
 specificationVersion: '0.19'
 apis:
-  - aid: openpipe:platform
-    name: OpenPipe Platform API
-    description: >-
-      OpenAI-compatible chat completions, model and dataset management, training jobs,
-      criteria-based judging, request reporting (OpenAI and Anthropic), tag/metadata
-      updates, caching, and Anthropic proxying. Base URL https://api.openpipe.ai/api/v1.
-    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
-    humanURL: https://docs.openpipe.ai/
-    baseURL: https://api.openpipe.ai/api/v1
-    tags:
-      - AI
-      - LLM
-      - Chat Completions
-      - Fine Tuning
-      - Datasets
-      - Judges
-      - Reporting
-      - Caching
-    properties:
-      - type: Documentation
-        url: https://docs.openpipe.ai/
-      - type: OpenAPI
-        url: openapi/openpipe-openapi.json
-      - type: SignUp
-        url: https://app.openpipe.ai/
-      - type: Pricing
-        url: https://openpipe.ai/pricing
-      - type: BaseModels
-        url: https://docs.openpipe.ai/base-models
-common:
-  - type: Website
-    url: https://openpipe.ai/
+- aid: openpipe:platform
+  name: OpenPipe Platform API
+  description: OpenAI-compatible chat completions, model and dataset management, training jobs, criteria-based judging, request
+    reporting (OpenAI and Anthropic), tag/metadata updates, caching, and Anthropic proxying. Base URL https://api.openpipe.ai/api/v1.
+  image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+  humanURL: https://docs.openpipe.ai/
+  baseURL: https://api.openpipe.ai/api/v1
+  tags:
+  - AI
+  - LLM
+  - Chat Completions
+  - Fine Tuning
+  - Datasets
+  - Judges
+  - Reporting
+  - Caching
+  properties:
   - type: Documentation
     url: https://docs.openpipe.ai/
-  - type: Plans
-    url: plans/openpipe-plans-pricing.yml
-  - type: RateLimits
-    url: rate-limits/openpipe-rate-limits.yml
-  - type: FinOps
-    url: finops/openpipe-finops.yml
+  - type: OpenAPI
+    url: openapi/openpipe-openapi.json
+  - type: SignUp
+    url: https://app.openpipe.ai/
+  - type: Pricing
+    url: https://openpipe.ai/pricing
+  - type: BaseModels
+    url: https://docs.openpipe.ai/base-models
+  - type: NaftikoCapability
+    url: capabilities/openpipe.yaml
+common:
+- type: LinkedIn
+  url: https://www.linkedin.com/company/openpipe
+- type: Website
+  url: https://openpipe.ai/
+- type: Documentation
+  url: https://docs.openpipe.ai/
+- type: Plans
+  url: plans/openpipe-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/openpipe-rate-limits.yml
+- type: FinOps
+  url: finops/openpipe-finops.yml
 maintainers:
-  - FN: Kin Lane
-    email: kin@apievangelist.com
+- FN: Kin Lane
+  email: kin@apievangelist.com
