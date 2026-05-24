@@ -63,6 +63,8 @@ common:
     url: rate-limits/openpipe-rate-limits.yml
   - type: FinOps
     url: finops/openpipe-finops.yml
+  - type: LLMsTxt
+    url: https://docs.openpipe.ai/llms.txt
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
