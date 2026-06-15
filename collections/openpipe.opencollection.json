@@ -1,0 +1,455 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "OpenPipe API",
+    "version": "0.1.1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "checkCache",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://api.openpipe.ai/api/v1/check-cache",
+        "body": {
+          "type": "json",
+          "data": "{}"
+        },
+        "auth": {
+          "type": "bearer",
+          "token": "{{bearerToken}}"
+        }
+      },
+      "docs": "DEPRECATED: we no longer support prompt caching."
+    },
+    {
+      "info": {
+        "name": "createChatCompletion",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://api.openpipe.ai/api/v1/chat/completions",
+        "body": {
+          "type": "json",
+          "data": "{}"
+        },
+        "auth": {
+          "type": "bearer",
+          "token": "{{bearerToken}}"
+        }
+      },
+      "docs": "OpenAI-compatible route for generating inference and optionally logging the request."
+    },
+    {
+      "info": {
+        "name": "report",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://api.openpipe.ai/api/v1/report",
+        "body": {
+          "type": "json",
+          "data": "{}"
+        },
+        "auth": {
+          "type": "bearer",
+          "token": "{{bearerToken}}"
+        }
+      },
+      "docs": "Record request logs from OpenAI models"
+    },
+    {
+      "info": {
+        "name": "reportAnthropic",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://api.openpipe.ai/api/v1/report-anthropic",
+        "body": {
+          "type": "json",
+          "data": "{}"
+        },
+        "auth": {
+          "type": "bearer",
+          "token": "{{bearerToken}}"
+        }
+      },
+      "docs": "Record request logs from Anthropic models"
+    },
+    {
+      "info": {
+        "name": "updateLogTags",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://api.openpipe.ai/api/v1/logs/update-tags",
+        "body": {
+          "type": "json",
+          "data": "{}"
+        },
+        "auth": {
+          "type": "bearer",
+          "token": "{{bearerToken}}"
+        }
+      },
+      "docs": "DEPRECATED: use \"/logs/update-metadata\" instead"
+    },
+    {
+      "info": {
+        "name": "updateLogMetadata",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://api.openpipe.ai/api/v1/logs/update-metadata",
+        "body": {
+          "type": "json",
+          "data": "{}"
+        },
+        "auth": {
+          "type": "bearer",
+          "token": "{{bearerToken}}"
+        }
+      },
+      "docs": "Update tags metadata for logged calls matching the provided filters."
+    },
+    {
+      "info": {
+        "name": "localTestingOnlyGetLatestLoggedCall",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://api.openpipe.ai/api/v1/local-testing-only-get-latest-logged-call",
+        "auth": {
+          "type": "bearer",
+          "token": "{{bearerToken}}"
+        }
+      },
+      "docs": "Get the latest logged call (only for local testing)"
+    },
+    {
+      "info": {
+        "name": "getCriterionJudgement",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://api.openpipe.ai/api/v1/criteria/judge",
+        "body": {
+          "type": "json",
+          "data": "{}"
+        },
+        "auth": {
+          "type": "bearer",
+          "token": "{{bearerToken}}"
+        }
+      },
+      "docs": "Get a judgement of a completion against the specified criterion"
+    },
+    {
+      "info": {
+        "name": "listDatasets",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://api.openpipe.ai/api/v1/datasets",
+        "auth": {
+          "type": "bearer",
+          "token": "{{bearerToken}}"
+        }
+      },
+      "docs": "List datasets for a project."
+    },
+    {
+      "info": {
+        "name": "createDataset",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://api.openpipe.ai/api/v1/datasets",
+        "body": {
+          "type": "json",
+          "data": "{}"
+        },
+        "auth": {
+          "type": "bearer",
+          "token": "{{bearerToken}}"
+        }
+      },
+      "docs": "Create a new dataset."
+    },
+    {
+      "info": {
+        "name": "deleteDataset",
+        "type": "http"
+      },
+      "http": {
+        "method": "DELETE",
+        "url": "https://api.openpipe.ai/api/v1/datasets/:datasetId",
+        "params": [
+          {
+            "name": "datasetId",
+            "value": "",
+            "type": "path"
+          }
+        ],
+        "auth": {
+          "type": "bearer",
+          "token": "{{bearerToken}}"
+        }
+      },
+      "docs": "Delete a dataset."
+    },
+    {
+      "info": {
+        "name": "createDatasetEntries",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://api.openpipe.ai/api/v1/datasets/:datasetId/entries",
+        "params": [
+          {
+            "name": "datasetId",
+            "value": "",
+            "type": "path"
+          }
+        ],
+        "body": {
+          "type": "json",
+          "data": "{}"
+        },
+        "auth": {
+          "type": "bearer",
+          "token": "{{bearerToken}}"
+        }
+      },
+      "docs": "Add new dataset entries."
+    },
+    {
+      "info": {
+        "name": "listModels",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://api.openpipe.ai/api/v1/models",
+        "auth": {
+          "type": "bearer",
+          "token": "{{bearerToken}}"
+        }
+      },
+      "docs": "List all models for a project."
+    },
+    {
+      "info": {
+        "name": "createModel",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://api.openpipe.ai/api/v1/models",
+        "body": {
+          "type": "json",
+          "data": "{}"
+        },
+        "auth": {
+          "type": "bearer",
+          "token": "{{bearerToken}}"
+        }
+      },
+      "docs": "Train a new model."
+    },
+    {
+      "info": {
+        "name": "getModel",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://api.openpipe.ai/api/v1/models/:modelSlug",
+        "params": [
+          {
+            "name": "modelSlug",
+            "value": "",
+            "type": "path"
+          }
+        ],
+        "auth": {
+          "type": "bearer",
+          "token": "{{bearerToken}}"
+        }
+      },
+      "docs": "Get a model by ID."
+    },
+    {
+      "info": {
+        "name": "deleteModel",
+        "type": "http"
+      },
+      "http": {
+        "method": "DELETE",
+        "url": "https://api.openpipe.ai/api/v1/models/:modelSlug",
+        "params": [
+          {
+            "name": "modelSlug",
+            "value": "",
+            "type": "path"
+          }
+        ],
+        "auth": {
+          "type": "bearer",
+          "token": "{{bearerToken}}"
+        }
+      },
+      "docs": "Delete an existing model."
+    },
+    {
+      "info": {
+        "name": "unstableDatasetCreate",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://api.openpipe.ai/api/v1/unstable/dataset/create",
+        "body": {
+          "type": "json",
+          "data": "{}"
+        },
+        "auth": {
+          "type": "bearer",
+          "token": "{{bearerToken}}"
+        }
+      },
+      "docs": "DEPRECATED: use the `/datasets` endpoint instead"
+    },
+    {
+      "info": {
+        "name": "unstableDatasetDelete",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://api.openpipe.ai/api/v1/unstable/dataset/delete",
+        "body": {
+          "type": "json",
+          "data": "{}"
+        },
+        "auth": {
+          "type": "bearer",
+          "token": "{{bearerToken}}"
+        }
+      },
+      "docs": "DEPRECATED: use the `/datasets/{dataset}` endpoint instead"
+    },
+    {
+      "info": {
+        "name": "unstableDatasetList",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://api.openpipe.ai/api/v1/unstable/dataset/list",
+        "auth": {
+          "type": "bearer",
+          "token": "{{bearerToken}}"
+        }
+      },
+      "docs": "DEPRECATED: use the `/datasets` endpoint instead"
+    },
+    {
+      "info": {
+        "name": "unstableDatasetEntryCreate",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://api.openpipe.ai/api/v1/unstable/dataset-entry/create",
+        "body": {
+          "type": "json",
+          "data": "{}"
+        },
+        "auth": {
+          "type": "bearer",
+          "token": "{{bearerToken}}"
+        }
+      },
+      "docs": "DEPRECATED: use the `/datasets/{dataset}/entries` endpoint instead"
+    },
+    {
+      "info": {
+        "name": "unstableFinetuneCreate",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://api.openpipe.ai/api/v1/unstable/finetune/create",
+        "body": {
+          "type": "json",
+          "data": "{}"
+        },
+        "auth": {
+          "type": "bearer",
+          "token": "{{bearerToken}}"
+        }
+      },
+      "docs": "DEPRECATED"
+    },
+    {
+      "info": {
+        "name": "unstableFinetuneGet",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://api.openpipe.ai/api/v1/unstable/finetune/get",
+        "params": [
+          {
+            "name": "id",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "slug",
+            "value": "",
+            "type": "query"
+          }
+        ],
+        "auth": {
+          "type": "bearer",
+          "token": "{{bearerToken}}"
+        }
+      },
+      "docs": "DEPRECATED: use the `/models/{model}` endpoint instead"
+    },
+    {
+      "info": {
+        "name": "unstableFinetuneDelete",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://api.openpipe.ai/api/v1/unstable/finetune/delete",
+        "body": {
+          "type": "json",
+          "data": "{}"
+        },
+        "auth": {
+          "type": "bearer",
+          "token": "{{bearerToken}}"
+        }
+      },
+      "docs": "DEPRECATED: use the `/models/{model}` endpoint instead"
+    }
+  ],
+  "bundled": true
+}

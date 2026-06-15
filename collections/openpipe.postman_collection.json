@@ -1,0 +1,3617 @@
+{
+  "item": [
+    {
+      "id": "8a605095-f187-4901-9eea-a5a35094f263",
+      "name": "check Cache",
+      "request": {
+        "name": "check Cache",
+        "description": {
+          "content": "DEPRECATED: we no longer support prompt caching.",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "check-cache"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "POST",
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{bearerToken}}"
+            }
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"requestedAt\": \"<number>\",\n  \"reqPayload\": {},\n  \"tags\": {}\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "response": [
+        {
+          "id": "fe2e0fb4-3da1-460b-8585-62200fe392cd",
+          "name": "Successful response",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "check-cache"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: bearer",
+                  "type": "text/plain"
+                },
+                "key": "Authorization",
+                "value": "Bearer <token>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"requestedAt\": \"<number>\",\n  \"reqPayload\": {},\n  \"tags\": {}\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"respPayload\": {}\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "f48774ec-b806-4257-993e-a04a42232858",
+          "name": "Error response",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "check-cache"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: bearer",
+                  "type": "text/plain"
+                },
+                "key": "Authorization",
+                "value": "Bearer <token>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"requestedAt\": \"<number>\",\n  \"reqPayload\": {},\n  \"tags\": {}\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "Internal Server Error",
+          "code": 500,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"message\": \"string\",\n  \"code\": \"string\",\n  \"issues\": [\n    {\n      \"message\": \"string\"\n    },\n    {\n      \"message\": \"string\"\n    }\n  ]\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "e80a0694-1d5d-4d79-b45c-61d54a0bd40a",
+      "name": "create Chat Completion",
+      "request": {
+        "name": "create Chat Completion",
+        "description": {
+          "content": "OpenAI-compatible route for generating inference and optionally logging the request.",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "chat",
+            "completions"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "POST",
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{bearerToken}}"
+            }
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"messages\": [\n    {\n      \"role\": \"<string>\",\n      \"content\": \"<string>\",\n      \"name\": \"<string>\"\n    },\n    {\n      \"role\": \"<string>\",\n      \"content\": \"<string>\",\n      \"name\": \"<string>\"\n    }\n  ],\n  \"model\": \"<string>\",\n  \"audio\": {\n    \"format\": \"<string>\",\n    \"voice\": \"<string>\"\n  },\n  \"function_call\": \"<string>\",\n  \"functions\": [\n    {\n      \"name\": \"<string>\",\n      \"parameters\": {\n        \"key_0\": {}\n      },\n      \"description\": \"<string>\",\n      \"strict\": \"<boolean>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"parameters\": {\n        \"key_0\": {},\n        \"key_1\": {},\n        \"key_2\": {},\n        \"key_3\": {}\n      },\n      \"description\": \"<string>\",\n      \"strict\": \"<boolean>\"\n    }\n  ],\n  \"tool_choice\": \"<string>\",\n  \"tools\": [\n    {\n      \"function\": {\n        \"name\": \"<string>\",\n        \"parameters\": {\n          \"key_0\": {},\n          \"key_1\": {}\n        },\n        \"description\": \"<string>\",\n        \"strict\": \"<boolean>\"\n      },\n      \"type\": \"<string>\"\n    },\n    {\n      \"function\": {\n        \"name\": \"<string>\",\n        \"parameters\": {\n          \"key_0\": {},\n          \"key_1\": {},\n          \"key_2\": {},\n          \"key_3\": {}\n        },\n        \"description\": \"<string>\",\n        \"strict\": \"<boolean>\"\n      },\n      \"type\": \"<string>\"\n    }\n  ],\n  \"n\": \"<number>\",\n  \"max_tokens\": \"<number>\",\n  \"max_completion_tokens\": \"<number>\",\n  \"temperature\": \"<number>\",\n  \"top_p\": \"<number>\",\n  \"presence_penalty\": \"<number>\",\n  \"frequency_penalty\": \"<number>\",\n  \"stop\": \"<string>\",\n  \"response_format\": {\n    \"type\": \"<string>\"\n  },\n  \"logprobs\": \"<boolean>\",\n  \"top_logprobs\": \"<number>\",\n  \"stream_options\": {\n    \"include_usage\": \"<boolean>\"\n  },\n  \"store\": \"<boolean>\",\n  \"metadata\": {\n    \"key_0\": \"<string>\"\n  },\n  \"stream\": false\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "response": [
+        {
+          "id": "af3faf06-4752-4731-a68c-edd40f6c1211",
+          "name": "Successful response",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "chat",
+                "completions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: bearer",
+                  "type": "text/plain"
+                },
+                "key": "Authorization",
+                "value": "Bearer <token>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"messages\": [\n    {\n      \"role\": \"<string>\",\n      \"content\": \"<string>\",\n      \"name\": \"<string>\"\n    },\n    {\n      \"role\": \"<string>\",\n      \"content\": \"<string>\",\n      \"name\": \"<string>\"\n    }\n  ],\n  \"model\": \"<string>\",\n  \"audio\": {\n    \"format\": \"<string>\",\n    \"voice\": \"<string>\"\n  },\n  \"function_call\": \"<string>\",\n  \"functions\": [\n    {\n      \"name\": \"<string>\",\n      \"parameters\": {\n        \"key_0\": {},\n        \"key_1\": {},\n        \"key_2\": {}\n      },\n      \"description\": \"<string>\",\n      \"strict\": \"<boolean>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"parameters\": {\n        \"key_0\": {},\n        \"key_1\": {}\n      },\n      \"description\": \"<string>\",\n      \"strict\": \"<boolean>\"\n    }\n  ],\n  \"tool_choice\": \"<string>\",\n  \"tools\": [\n    {\n      \"function\": {\n        \"name\": \"<string>\",\n        \"parameters\": {\n          \"key_0\": {}\n        },\n        \"description\": \"<string>\",\n        \"strict\": \"<boolean>\"\n      },\n      \"type\": \"<string>\"\n    },\n    {\n      \"function\": {\n        \"name\": \"<string>\",\n        \"parameters\": {\n          \"key_0\": {},\n          \"key_1\": {},\n          \"key_2\": {}\n        },\n        \"description\": \"<string>\",\n        \"strict\": \"<boolean>\"\n      },\n      \"type\": \"<string>\"\n    }\n  ],\n  \"n\": \"<number>\",\n  \"max_tokens\": \"<number>\",\n  \"max_completion_tokens\": \"<number>\",\n  \"temperature\": \"<number>\",\n  \"top_p\": \"<number>\",\n  \"presence_penalty\": \"<number>\",\n  \"frequency_penalty\": \"<number>\",\n  \"stop\": \"<string>\",\n  \"response_format\": {\n    \"type\": \"<string>\"\n  },\n  \"logprobs\": \"<boolean>\",\n  \"top_logprobs\": \"<number>\",\n  \"stream_options\": {\n    \"include_usage\": \"<boolean>\"\n  },\n  \"store\": \"<boolean>\",\n  \"metadata\": {\n    \"key_0\": \"<string>\"\n  },\n  \"stream\": false\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"id\": \"string\",\n  \"object\": \"chat.completion\",\n  \"created\": 5007.183275883316,\n  \"model\": \"string\",\n  \"choices\": [\n    {\n      \"finish_reason\": \"length\",\n      \"index\": 9245.497100787365,\n      \"message\": {\n        \"role\": \"assistant\",\n        \"reasoning_content\": \"string\",\n        \"content\": null,\n        \"refusal\": \"string\",\n        \"function_call\": {\n          \"name\": \"\",\n          \"arguments\": \"\"\n        },\n        \"tool_calls\": [\n          {\n            \"id\": \"string\",\n            \"function\": {\n              \"name\": \"string\",\n              \"arguments\": \"string\"\n            },\n            \"type\": \"function\"\n          },\n          {\n            \"id\": \"string\",\n            \"function\": {\n              \"name\": \"string\",\n              \"arguments\": \"string\"\n            },\n            \"type\": \"function\"\n          }\n        ]\n      },\n      \"logprobs\": null,\n      \"content_filter_results\": {\n        \"key_0\": 5548,\n        \"key_1\": 787,\n        \"key_2\": true\n      },\n      \"criteria_results\": {\n        \"key_0\": {\n          \"status\": \"success\",\n          \"score\": 3391.1445621266466,\n          \"explanation\": \"string\",\n          \"errorCode\": 1521.3273411046325,\n          \"errorMessage\": \"string\"\n        },\n        \"key_1\": {\n          \"status\": \"success\",\n          \"score\": 5667.389349698602,\n          \"explanation\": \"string\",\n          \"errorCode\": 8911.920866133041,\n          \"errorMessage\": \"string\"\n        },\n        \"key_2\": {\n          \"status\": \"success\",\n          \"score\": 2911.406251274692,\n          \"explanation\": \"string\",\n          \"errorCode\": 681.8363750445766,\n          \"errorMessage\": \"string\"\n        }\n      }\n    },\n    {\n      \"finish_reason\": \"length\",\n      \"index\": 4152.470803062187,\n      \"message\": {\n        \"role\": \"assistant\",\n        \"reasoning_content\": \"string\",\n        \"content\": null,\n        \"refusal\": \"string\",\n        \"function_call\": {\n          \"name\": \"\",\n          \"arguments\": \"\"\n        },\n        \"tool_calls\": [\n          {\n            \"id\": \"string\",\n            \"function\": {\n              \"name\": \"string\",\n              \"arguments\": \"string\"\n            },\n            \"type\": \"function\"\n          },\n          {\n            \"id\": \"string\",\n            \"function\": {\n              \"name\": \"string\",\n              \"arguments\": \"string\"\n            },\n            \"type\": \"function\"\n          }\n        ]\n      },\n      \"logprobs\": null,\n      \"content_filter_results\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\"\n      },\n      \"criteria_results\": {\n        \"key_0\": {\n          \"status\": \"success\",\n          \"score\": 2265.127913808196,\n          \"explanation\": \"string\",\n          \"errorCode\": 474.17007560074387,\n          \"errorMessage\": \"string\"\n        }\n      }\n    }\n  ],\n  \"usage\": {\n    \"prompt_tokens\": 921.132071406543,\n    \"completion_tokens\": 4066.672840922523,\n    \"total_tokens\": 6280.060487003139,\n    \"prompt_cache_hit_tokens\": 6922.753984035854,\n    \"prompt_cache_miss_tokens\": 6985.931629874442,\n    \"completion_tokens_details\": {\n      \"reasoning_tokens\": 1687.8354099928727,\n      \"audio_tokens\": 4971.523956274702,\n      \"text_tokens\": 139.73213092015823,\n      \"accepted_prediction_tokens\": 6774.6464672395,\n      \"rejected_prediction_tokens\": 2944.919500632749\n    },\n    \"prompt_tokens_details\": {\n      \"cached_tokens\": 5580.378188025821,\n      \"audio_tokens\": 1678.7812175643212\n    },\n    \"criteria\": {\n      \"key_0\": {\n        \"total_tokens\": 4953.371677087779\n      },\n      \"key_1\": {\n        \"total_tokens\": 7794.408701234536\n      }\n    }\n  }\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "ac5576ba-7590-47bc-8734-8d7754c8af3d",
+          "name": "Error response",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "chat",
+                "completions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: bearer",
+                  "type": "text/plain"
+                },
+                "key": "Authorization",
+                "value": "Bearer <token>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"messages\": [\n    {\n      \"role\": \"<string>\",\n      \"content\": \"<string>\",\n      \"name\": \"<string>\"\n    },\n    {\n      \"role\": \"<string>\",\n      \"content\": \"<string>\",\n      \"name\": \"<string>\"\n    }\n  ],\n  \"model\": \"<string>\",\n  \"audio\": {\n    \"format\": \"<string>\",\n    \"voice\": \"<string>\"\n  },\n  \"function_call\": \"<string>\",\n  \"functions\": [\n    {\n      \"name\": \"<string>\",\n      \"parameters\": {\n        \"key_0\": {},\n        \"key_1\": {},\n        \"key_2\": {}\n      },\n      \"description\": \"<string>\",\n      \"strict\": \"<boolean>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"parameters\": {\n        \"key_0\": {},\n        \"key_1\": {}\n      },\n      \"description\": \"<string>\",\n      \"strict\": \"<boolean>\"\n    }\n  ],\n  \"tool_choice\": \"<string>\",\n  \"tools\": [\n    {\n      \"function\": {\n        \"name\": \"<string>\",\n        \"parameters\": {\n          \"key_0\": {}\n        },\n        \"description\": \"<string>\",\n        \"strict\": \"<boolean>\"\n      },\n      \"type\": \"<string>\"\n    },\n    {\n      \"function\": {\n        \"name\": \"<string>\",\n        \"parameters\": {\n          \"key_0\": {},\n          \"key_1\": {},\n          \"key_2\": {}\n        },\n        \"description\": \"<string>\",\n        \"strict\": \"<boolean>\"\n      },\n      \"type\": \"<string>\"\n    }\n  ],\n  \"n\": \"<number>\",\n  \"max_tokens\": \"<number>\",\n  \"max_completion_tokens\": \"<number>\",\n  \"temperature\": \"<number>\",\n  \"top_p\": \"<number>\",\n  \"presence_penalty\": \"<number>\",\n  \"frequency_penalty\": \"<number>\",\n  \"stop\": \"<string>\",\n  \"response_format\": {\n    \"type\": \"<string>\"\n  },\n  \"logprobs\": \"<boolean>\",\n  \"top_logprobs\": \"<number>\",\n  \"stream_options\": {\n    \"include_usage\": \"<boolean>\"\n  },\n  \"store\": \"<boolean>\",\n  \"metadata\": {\n    \"key_0\": \"<string>\"\n  },\n  \"stream\": false\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "Internal Server Error",
+          "code": 500,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"message\": \"string\",\n  \"code\": \"string\",\n  \"issues\": [\n    {\n      \"message\": \"string\"\n    },\n    {\n      \"message\": \"string\"\n    }\n  ]\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "c6aee09e-8478-4a42-b3c1-cd99f4bf8a9b",
+      "name": "report",
+      "request": {
+        "name": "report",
+        "description": {
+          "content": "Record request logs from OpenAI models",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "report"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "POST",
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{bearerToken}}"
+            }
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"requestedAt\": \"<number>\",\n  \"receivedAt\": \"<number>\",\n  \"reqPayload\": {},\n  \"respPayload\": {},\n  \"statusCode\": \"<number>\",\n  \"errorMessage\": \"<string>\",\n  \"tags\": {}\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "response": [
+        {
+          "id": "eb521204-72ec-42ba-a65a-14c07f13081e",
+          "name": "Successful response",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "report"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: bearer",
+                  "type": "text/plain"
+                },
+                "key": "Authorization",
+                "value": "Bearer <token>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"requestedAt\": \"<number>\",\n  \"receivedAt\": \"<number>\",\n  \"reqPayload\": {},\n  \"respPayload\": {},\n  \"statusCode\": \"<number>\",\n  \"errorMessage\": \"<string>\",\n  \"tags\": {}\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"status\": \"ok\"\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "42a0dbb0-3ae6-47a1-8248-9dc2eb278eb1",
+          "name": "Error response",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "report"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: bearer",
+                  "type": "text/plain"
+                },
+                "key": "Authorization",
+                "value": "Bearer <token>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"requestedAt\": \"<number>\",\n  \"receivedAt\": \"<number>\",\n  \"reqPayload\": {},\n  \"respPayload\": {},\n  \"statusCode\": \"<number>\",\n  \"errorMessage\": \"<string>\",\n  \"tags\": {}\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "Internal Server Error",
+          "code": 500,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"message\": \"string\",\n  \"code\": \"string\",\n  \"issues\": [\n    {\n      \"message\": \"string\"\n    },\n    {\n      \"message\": \"string\"\n    }\n  ]\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "9d55e977-70ed-4baf-b397-354e9ced85eb",
+      "name": "report Anthropic",
+      "request": {
+        "name": "report Anthropic",
+        "description": {
+          "content": "Record request logs from Anthropic models",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "report-anthropic"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "POST",
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{bearerToken}}"
+            }
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"requestedAt\": \"<number>\",\n  \"receivedAt\": \"<number>\",\n  \"reqPayload\": {\n    \"max_tokens\": \"<number>\",\n    \"messages\": [\n      {\n        \"content\": \"<string>\",\n        \"role\": \"<string>\"\n      },\n      {\n        \"content\": \"<string>\",\n        \"role\": \"<string>\"\n      }\n    ],\n    \"model\": \"<string>\",\n    \"stream\": \"<boolean>\",\n    \"metadata\": {\n      \"user_id\": \"<string>\"\n    },\n    \"stop_sequences\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"system\": \"<string>\",\n    \"temperature\": \"<number>\",\n    \"top_k\": \"<number>\",\n    \"top_p\": \"<number>\",\n    \"thinking\": {\n      \"budget_tokens\": \"<number>\",\n      \"type\": \"<string>\"\n    },\n    \"tool_choice\": {\n      \"type\": \"<string>\",\n      \"disable_parallel_tool_use\": \"<boolean>\"\n    },\n    \"tools\": [\n      {\n        \"name\": \"<string>\",\n        \"input_schema\": {\n          \"type\": \"<string>\",\n          \"properties\": {}\n        },\n        \"description\": \"<string>\",\n        \"cache_control\": {\n          \"type\": \"<string>\"\n        }\n      },\n      {\n        \"name\": \"<string>\",\n        \"input_schema\": {\n          \"type\": \"<string>\",\n          \"properties\": {}\n        },\n        \"description\": \"<string>\",\n        \"cache_control\": {\n          \"type\": \"<string>\"\n        }\n      }\n    ]\n  },\n  \"respPayload\": {\n    \"id\": \"<string>\",\n    \"content\": [\n      {\n        \"text\": \"<string>\",\n        \"type\": \"<string>\",\n        \"citations\": null\n      },\n      {\n        \"text\": \"<string>\",\n        \"type\": \"<string>\",\n        \"citations\": null\n      }\n    ],\n    \"model\": \"<string>\",\n    \"role\": \"<string>\",\n    \"stop_reason\": \"<string>\",\n    \"stop_sequence\": \"<string>\",\n    \"type\": \"<string>\",\n    \"usage\": {\n      \"input_tokens\": \"<number>\",\n      \"output_tokens\": \"<number>\",\n      \"cache_creation_input_tokens\": \"<number>\",\n      \"cache_read_input_tokens\": \"<number>\"\n    }\n  },\n  \"statusCode\": \"<number>\",\n  \"errorMessage\": \"<string>\",\n  \"metadata\": {},\n  \"tags\": {}\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "response": [
+        {
+          "id": "1e195e13-57a1-4925-aed1-ee9b7d750ae0",
+          "name": "Successful response",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "report-anthropic"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: bearer",
+                  "type": "text/plain"
+                },
+                "key": "Authorization",
+                "value": "Bearer <token>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"requestedAt\": \"<number>\",\n  \"receivedAt\": \"<number>\",\n  \"reqPayload\": {\n    \"max_tokens\": \"<number>\",\n    \"messages\": [\n      {\n        \"content\": \"<string>\",\n        \"role\": \"<string>\"\n      },\n      {\n        \"content\": \"<string>\",\n        \"role\": \"<string>\"\n      }\n    ],\n    \"model\": \"<string>\",\n    \"stream\": \"<boolean>\",\n    \"metadata\": {\n      \"user_id\": \"<string>\"\n    },\n    \"stop_sequences\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"system\": \"<string>\",\n    \"temperature\": \"<number>\",\n    \"top_k\": \"<number>\",\n    \"top_p\": \"<number>\",\n    \"thinking\": {\n      \"budget_tokens\": \"<number>\",\n      \"type\": \"<string>\"\n    },\n    \"tool_choice\": {\n      \"type\": \"<string>\",\n      \"disable_parallel_tool_use\": \"<boolean>\"\n    },\n    \"tools\": [\n      {\n        \"name\": \"<string>\",\n        \"input_schema\": {\n          \"type\": \"<string>\",\n          \"properties\": {}\n        },\n        \"description\": \"<string>\",\n        \"cache_control\": {\n          \"type\": \"<string>\"\n        }\n      },\n      {\n        \"name\": \"<string>\",\n        \"input_schema\": {\n          \"type\": \"<string>\",\n          \"properties\": {}\n        },\n        \"description\": \"<string>\",\n        \"cache_control\": {\n          \"type\": \"<string>\"\n        }\n      }\n    ]\n  },\n  \"respPayload\": {\n    \"id\": \"<string>\",\n    \"content\": [\n      {\n        \"text\": \"<string>\",\n        \"type\": \"<string>\",\n        \"citations\": null\n      },\n      {\n        \"text\": \"<string>\",\n        \"type\": \"<string>\",\n        \"citations\": null\n      }\n    ],\n    \"model\": \"<string>\",\n    \"role\": \"<string>\",\n    \"stop_reason\": \"<string>\",\n    \"stop_sequence\": \"<string>\",\n    \"type\": \"<string>\",\n    \"usage\": {\n      \"input_tokens\": \"<number>\",\n      \"output_tokens\": \"<number>\",\n      \"cache_creation_input_tokens\": \"<number>\",\n      \"cache_read_input_tokens\": \"<number>\"\n    }\n  },\n  \"statusCode\": \"<number>\",\n  \"errorMessage\": \"<string>\",\n  \"metadata\": {},\n  \"tags\": {}\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"status\": \"ok\"\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "13deeba8-1279-456f-a4da-ad0a6cc19f10",
+          "name": "Error response",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "report-anthropic"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: bearer",
+                  "type": "text/plain"
+                },
+                "key": "Authorization",
+                "value": "Bearer <token>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"requestedAt\": \"<number>\",\n  \"receivedAt\": \"<number>\",\n  \"reqPayload\": {\n    \"max_tokens\": \"<number>\",\n    \"messages\": [\n      {\n        \"content\": \"<string>\",\n        \"role\": \"<string>\"\n      },\n      {\n        \"content\": \"<string>\",\n        \"role\": \"<string>\"\n      }\n    ],\n    \"model\": \"<string>\",\n    \"stream\": \"<boolean>\",\n    \"metadata\": {\n      \"user_id\": \"<string>\"\n    },\n    \"stop_sequences\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"system\": \"<string>\",\n    \"temperature\": \"<number>\",\n    \"top_k\": \"<number>\",\n    \"top_p\": \"<number>\",\n    \"thinking\": {\n      \"budget_tokens\": \"<number>\",\n      \"type\": \"<string>\"\n    },\n    \"tool_choice\": {\n      \"type\": \"<string>\",\n      \"disable_parallel_tool_use\": \"<boolean>\"\n    },\n    \"tools\": [\n      {\n        \"name\": \"<string>\",\n        \"input_schema\": {\n          \"type\": \"<string>\",\n          \"properties\": {}\n        },\n        \"description\": \"<string>\",\n        \"cache_control\": {\n          \"type\": \"<string>\"\n        }\n      },\n      {\n        \"name\": \"<string>\",\n        \"input_schema\": {\n          \"type\": \"<string>\",\n          \"properties\": {}\n        },\n        \"description\": \"<string>\",\n        \"cache_control\": {\n          \"type\": \"<string>\"\n        }\n      }\n    ]\n  },\n  \"respPayload\": {\n    \"id\": \"<string>\",\n    \"content\": [\n      {\n        \"text\": \"<string>\",\n        \"type\": \"<string>\",\n        \"citations\": null\n      },\n      {\n        \"text\": \"<string>\",\n        \"type\": \"<string>\",\n        \"citations\": null\n      }\n    ],\n    \"model\": \"<string>\",\n    \"role\": \"<string>\",\n    \"stop_reason\": \"<string>\",\n    \"stop_sequence\": \"<string>\",\n    \"type\": \"<string>\",\n    \"usage\": {\n      \"input_tokens\": \"<number>\",\n      \"output_tokens\": \"<number>\",\n      \"cache_creation_input_tokens\": \"<number>\",\n      \"cache_read_input_tokens\": \"<number>\"\n    }\n  },\n  \"statusCode\": \"<number>\",\n  \"errorMessage\": \"<string>\",\n  \"metadata\": {},\n  \"tags\": {}\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "Internal Server Error",
+          "code": 500,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"message\": \"string\",\n  \"code\": \"string\",\n  \"issues\": [\n    {\n      \"message\": \"string\"\n    },\n    {\n      \"message\": \"string\"\n    }\n  ]\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "df849b87-cc93-40ba-bed5-e1473f2c0336",
+      "name": "update Log Tags",
+      "request": {
+        "name": "update Log Tags",
+        "description": {
+          "content": "DEPRECATED: use \"/logs/update-metadata\" instead",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "logs",
+            "update-tags"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "POST",
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{bearerToken}}"
+            }
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"filters\": [\n    {\n      \"field\": \"<string>\",\n      \"equals\": \"<string>\"\n    },\n    {\n      \"field\": \"<string>\",\n      \"equals\": \"<string>\"\n    }\n  ],\n  \"tags\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  }\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "response": [
+        {
+          "id": "5de0c7bb-b93b-4e8c-8c14-1ac3eb259c54",
+          "name": "Successful response",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "logs",
+                "update-tags"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: bearer",
+                  "type": "text/plain"
+                },
+                "key": "Authorization",
+                "value": "Bearer <token>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"filters\": [\n    {\n      \"field\": \"<string>\",\n      \"equals\": \"<string>\"\n    },\n    {\n      \"field\": \"<string>\",\n      \"equals\": \"<string>\"\n    }\n  ],\n  \"tags\": {\n    \"key_0\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"matchedLogs\": 857.0474768020231\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "a9318ed1-5fd2-4438-b6b8-1d17b679ac46",
+          "name": "Error response",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "logs",
+                "update-tags"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: bearer",
+                  "type": "text/plain"
+                },
+                "key": "Authorization",
+                "value": "Bearer <token>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"filters\": [\n    {\n      \"field\": \"<string>\",\n      \"equals\": \"<string>\"\n    },\n    {\n      \"field\": \"<string>\",\n      \"equals\": \"<string>\"\n    }\n  ],\n  \"tags\": {\n    \"key_0\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "Internal Server Error",
+          "code": 500,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"message\": \"string\",\n  \"code\": \"string\",\n  \"issues\": [\n    {\n      \"message\": \"string\"\n    },\n    {\n      \"message\": \"string\"\n    }\n  ]\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "c5e1a6e3-29be-494a-b9f0-459bc34b2edd",
+      "name": "update Log Metadata",
+      "request": {
+        "name": "update Log Metadata",
+        "description": {
+          "content": "Update tags metadata for logged calls matching the provided filters.",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "logs",
+            "update-metadata"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "POST",
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{bearerToken}}"
+            }
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"filters\": [\n    {\n      \"field\": \"<string>\",\n      \"equals\": \"<string>\"\n    },\n    {\n      \"field\": \"<string>\",\n      \"equals\": \"<string>\"\n    }\n  ],\n  \"metadata\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  }\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "response": [
+        {
+          "id": "ec7d6aa6-e31c-4f32-b6b9-4b498da68297",
+          "name": "Successful response",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "logs",
+                "update-metadata"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: bearer",
+                  "type": "text/plain"
+                },
+                "key": "Authorization",
+                "value": "Bearer <token>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"filters\": [\n    {\n      \"field\": \"<string>\",\n      \"equals\": \"<string>\"\n    },\n    {\n      \"field\": \"<string>\",\n      \"equals\": \"<string>\"\n    }\n  ],\n  \"metadata\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\",\n    \"key_2\": \"<string>\",\n    \"key_3\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"matchedLogs\": 857.0474768020231\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "2f44bf5f-98f4-4655-b408-965dee3056ad",
+          "name": "Error response",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "logs",
+                "update-metadata"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: bearer",
+                  "type": "text/plain"
+                },
+                "key": "Authorization",
+                "value": "Bearer <token>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"filters\": [\n    {\n      \"field\": \"<string>\",\n      \"equals\": \"<string>\"\n    },\n    {\n      \"field\": \"<string>\",\n      \"equals\": \"<string>\"\n    }\n  ],\n  \"metadata\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\",\n    \"key_2\": \"<string>\",\n    \"key_3\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "Internal Server Error",
+          "code": 500,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"message\": \"string\",\n  \"code\": \"string\",\n  \"issues\": [\n    {\n      \"message\": \"string\"\n    },\n    {\n      \"message\": \"string\"\n    }\n  ]\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "df1460c5-b89e-4bb3-acb0-7cfd94ee468c",
+      "name": "local Testing Only Get Latest Logged Call",
+      "request": {
+        "name": "local Testing Only Get Latest Logged Call",
+        "description": {
+          "content": "Get the latest logged call (only for local testing)",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "local-testing-only-get-latest-logged-call"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "GET",
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{bearerToken}}"
+            }
+          ]
+        }
+      },
+      "response": [
+        {
+          "id": "20686ac5-10a5-448f-9efe-ea0e3379713c",
+          "name": "Successful response",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "local-testing-only-get-latest-logged-call"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: bearer",
+                  "type": "text/plain"
+                },
+                "key": "Authorization",
+                "value": "Bearer <token>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"createdAt\": \"1954-01-27T13:33:39.573Z\",\n  \"cacheHit\": false,\n  \"statusCode\": 9903.972735830364,\n  \"errorMessage\": \"string\",\n  \"tags\": {\n    \"key_0\": \"string\",\n    \"key_1\": \"string\",\n    \"key_2\": \"string\"\n  },\n  \"metadata\": {\n    \"key_0\": \"string\"\n  },\n  \"reqPayload\": \"\",\n  \"respPayload\": \"\"\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "25503af0-c6eb-4bf7-a3d8-26cd74f178c3",
+          "name": "Error response",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "local-testing-only-get-latest-logged-call"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: bearer",
+                  "type": "text/plain"
+                },
+                "key": "Authorization",
+                "value": "Bearer <token>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "Internal Server Error",
+          "code": 500,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"message\": \"string\",\n  \"code\": \"string\",\n  \"issues\": [\n    {\n      \"message\": \"string\"\n    },\n    {\n      \"message\": \"string\"\n    }\n  ]\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "d8d423c3-3350-4577-85d9-4e1e2a0399dc",
+      "name": "get Criterion Judgement",
+      "request": {
+        "name": "get Criterion Judgement",
+        "description": {
+          "content": "Get a judgement of a completion against the specified criterion",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "criteria",
+            "judge"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "POST",
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{bearerToken}}"
+            }
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"criterion_id\": \"<string>\",\n  \"output\": {\n    \"role\": \"<string>\",\n    \"reasoning_content\": \"<string>\",\n    \"content\": null,\n    \"refusal\": \"<string>\",\n    \"function_call\": {\n      \"name\": \"\",\n      \"arguments\": \"\"\n    },\n    \"tool_calls\": [\n      {\n        \"id\": \"<string>\",\n        \"function\": {\n          \"name\": \"<string>\",\n          \"arguments\": \"<string>\"\n        },\n        \"type\": \"<string>\"\n      },\n      {\n        \"id\": \"<string>\",\n        \"function\": {\n          \"name\": \"<string>\",\n          \"arguments\": \"<string>\"\n        },\n        \"type\": \"<string>\"\n      }\n    ]\n  },\n  \"input\": {\n    \"messages\": [\n      {\n        \"role\": \"<string>\",\n        \"content\": \"<string>\",\n        \"name\": \"<string>\"\n      },\n      {\n        \"role\": \"<string>\",\n        \"content\": \"<string>\",\n        \"name\": \"<string>\"\n      }\n    ],\n    \"tool_choice\": \"<string>\",\n    \"tools\": [\n      {\n        \"function\": {\n          \"name\": \"<string>\",\n          \"parameters\": {\n            \"key_0\": {},\n            \"key_1\": {}\n          },\n          \"description\": \"<string>\",\n          \"strict\": \"<boolean>\"\n        },\n        \"type\": \"<string>\"\n      },\n      {\n        \"function\": {\n          \"name\": \"<string>\",\n          \"parameters\": {\n            \"key_0\": {}\n          },\n          \"description\": \"<string>\",\n          \"strict\": \"<boolean>\"\n        },\n        \"type\": \"<string>\"\n      }\n    ]\n  }\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "response": [
+        {
+          "id": "da0ec342-4ff9-4405-987f-6aba5880b723",
+          "name": "Successful response",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "criteria",
+                "judge"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: bearer",
+                  "type": "text/plain"
+                },
+                "key": "Authorization",
+                "value": "Bearer <token>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"criterion_id\": \"<string>\",\n  \"output\": {\n    \"role\": \"<string>\",\n    \"reasoning_content\": \"<string>\",\n    \"content\": null,\n    \"refusal\": \"<string>\",\n    \"function_call\": {\n      \"name\": \"\",\n      \"arguments\": \"\"\n    },\n    \"tool_calls\": [\n      {\n        \"id\": \"<string>\",\n        \"function\": {\n          \"name\": \"<string>\",\n          \"arguments\": \"<string>\"\n        },\n        \"type\": \"<string>\"\n      },\n      {\n        \"id\": \"<string>\",\n        \"function\": {\n          \"name\": \"<string>\",\n          \"arguments\": \"<string>\"\n        },\n        \"type\": \"<string>\"\n      }\n    ]\n  },\n  \"input\": {\n    \"messages\": [\n      {\n        \"role\": \"<string>\",\n        \"content\": \"<string>\",\n        \"name\": \"<string>\"\n      },\n      {\n        \"role\": \"<string>\",\n        \"content\": \"<string>\",\n        \"name\": \"<string>\"\n      }\n    ],\n    \"tool_choice\": \"<string>\",\n    \"tools\": [\n      {\n        \"function\": {\n          \"name\": \"<string>\",\n          \"parameters\": {\n            \"key_0\": {}\n          },\n          \"description\": \"<string>\",\n          \"strict\": \"<boolean>\"\n        },\n        \"type\": \"<string>\"\n      },\n      {\n        \"function\": {\n          \"name\": \"<string>\",\n          \"parameters\": {\n            \"key_0\": {},\n            \"key_1\": {}\n          },\n          \"description\": \"<string>\",\n          \"strict\": \"<boolean>\"\n        },\n        \"type\": \"<string>\"\n      }\n    ]\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"score\": 8934.39296216355,\n  \"explanation\": \"string\",\n  \"usage\": {\n    \"total_tokens\": 6092.120700163175\n  }\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "34d3de36-da97-47c7-8420-48fb3909440d",
+          "name": "Error response",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "criteria",
+                "judge"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: bearer",
+                  "type": "text/plain"
+                },
+                "key": "Authorization",
+                "value": "Bearer <token>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"criterion_id\": \"<string>\",\n  \"output\": {\n    \"role\": \"<string>\",\n    \"reasoning_content\": \"<string>\",\n    \"content\": null,\n    \"refusal\": \"<string>\",\n    \"function_call\": {\n      \"name\": \"\",\n      \"arguments\": \"\"\n    },\n    \"tool_calls\": [\n      {\n        \"id\": \"<string>\",\n        \"function\": {\n          \"name\": \"<string>\",\n          \"arguments\": \"<string>\"\n        },\n        \"type\": \"<string>\"\n      },\n      {\n        \"id\": \"<string>\",\n        \"function\": {\n          \"name\": \"<string>\",\n          \"arguments\": \"<string>\"\n        },\n        \"type\": \"<string>\"\n      }\n    ]\n  },\n  \"input\": {\n    \"messages\": [\n      {\n        \"role\": \"<string>\",\n        \"content\": \"<string>\",\n        \"name\": \"<string>\"\n      },\n      {\n        \"role\": \"<string>\",\n        \"content\": \"<string>\",\n        \"name\": \"<string>\"\n      }\n    ],\n    \"tool_choice\": \"<string>\",\n    \"tools\": [\n      {\n        \"function\": {\n          \"name\": \"<string>\",\n          \"parameters\": {\n            \"key_0\": {}\n          },\n          \"description\": \"<string>\",\n          \"strict\": \"<boolean>\"\n        },\n        \"type\": \"<string>\"\n      },\n      {\n        \"function\": {\n          \"name\": \"<string>\",\n          \"parameters\": {\n            \"key_0\": {},\n            \"key_1\": {}\n          },\n          \"description\": \"<string>\",\n          \"strict\": \"<boolean>\"\n        },\n        \"type\": \"<string>\"\n      }\n    ]\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "Internal Server Error",
+          "code": 500,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"message\": \"string\",\n  \"code\": \"string\",\n  \"issues\": [\n    {\n      \"message\": \"string\"\n    },\n    {\n      \"message\": \"string\"\n    }\n  ]\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "13f62b60-5776-4a50-83ce-44da15a78bad",
+      "name": "create Dataset",
+      "request": {
+        "name": "create Dataset",
+        "description": {
+          "content": "Create a new dataset.",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "datasets"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "POST",
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{bearerToken}}"
+            }
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"<string>\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "response": [
+        {
+          "id": "d85072d8-a644-45e0-8fe8-1569fecea098",
+          "name": "Successful response",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "datasets"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: bearer",
+                  "type": "text/plain"
+                },
+                "key": "Authorization",
+                "value": "Bearer <token>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"object\": \"dataset\",\n  \"id\": \"string\",\n  \"name\": \"string\",\n  \"created\": \"string\",\n  \"updated\": \"string\",\n  \"dataset_entry_count\": 2123.172793687712,\n  \"fine_tune_count\": 8561.953676726838\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "75a41bbe-f9c4-4f7e-8534-b0cff938f028",
+          "name": "Error response",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "datasets"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: bearer",
+                  "type": "text/plain"
+                },
+                "key": "Authorization",
+                "value": "Bearer <token>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "Internal Server Error",
+          "code": 500,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"message\": \"string\",\n  \"code\": \"string\",\n  \"issues\": [\n    {\n      \"message\": \"string\"\n    },\n    {\n      \"message\": \"string\"\n    }\n  ]\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "1fc326f7-6f18-41df-91cd-766bc115df4d",
+      "name": "list Datasets",
+      "request": {
+        "name": "list Datasets",
+        "description": {
+          "content": "List datasets for a project.",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "datasets"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "GET",
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{bearerToken}}"
+            }
+          ]
+        }
+      },
+      "response": [
+        {
+          "id": "e227484d-efaa-42de-b821-5ad577b4dbfa",
+          "name": "Successful response",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "datasets"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: bearer",
+                  "type": "text/plain"
+                },
+                "key": "Authorization",
+                "value": "Bearer <token>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"object\": \"list\",\n  \"data\": [\n    {\n      \"object\": \"dataset\",\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"created\": \"string\",\n      \"updated\": \"string\",\n      \"dataset_entry_count\": 791.8030935717424,\n      \"fine_tune_count\": 5898.327317563068\n    },\n    {\n      \"object\": \"dataset\",\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"created\": \"string\",\n      \"updated\": \"string\",\n      \"dataset_entry_count\": 5530.745867778209,\n      \"fine_tune_count\": 5933.985628605819\n    }\n  ]\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "fcbf1d44-e5fa-4a27-9ec6-6ff69a798fe5",
+          "name": "Error response",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "datasets"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: bearer",
+                  "type": "text/plain"
+                },
+                "key": "Authorization",
+                "value": "Bearer <token>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "Internal Server Error",
+          "code": 500,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"message\": \"string\",\n  \"code\": \"string\",\n  \"issues\": [\n    {\n      \"message\": \"string\"\n    },\n    {\n      \"message\": \"string\"\n    }\n  ]\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "20ad3d1c-835f-41f5-b01e-f2691c14f3e9",
+      "name": "delete Dataset",
+      "request": {
+        "name": "delete Dataset",
+        "description": {
+          "content": "Delete a dataset.",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "datasets",
+            ":datasetId"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": [
+            {
+              "disabled": false,
+              "type": "any",
+              "value": "<string>",
+              "key": "datasetId",
+              "description": "(Required) "
+            }
+          ]
+        },
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "DELETE",
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{bearerToken}}"
+            }
+          ]
+        }
+      },
+      "response": [
+        {
+          "id": "53321b31-71db-4139-b588-4fabdd517287",
+          "name": "Successful response",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "datasets",
+                ":datasetId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "datasetId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: bearer",
+                  "type": "text/plain"
+                },
+                "key": "Authorization",
+                "value": "Bearer <token>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"id\": \"string\",\n  \"object\": \"dataset\",\n  \"deleted\": true\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "40b2fa29-9e30-4ea1-9c16-052bae24fd58",
+          "name": "Error response",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "datasets",
+                ":datasetId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "datasetId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: bearer",
+                  "type": "text/plain"
+                },
+                "key": "Authorization",
+                "value": "Bearer <token>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "body": {}
+          },
+          "status": "Internal Server Error",
+          "code": 500,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"message\": \"string\",\n  \"code\": \"string\",\n  \"issues\": [\n    {\n      \"message\": \"string\"\n    },\n    {\n      \"message\": \"string\"\n    }\n  ]\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "7cac2acb-fbf5-483e-b4ed-8fca10c23d8b",
+      "name": "create Dataset Entries",
+      "request": {
+        "name": "create Dataset Entries",
+        "description": {
+          "content": "Add new dataset entries.",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "datasets",
+            ":datasetId",
+            "entries"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": [
+            {
+              "disabled": false,
+              "type": "any",
+              "value": "<string>",
+              "key": "datasetId",
+              "description": "(Required) "
+            }
+          ]
+        },
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "POST",
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{bearerToken}}"
+            }
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"entries\": [\n    {\n      \"messages\": [\n        {\n          \"role\": \"<string>\",\n          \"content\": \"<string>\",\n          \"name\": \"<string>\"\n        },\n        {\n          \"role\": \"<string>\",\n          \"content\": \"<string>\",\n          \"name\": \"<string>\"\n        }\n      ],\n      \"rejected_message\": {\n        \"role\": \"<string>\",\n        \"reasoning_content\": \"<string>\",\n        \"content\": null,\n        \"refusal\": \"<string>\",\n        \"function_call\": {\n          \"name\": \"\",\n          \"arguments\": \"\"\n        },\n        \"tool_calls\": [\n          {\n            \"id\": \"<string>\",\n            \"function\": {\n              \"name\": \"<string>\",\n              \"arguments\": \"<string>\"\n            },\n            \"type\": \"<string>\"\n          },\n          {\n            \"id\": \"<string>\",\n            \"function\": {\n              \"name\": \"<string>\",\n              \"arguments\": \"<string>\"\n            },\n            \"type\": \"<string>\"\n          }\n        ]\n      },\n      \"tool_choice\": \"<string>\",\n      \"tools\": [\n        {\n          \"function\": {\n            \"name\": \"<string>\",\n            \"parameters\": {\n              \"key_0\": {}\n            },\n            \"description\": \"<string>\",\n            \"strict\": \"<boolean>\"\n          },\n          \"type\": \"<string>\"\n        },\n        {\n          \"function\": {\n            \"name\": \"<string>\",\n            \"parameters\": {\n              \"key_0\": {},\n              \"key_1\": {}\n            },\n            \"description\": \"<string>\",\n            \"strict\": \"<boolean>\"\n          },\n          \"type\": \"<string>\"\n        }\n      ],\n      \"response_format\": {\n        \"type\": \"<string>\"\n      },\n      \"split\": \"<string>\",\n      \"metadata\": {\n        \"key_0\": \"<string>\",\n        \"key_1\": \"<string>\"\n      }\n    }\n  ]\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "response": [
+        {
+          "id": "56c82709-0442-4d3e-82cc-34e31bb3c36f",
+          "name": "Successful response",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "datasets",
+                ":datasetId",
+                "entries"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "datasetId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: bearer",
+                  "type": "text/plain"
+                },
+                "key": "Authorization",
+                "value": "Bearer <token>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"entries\": [\n    {\n      \"messages\": [\n        {\n          \"role\": \"<string>\",\n          \"content\": \"<string>\",\n          \"name\": \"<string>\"\n        },\n        {\n          \"role\": \"<string>\",\n          \"content\": \"<string>\",\n          \"name\": \"<string>\"\n        }\n      ],\n      \"rejected_message\": {\n        \"role\": \"<string>\",\n        \"reasoning_content\": \"<string>\",\n        \"content\": null,\n        \"refusal\": \"<string>\",\n        \"function_call\": {\n          \"name\": \"\",\n          \"arguments\": \"\"\n        },\n        \"tool_calls\": [\n          {\n            \"id\": \"<string>\",\n            \"function\": {\n              \"name\": \"<string>\",\n              \"arguments\": \"<string>\"\n            },\n            \"type\": \"<string>\"\n          },\n          {\n            \"id\": \"<string>\",\n            \"function\": {\n              \"name\": \"<string>\",\n              \"arguments\": \"<string>\"\n            },\n            \"type\": \"<string>\"\n          }\n        ]\n      },\n      \"tool_choice\": \"<string>\",\n      \"tools\": [\n        {\n          \"function\": {\n            \"name\": \"<string>\",\n            \"parameters\": {\n              \"key_0\": {},\n              \"key_1\": {}\n            },\n            \"description\": \"<string>\",\n            \"strict\": \"<boolean>\"\n          },\n          \"type\": \"<string>\"\n        },\n        {\n          \"function\": {\n            \"name\": \"<string>\",\n            \"parameters\": {\n              \"key_0\": {}\n            },\n            \"description\": \"<string>\",\n            \"strict\": \"<boolean>\"\n          },\n          \"type\": \"<string>\"\n        }\n      ],\n      \"response_format\": {\n        \"type\": \"<string>\"\n      },\n      \"split\": \"<string>\",\n      \"metadata\": {\n        \"key_0\": \"<string>\",\n        \"key_1\": \"<string>\"\n      }\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"object\": \"dataset.entries.creation\",\n  \"entries_created\": 9027.440045620617,\n  \"errors\": {\n    \"object\": \"list\",\n    \"data\": [\n      {\n        \"object\": \"dataset.entries.creation.error\",\n        \"entry_index\": 5031.597566971518,\n        \"message\": \"string\"\n      },\n      {\n        \"object\": \"dataset.entries.creation.error\",\n        \"entry_index\": 3834.3996721172525,\n        \"message\": \"string\"\n      }\n    ]\n  }\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "15492879-c56d-42bc-9988-ef9f3ca87aa2",
+          "name": "Error response",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "datasets",
+                ":datasetId",
+                "entries"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "datasetId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: bearer",
+                  "type": "text/plain"
+                },
+                "key": "Authorization",
+                "value": "Bearer <token>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"entries\": [\n    {\n      \"messages\": [\n        {\n          \"role\": \"<string>\",\n          \"content\": \"<string>\",\n          \"name\": \"<string>\"\n        },\n        {\n          \"role\": \"<string>\",\n          \"content\": \"<string>\",\n          \"name\": \"<string>\"\n        }\n      ],\n      \"rejected_message\": {\n        \"role\": \"<string>\",\n        \"reasoning_content\": \"<string>\",\n        \"content\": null,\n        \"refusal\": \"<string>\",\n        \"function_call\": {\n          \"name\": \"\",\n          \"arguments\": \"\"\n        },\n        \"tool_calls\": [\n          {\n            \"id\": \"<string>\",\n            \"function\": {\n              \"name\": \"<string>\",\n              \"arguments\": \"<string>\"\n            },\n            \"type\": \"<string>\"\n          },\n          {\n            \"id\": \"<string>\",\n            \"function\": {\n              \"name\": \"<string>\",\n              \"arguments\": \"<string>\"\n            },\n            \"type\": \"<string>\"\n          }\n        ]\n      },\n      \"tool_choice\": \"<string>\",\n      \"tools\": [\n        {\n          \"function\": {\n            \"name\": \"<string>\",\n            \"parameters\": {\n              \"key_0\": {},\n              \"key_1\": {}\n            },\n            \"description\": \"<string>\",\n            \"strict\": \"<boolean>\"\n          },\n          \"type\": \"<string>\"\n        },\n        {\n          \"function\": {\n            \"name\": \"<string>\",\n            \"parameters\": {\n              \"key_0\": {}\n            },\n            \"description\": \"<string>\",\n            \"strict\": \"<boolean>\"\n          },\n          \"type\": \"<string>\"\n        }\n      ],\n      \"response_format\": {\n        \"type\": \"<string>\"\n      },\n      \"split\": \"<string>\",\n      \"metadata\": {\n        \"key_0\": \"<string>\",\n        \"key_1\": \"<string>\"\n      }\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "Internal Server Error",
+          "code": 500,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"message\": \"string\",\n  \"code\": \"string\",\n  \"issues\": [\n    {\n      \"message\": \"string\"\n    },\n    {\n      \"message\": \"string\"\n    }\n  ]\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "8e93dcb6-980c-402a-9cd6-9d6062c3c1a2",
+      "name": "create Model",
+      "request": {
+        "name": "create Model",
+        "description": {
+          "content": "Train a new model.",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "models"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "POST",
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{bearerToken}}"
+            }
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"datasetId\": \"<string>\",\n  \"slug\": \"<string>\",\n  \"trainingConfig\": {\n    \"provider\": \"<string>\",\n    \"baseModel\": \"<string>\",\n    \"enable_sft\": true,\n    \"enable_preference_tuning\": false,\n    \"sft_hyperparameters\": {},\n    \"preference_hyperparameters\": {},\n    \"hyperparameters\": {\n      \"is_sft_enabled\": true,\n      \"batch_size\": \"<string>\",\n      \"learning_rate_multiplier\": \"<number>\",\n      \"num_epochs\": \"<number>\",\n      \"is_preference_tuning_enabled\": \"<boolean>\",\n      \"preference_tuning_variant\": \"<string>\",\n      \"preference_tuning_learning_rate_multiplier\": \"<number>\",\n      \"preference_tuning_num_epochs\": \"<number>\",\n      \"preference_tuning_training_beta\": \"<number>\",\n      \"preference_tuning_adapter_weight\": \"<number>\"\n    }\n  },\n  \"defaultTemperature\": \"<number>\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "response": [
+        {
+          "id": "8cb03563-32bf-4d32-9075-a3c44f566324",
+          "name": "Successful response",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "models"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: bearer",
+                  "type": "text/plain"
+                },
+                "key": "Authorization",
+                "value": "Bearer <token>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"datasetId\": \"<string>\",\n  \"slug\": \"<string>\",\n  \"trainingConfig\": {\n    \"provider\": \"<string>\",\n    \"baseModel\": \"<string>\",\n    \"enable_sft\": true,\n    \"enable_preference_tuning\": false,\n    \"sft_hyperparameters\": {},\n    \"preference_hyperparameters\": {},\n    \"hyperparameters\": {\n      \"is_sft_enabled\": true,\n      \"batch_size\": \"<string>\",\n      \"learning_rate_multiplier\": \"<number>\",\n      \"num_epochs\": \"<number>\",\n      \"is_preference_tuning_enabled\": \"<boolean>\",\n      \"preference_tuning_variant\": \"<string>\",\n      \"preference_tuning_learning_rate_multiplier\": \"<number>\",\n      \"preference_tuning_num_epochs\": \"<number>\",\n      \"preference_tuning_training_beta\": \"<number>\",\n      \"preference_tuning_adapter_weight\": \"<number>\"\n    }\n  },\n  \"defaultTemperature\": \"<number>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"id\": \"string\",\n  \"name\": \"string\",\n  \"object\": \"model\",\n  \"description\": \"string\",\n  \"created\": \"string\",\n  \"updated\": \"string\",\n  \"openpipe\": {\n    \"baseModel\": \"string\",\n    \"hyperparameters\": {\n      \"key_0\": {}\n    },\n    \"status\": \"PENDING_DEPRECATION\",\n    \"datasetId\": \"string\",\n    \"errorMessage\": \"string\"\n  },\n  \"contextWindow\": 4652.267189481996,\n  \"maxCompletionTokens\": 3833.2268522453037,\n  \"capabilities\": [\n    \"chat\",\n    \"chat\"\n  ],\n  \"pricing\": {\n    \"chatIn\": 852.9046519291538,\n    \"chatOut\": 5386.765205744057\n  },\n  \"owned_by\": \"string\"\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "7582e8ac-ce4c-4f5e-98c9-a79e0c9e22fc",
+          "name": "Error response",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "models"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: bearer",
+                  "type": "text/plain"
+                },
+                "key": "Authorization",
+                "value": "Bearer <token>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"datasetId\": \"<string>\",\n  \"slug\": \"<string>\",\n  \"trainingConfig\": {\n    \"provider\": \"<string>\",\n    \"baseModel\": \"<string>\",\n    \"enable_sft\": true,\n    \"enable_preference_tuning\": false,\n    \"sft_hyperparameters\": {},\n    \"preference_hyperparameters\": {},\n    \"hyperparameters\": {\n      \"is_sft_enabled\": true,\n      \"batch_size\": \"<string>\",\n      \"learning_rate_multiplier\": \"<number>\",\n      \"num_epochs\": \"<number>\",\n      \"is_preference_tuning_enabled\": \"<boolean>\",\n      \"preference_tuning_variant\": \"<string>\",\n      \"preference_tuning_learning_rate_multiplier\": \"<number>\",\n      \"preference_tuning_num_epochs\": \"<number>\",\n      \"preference_tuning_training_beta\": \"<number>\",\n      \"preference_tuning_adapter_weight\": \"<number>\"\n    }\n  },\n  \"defaultTemperature\": \"<number>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "Internal Server Error",
+          "code": 500,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"message\": \"string\",\n  \"code\": \"string\",\n  \"issues\": [\n    {\n      \"message\": \"string\"\n    },\n    {\n      \"message\": \"string\"\n    }\n  ]\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "e79b427e-8aeb-43a1-aa63-926bf618d483",
+      "name": "list Models",
+      "request": {
+        "name": "list Models",
+        "description": {
+          "content": "List all models for a project.",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "models"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "GET",
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{bearerToken}}"
+            }
+          ]
+        }
+      },
+      "response": [
+        {
+          "id": "7d191a8b-d67a-408c-833e-ed21c875faad",
+          "name": "Successful response",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "models"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: bearer",
+                  "type": "text/plain"
+                },
+                "key": "Authorization",
+                "value": "Bearer <token>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"object\": \"list\",\n  \"data\": [\n    {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"object\": \"model\",\n      \"description\": \"string\",\n      \"created\": \"string\",\n      \"updated\": \"string\",\n      \"openpipe\": {\n        \"baseModel\": \"string\",\n        \"hyperparameters\": {\n          \"key_0\": {},\n          \"key_1\": {},\n          \"key_2\": {}\n        },\n        \"status\": \"PROVISIONING\",\n        \"datasetId\": \"string\",\n        \"errorMessage\": \"string\"\n      },\n      \"contextWindow\": 5541.203961715423,\n      \"maxCompletionTokens\": 1837.8655848069202,\n      \"capabilities\": [\n        \"chat\",\n        \"json\"\n      ],\n      \"pricing\": {\n        \"chatIn\": 4748.49798435381,\n        \"chatOut\": 247.1771609498352\n      },\n      \"owned_by\": \"string\"\n    },\n    {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"object\": \"model\",\n      \"description\": \"string\",\n      \"created\": \"string\",\n      \"updated\": \"string\",\n      \"openpipe\": {\n        \"baseModel\": \"string\",\n        \"hyperparameters\": {\n          \"key_0\": {},\n          \"key_1\": {}\n        },\n        \"status\": \"QUEUED\",\n        \"datasetId\": \"string\",\n        \"errorMessage\": \"string\"\n      },\n      \"contextWindow\": 7741.058060826343,\n      \"maxCompletionTokens\": 8113.153434365353,\n      \"capabilities\": [\n        \"chat\",\n        \"chat\"\n      ],\n      \"pricing\": {\n        \"chatIn\": 1254.8014351779668,\n        \"chatOut\": 6146.833987066905\n      },\n      \"owned_by\": \"string\"\n    }\n  ]\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "2a57e9d6-2fc6-41a9-b347-1fcb0d30220f",
+          "name": "Error response",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "models"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: bearer",
+                  "type": "text/plain"
+                },
+                "key": "Authorization",
+                "value": "Bearer <token>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "Internal Server Error",
+          "code": 500,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"message\": \"string\",\n  \"code\": \"string\",\n  \"issues\": [\n    {\n      \"message\": \"string\"\n    },\n    {\n      \"message\": \"string\"\n    }\n  ]\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "c86a1ff9-d405-4603-9eaa-6c9241a86b4a",
+      "name": "get Model",
+      "request": {
+        "name": "get Model",
+        "description": {
+          "content": "Get a model by ID.",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "models",
+            ":modelSlug"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": [
+            {
+              "disabled": false,
+              "type": "any",
+              "value": "<string>",
+              "key": "modelSlug",
+              "description": "(Required) "
+            }
+          ]
+        },
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "GET",
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{bearerToken}}"
+            }
+          ]
+        }
+      },
+      "response": [
+        {
+          "id": "a7d40148-6176-4323-90bc-4d68dcad9a54",
+          "name": "Successful response",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "models",
+                ":modelSlug"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "modelSlug",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: bearer",
+                  "type": "text/plain"
+                },
+                "key": "Authorization",
+                "value": "Bearer <token>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"id\": \"string\",\n  \"name\": \"string\",\n  \"object\": \"model\",\n  \"description\": \"string\",\n  \"created\": \"string\",\n  \"updated\": \"string\",\n  \"openpipe\": {\n    \"baseModel\": \"string\",\n    \"hyperparameters\": {\n      \"key_0\": {}\n    },\n    \"status\": \"PENDING_DEPRECATION\",\n    \"datasetId\": \"string\",\n    \"errorMessage\": \"string\"\n  },\n  \"contextWindow\": 4652.267189481996,\n  \"maxCompletionTokens\": 3833.2268522453037,\n  \"capabilities\": [\n    \"chat\",\n    \"chat\"\n  ],\n  \"pricing\": {\n    \"chatIn\": 852.9046519291538,\n    \"chatOut\": 5386.765205744057\n  },\n  \"owned_by\": \"string\"\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "7ae9c8a8-8645-4fb4-9bde-2e640fc105d4",
+          "name": "Error response",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "models",
+                ":modelSlug"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "modelSlug",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: bearer",
+                  "type": "text/plain"
+                },
+                "key": "Authorization",
+                "value": "Bearer <token>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "Internal Server Error",
+          "code": 500,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"message\": \"string\",\n  \"code\": \"string\",\n  \"issues\": [\n    {\n      \"message\": \"string\"\n    },\n    {\n      \"message\": \"string\"\n    }\n  ]\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "218cdea3-cf16-44e6-971a-b3a77c6ad425",
+      "name": "delete Model",
+      "request": {
+        "name": "delete Model",
+        "description": {
+          "content": "Delete an existing model.",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "models",
+            ":modelSlug"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": [
+            {
+              "disabled": false,
+              "type": "any",
+              "value": "<string>",
+              "key": "modelSlug",
+              "description": "(Required) "
+            }
+          ]
+        },
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "DELETE",
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{bearerToken}}"
+            }
+          ]
+        }
+      },
+      "response": [
+        {
+          "id": "a42eb3b9-d7d9-42fe-96ac-50d660bec021",
+          "name": "Successful response",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "models",
+                ":modelSlug"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "modelSlug",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: bearer",
+                  "type": "text/plain"
+                },
+                "key": "Authorization",
+                "value": "Bearer <token>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"id\": \"string\",\n  \"object\": \"model\",\n  \"deleted\": false\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "ee2138d2-75e7-44b1-8186-d710a22a2570",
+          "name": "Error response",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "models",
+                ":modelSlug"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "modelSlug",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: bearer",
+                  "type": "text/plain"
+                },
+                "key": "Authorization",
+                "value": "Bearer <token>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "body": {}
+          },
+          "status": "Internal Server Error",
+          "code": 500,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"message\": \"string\",\n  \"code\": \"string\",\n  \"issues\": [\n    {\n      \"message\": \"string\"\n    },\n    {\n      \"message\": \"string\"\n    }\n  ]\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "66d2ec26-9653-4682-934e-c014b6019405",
+      "name": "unstable Dataset Create",
+      "request": {
+        "name": "unstable Dataset Create",
+        "description": {
+          "content": "DEPRECATED: use the `/datasets` endpoint instead",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "unstable",
+            "dataset",
+            "create"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "POST",
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{bearerToken}}"
+            }
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"<string>\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "response": [
+        {
+          "id": "b87fd518-0343-4826-aba3-8eb287a62dea",
+          "name": "Successful response",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "unstable",
+                "dataset",
+                "create"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: bearer",
+                  "type": "text/plain"
+                },
+                "key": "Authorization",
+                "value": "Bearer <token>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"datasetId\": \"string\"\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "36819640-11b3-4558-a0de-fe92e50df996",
+          "name": "Error response",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "unstable",
+                "dataset",
+                "create"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: bearer",
+                  "type": "text/plain"
+                },
+                "key": "Authorization",
+                "value": "Bearer <token>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "Internal Server Error",
+          "code": 500,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"message\": \"string\",\n  \"code\": \"string\",\n  \"issues\": [\n    {\n      \"message\": \"string\"\n    },\n    {\n      \"message\": \"string\"\n    }\n  ]\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "898754ba-b5e0-49b1-ae76-0c3a1e5a5748",
+      "name": "unstable Dataset Delete",
+      "request": {
+        "name": "unstable Dataset Delete",
+        "description": {
+          "content": "DEPRECATED: use the `/datasets/{dataset}` endpoint instead",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "unstable",
+            "dataset",
+            "delete"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "POST",
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{bearerToken}}"
+            }
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"datasetId\": \"<string>\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "response": [
+        {
+          "id": "cbc5c928-66a8-4e75-84b8-1689d8e55bb4",
+          "name": "Successful response",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "unstable",
+                "dataset",
+                "delete"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: bearer",
+                  "type": "text/plain"
+                },
+                "key": "Authorization",
+                "value": "Bearer <token>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"datasetId\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"datasetId\": \"string\"\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "c7979db5-ef76-4de7-8118-d7fdf2a5904e",
+          "name": "Error response",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "unstable",
+                "dataset",
+                "delete"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: bearer",
+                  "type": "text/plain"
+                },
+                "key": "Authorization",
+                "value": "Bearer <token>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"datasetId\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "Internal Server Error",
+          "code": 500,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"message\": \"string\",\n  \"code\": \"string\",\n  \"issues\": [\n    {\n      \"message\": \"string\"\n    },\n    {\n      \"message\": \"string\"\n    }\n  ]\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "3be9f2ba-2025-4142-a231-a5c62a8133ce",
+      "name": "unstable Dataset List",
+      "request": {
+        "name": "unstable Dataset List",
+        "description": {
+          "content": "DEPRECATED: use the `/datasets` endpoint instead",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "unstable",
+            "dataset",
+            "list"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "GET",
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{bearerToken}}"
+            }
+          ]
+        }
+      },
+      "response": [
+        {
+          "id": "28251185-96fa-4c26-8243-ac92bd2aa061",
+          "name": "Successful response",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "unstable",
+                "dataset",
+                "list"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: bearer",
+                  "type": "text/plain"
+                },
+                "key": "Authorization",
+                "value": "Bearer <token>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "[\n  {\n    \"id\": \"string\",\n    \"name\": \"string\",\n    \"createdAt\": \"1961-10-03T01:30:02.023Z\",\n    \"updatedAt\": \"2010-01-28T10:27:31.678Z\",\n    \"datasetEntryCount\": 9988.50213338799,\n    \"fineTuneCount\": 1471.0130991669157\n  },\n  {\n    \"id\": \"string\",\n    \"name\": \"string\",\n    \"createdAt\": \"1953-06-20T00:30:23.233Z\",\n    \"updatedAt\": \"1957-04-04T10:43:34.361Z\",\n    \"datasetEntryCount\": 7202.55703509365,\n    \"fineTuneCount\": 7751.471918953137\n  }\n]",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "a3ed7ad8-8809-4200-adf7-ecbc77d59289",
+          "name": "Error response",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "unstable",
+                "dataset",
+                "list"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: bearer",
+                  "type": "text/plain"
+                },
+                "key": "Authorization",
+                "value": "Bearer <token>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "Internal Server Error",
+          "code": 500,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"message\": \"string\",\n  \"code\": \"string\",\n  \"issues\": [\n    {\n      \"message\": \"string\"\n    },\n    {\n      \"message\": \"string\"\n    }\n  ]\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "615b0a3d-e8de-4932-a10f-0b7cfbf679d8",
+      "name": "unstable Dataset Entry Create",
+      "request": {
+        "name": "unstable Dataset Entry Create",
+        "description": {
+          "content": "DEPRECATED: use the `/datasets/{dataset}/entries` endpoint instead",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "unstable",
+            "dataset-entry",
+            "create"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "POST",
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{bearerToken}}"
+            }
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"datasetId\": \"<string>\",\n  \"entries\": [\n    {\n      \"messages\": [\n        {\n          \"role\": \"<string>\",\n          \"content\": \"<string>\",\n          \"name\": \"<string>\"\n        },\n        {\n          \"role\": \"<string>\",\n          \"content\": \"<string>\",\n          \"name\": \"<string>\"\n        }\n      ],\n      \"rejected_message\": {\n        \"role\": \"<string>\",\n        \"reasoning_content\": \"<string>\",\n        \"content\": null,\n        \"refusal\": \"<string>\",\n        \"function_call\": {\n          \"name\": \"\",\n          \"arguments\": \"\"\n        },\n        \"tool_calls\": [\n          {\n            \"id\": \"<string>\",\n            \"function\": {\n              \"name\": \"<string>\",\n              \"arguments\": \"<string>\"\n            },\n            \"type\": \"<string>\"\n          },\n          {\n            \"id\": \"<string>\",\n            \"function\": {\n              \"name\": \"<string>\",\n              \"arguments\": \"<string>\"\n            },\n            \"type\": \"<string>\"\n          }\n        ]\n      },\n      \"function_call\": \"<string>\",\n      \"functions\": [\n        {\n          \"name\": \"<string>\",\n          \"parameters\": {\n            \"key_0\": {},\n            \"key_1\": {}\n          },\n          \"description\": \"<string>\",\n          \"strict\": \"<boolean>\"\n        },\n        {\n          \"name\": \"<string>\",\n          \"parameters\": {\n            \"key_0\": {}\n          },\n          \"description\": \"<string>\",\n          \"strict\": \"<boolean>\"\n        }\n      ],\n      \"tool_choice\": \"<string>\",\n      \"tools\": [\n        {\n          \"function\": {\n            \"name\": \"<string>\",\n            \"parameters\": {\n              \"key_0\": {}\n            },\n            \"description\": \"<string>\",\n            \"strict\": \"<boolean>\"\n          },\n          \"type\": \"<string>\"\n        },\n        {\n          \"function\": {\n            \"name\": \"<string>\",\n            \"parameters\": {\n              \"key_0\": {}\n            },\n            \"description\": \"<string>\",\n            \"strict\": \"<boolean>\"\n          },\n          \"type\": \"<string>\"\n        }\n      ],\n      \"response_format\": {\n        \"type\": \"<string>\"\n      },\n      \"split\": \"<string>\",\n      \"judgement\": \"<string>\",\n      \"metadata\": {\n        \"key_0\": \"<string>\"\n      }\n    }\n  ]\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "response": [
+        {
+          "id": "75ec2294-4a5e-4027-9446-7962ab1dd080",
+          "name": "Successful response",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "unstable",
+                "dataset-entry",
+                "create"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: bearer",
+                  "type": "text/plain"
+                },
+                "key": "Authorization",
+                "value": "Bearer <token>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"datasetId\": \"<string>\",\n  \"entries\": [\n    {\n      \"messages\": [\n        {\n          \"role\": \"<string>\",\n          \"content\": \"<string>\",\n          \"name\": \"<string>\"\n        },\n        {\n          \"role\": \"<string>\",\n          \"content\": \"<string>\",\n          \"name\": \"<string>\"\n        }\n      ],\n      \"rejected_message\": {\n        \"role\": \"<string>\",\n        \"reasoning_content\": \"<string>\",\n        \"content\": null,\n        \"refusal\": \"<string>\",\n        \"function_call\": {\n          \"name\": \"\",\n          \"arguments\": \"\"\n        },\n        \"tool_calls\": [\n          {\n            \"id\": \"<string>\",\n            \"function\": {\n              \"name\": \"<string>\",\n              \"arguments\": \"<string>\"\n            },\n            \"type\": \"<string>\"\n          },\n          {\n            \"id\": \"<string>\",\n            \"function\": {\n              \"name\": \"<string>\",\n              \"arguments\": \"<string>\"\n            },\n            \"type\": \"<string>\"\n          }\n        ]\n      },\n      \"function_call\": \"<string>\",\n      \"functions\": [\n        {\n          \"name\": \"<string>\",\n          \"parameters\": {\n            \"key_0\": {}\n          },\n          \"description\": \"<string>\",\n          \"strict\": \"<boolean>\"\n        },\n        {\n          \"name\": \"<string>\",\n          \"parameters\": {\n            \"key_0\": {},\n            \"key_1\": {},\n            \"key_2\": {},\n            \"key_3\": {}\n          },\n          \"description\": \"<string>\",\n          \"strict\": \"<boolean>\"\n        }\n      ],\n      \"tool_choice\": \"<string>\",\n      \"tools\": [\n        {\n          \"function\": {\n            \"name\": \"<string>\",\n            \"parameters\": {\n              \"key_0\": {}\n            },\n            \"description\": \"<string>\",\n            \"strict\": \"<boolean>\"\n          },\n          \"type\": \"<string>\"\n        },\n        {\n          \"function\": {\n            \"name\": \"<string>\",\n            \"parameters\": {\n              \"key_0\": {},\n              \"key_1\": {}\n            },\n            \"description\": \"<string>\",\n            \"strict\": \"<boolean>\"\n          },\n          \"type\": \"<string>\"\n        }\n      ],\n      \"response_format\": {\n        \"type\": \"<string>\"\n      },\n      \"split\": \"<string>\",\n      \"judgement\": \"<string>\",\n      \"metadata\": {\n        \"key_0\": \"<string>\"\n      }\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"createdEntries\": 1799.9680060821765,\n  \"errors\": [\n    {\n      \"index\": 3005.494022345988,\n      \"message\": \"string\"\n    },\n    {\n      \"index\": 560.5693194860162,\n      \"message\": \"string\"\n    }\n  ]\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "523a4070-a338-4830-91f9-4086e037fa22",
+          "name": "Error response",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "unstable",
+                "dataset-entry",
+                "create"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: bearer",
+                  "type": "text/plain"
+                },
+                "key": "Authorization",
+                "value": "Bearer <token>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"datasetId\": \"<string>\",\n  \"entries\": [\n    {\n      \"messages\": [\n        {\n          \"role\": \"<string>\",\n          \"content\": \"<string>\",\n          \"name\": \"<string>\"\n        },\n        {\n          \"role\": \"<string>\",\n          \"content\": \"<string>\",\n          \"name\": \"<string>\"\n        }\n      ],\n      \"rejected_message\": {\n        \"role\": \"<string>\",\n        \"reasoning_content\": \"<string>\",\n        \"content\": null,\n        \"refusal\": \"<string>\",\n        \"function_call\": {\n          \"name\": \"\",\n          \"arguments\": \"\"\n        },\n        \"tool_calls\": [\n          {\n            \"id\": \"<string>\",\n            \"function\": {\n              \"name\": \"<string>\",\n              \"arguments\": \"<string>\"\n            },\n            \"type\": \"<string>\"\n          },\n          {\n            \"id\": \"<string>\",\n            \"function\": {\n              \"name\": \"<string>\",\n              \"arguments\": \"<string>\"\n            },\n            \"type\": \"<string>\"\n          }\n        ]\n      },\n      \"function_call\": \"<string>\",\n      \"functions\": [\n        {\n          \"name\": \"<string>\",\n          \"parameters\": {\n            \"key_0\": {}\n          },\n          \"description\": \"<string>\",\n          \"strict\": \"<boolean>\"\n        },\n        {\n          \"name\": \"<string>\",\n          \"parameters\": {\n            \"key_0\": {},\n            \"key_1\": {},\n            \"key_2\": {},\n            \"key_3\": {}\n          },\n          \"description\": \"<string>\",\n          \"strict\": \"<boolean>\"\n        }\n      ],\n      \"tool_choice\": \"<string>\",\n      \"tools\": [\n        {\n          \"function\": {\n            \"name\": \"<string>\",\n            \"parameters\": {\n              \"key_0\": {}\n            },\n            \"description\": \"<string>\",\n            \"strict\": \"<boolean>\"\n          },\n          \"type\": \"<string>\"\n        },\n        {\n          \"function\": {\n            \"name\": \"<string>\",\n            \"parameters\": {\n              \"key_0\": {},\n              \"key_1\": {}\n            },\n            \"description\": \"<string>\",\n            \"strict\": \"<boolean>\"\n          },\n          \"type\": \"<string>\"\n        }\n      ],\n      \"response_format\": {\n        \"type\": \"<string>\"\n      },\n      \"split\": \"<string>\",\n      \"judgement\": \"<string>\",\n      \"metadata\": {\n        \"key_0\": \"<string>\"\n      }\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "Internal Server Error",
+          "code": 500,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"message\": \"string\",\n  \"code\": \"string\",\n  \"issues\": [\n    {\n      \"message\": \"string\"\n    },\n    {\n      \"message\": \"string\"\n    }\n  ]\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "9ab5393a-e763-4e50-90c8-810b0a67695d",
+      "name": "unstable Finetune Create",
+      "request": {
+        "name": "unstable Finetune Create",
+        "description": {
+          "content": "DEPRECATED",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "unstable",
+            "finetune",
+            "create"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "POST",
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{bearerToken}}"
+            }
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"datasetId\": \"<string>\",\n  \"slug\": \"<string>\",\n  \"baseModel\": \"<string>\",\n  \"overrides\": {}\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "response": [
+        {
+          "id": "c7f25951-e70d-4830-9327-8fcef4abef78",
+          "name": "Successful response",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "unstable",
+                "finetune",
+                "create"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: bearer",
+                  "type": "text/plain"
+                },
+                "key": "Authorization",
+                "value": "Bearer <token>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"datasetId\": \"<string>\",\n  \"slug\": \"<string>\",\n  \"baseModel\": \"<string>\",\n  \"overrides\": {}\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"id\": \"string\"\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "93adbc42-e6eb-4896-b40e-fbed9aeb7ab3",
+          "name": "Error response",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "unstable",
+                "finetune",
+                "create"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: bearer",
+                  "type": "text/plain"
+                },
+                "key": "Authorization",
+                "value": "Bearer <token>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"datasetId\": \"<string>\",\n  \"slug\": \"<string>\",\n  \"baseModel\": \"<string>\",\n  \"overrides\": {}\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "Internal Server Error",
+          "code": 500,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"message\": \"string\",\n  \"code\": \"string\",\n  \"issues\": [\n    {\n      \"message\": \"string\"\n    },\n    {\n      \"message\": \"string\"\n    }\n  ]\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "8fe48d4c-773a-426e-befb-2a1db020c569",
+      "name": "unstable Finetune Get",
+      "request": {
+        "name": "unstable Finetune Get",
+        "description": {
+          "content": "DEPRECATED: use the `/models/{model}` endpoint instead",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "unstable",
+            "finetune",
+            "get"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [
+            {
+              "disabled": false,
+              "key": "id",
+              "value": "<string>"
+            },
+            {
+              "disabled": false,
+              "key": "slug",
+              "value": "<string>"
+            }
+          ],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "GET",
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{bearerToken}}"
+            }
+          ]
+        }
+      },
+      "response": [
+        {
+          "id": "3b54e671-7a98-424e-88be-bea2c5d05eb3",
+          "name": "Successful response",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "unstable",
+                "finetune",
+                "get"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "id",
+                  "value": "<string>"
+                },
+                {
+                  "key": "slug",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: bearer",
+                  "type": "text/plain"
+                },
+                "key": "Authorization",
+                "value": "Bearer <token>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"id\": \"string\",\n  \"status\": \"PENDING\",\n  \"slug\": \"string\",\n  \"baseModel\": \"string\",\n  \"errorMessage\": \"string\",\n  \"datasetId\": \"string\",\n  \"createdAt\": \"string\"\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "43e8d563-978d-4556-9d74-6e0617425d2c",
+          "name": "Error response",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "unstable",
+                "finetune",
+                "get"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "id",
+                  "value": "<string>"
+                },
+                {
+                  "key": "slug",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: bearer",
+                  "type": "text/plain"
+                },
+                "key": "Authorization",
+                "value": "Bearer <token>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "Internal Server Error",
+          "code": 500,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"message\": \"string\",\n  \"code\": \"string\",\n  \"issues\": [\n    {\n      \"message\": \"string\"\n    },\n    {\n      \"message\": \"string\"\n    }\n  ]\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "9890bf24-3d01-4de3-b822-730877d9dd7c",
+      "name": "unstable Finetune Delete",
+      "request": {
+        "name": "unstable Finetune Delete",
+        "description": {
+          "content": "DEPRECATED: use the `/models/{model}` endpoint instead",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "unstable",
+            "finetune",
+            "delete"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "POST",
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{bearerToken}}"
+            }
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"id\": \"<string>\",\n  \"slug\": \"<string>\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "response": [
+        {
+          "id": "1ed468c7-a7d9-4c28-8e8c-36a215d4aeef",
+          "name": "Successful response",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "unstable",
+                "finetune",
+                "delete"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: bearer",
+                  "type": "text/plain"
+                },
+                "key": "Authorization",
+                "value": "Bearer <token>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": \"<string>\",\n  \"slug\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"deleted\": \"string\"\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "752ff5fd-3bf3-4929-9251-a2d78abba8a9",
+          "name": "Error response",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "unstable",
+                "finetune",
+                "delete"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: bearer",
+                  "type": "text/plain"
+                },
+                "key": "Authorization",
+                "value": "Bearer <token>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": \"<string>\",\n  \"slug\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "Internal Server Error",
+          "code": 500,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"message\": \"string\",\n  \"code\": \"string\",\n  \"issues\": [\n    {\n      \"message\": \"string\"\n    },\n    {\n      \"message\": \"string\"\n    }\n  ]\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.openpipe.ai/api/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "904130ee-4eee-489c-b976-6ee787473fee",
+    "name": "OpenPipe API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The public API for reporting API calls to OpenPipe",
+      "type": "text/plain"
+    }
+  }
+}
