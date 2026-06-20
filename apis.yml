@@ -6,7 +6,7 @@ description: >-
   OpenPipe is a fine-tuning and inference platform for distilling expensive frontier-LLM workloads into smaller, cheaper
   specialized models. Captures production traces (OpenAI and Anthropic), fine-tunes, evaluates with judges, caches
   results, and serves the result via OpenAI-compatible API. Also supports proxying to external models.
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 tags:
   - AI
   - LLM
@@ -26,7 +26,7 @@ apis:
       OpenAI-compatible chat completions, model and dataset management, training jobs, criteria-based judging, request
       reporting (OpenAI and Anthropic), tag/metadata updates, caching, and Anthropic proxying. Base URL
       https://api.openpipe.ai/api/v1.
-    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     humanURL: https://docs.openpipe.ai/
     baseURL: https://api.openpipe.ai/api/v1
     tags:
