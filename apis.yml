@@ -43,7 +43,7 @@ apis:
         url: https://docs.openpipe.ai/
       - type: OpenAPI
         url: openapi/openpipe-openapi.json
-      - type: SignUp
+      - type: Signup
         url: https://app.openpipe.ai/
       - type: Pricing
         url: https://openpipe.ai/pricing
@@ -64,7 +64,7 @@ common:
     url: rate-limits/openpipe-rate-limits.yml
   - type: FinOps
     url: finops/openpipe-finops.yml
-  - type: LLMsTxt
+  - type: LlmsText
     url: https://docs.openpipe.ai/llms.txt
 maintainers:
   - FN: Kin Lane
