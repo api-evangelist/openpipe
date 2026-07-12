@@ -50,6 +50,10 @@ apis:
       - type: BaseModels
         url: https://docs.openpipe.ai/base-models
 common:
+  - type: DomainSecurity
+    url: security/openpipe-domain-security.yml
+  - type: Authentication
+    url: authentication/openpipe-authentication.yml
   - type: GitHubOrganization
     url: https://github.com/OpenPipe
   - type: LinkedIn

@@ -1,0 +1,12 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/openpipe-openapi.json
+summary:
+  types:
+  - http
+schemes:
+- name: Authorization
+  type: http
+  scheme: bearer
+  sources:
+  - openapi/openpipe-openapi.json
