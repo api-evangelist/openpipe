@@ -50,6 +50,8 @@ apis:
       - type: BaseModels
         url: https://docs.openpipe.ai/base-models
 common:
+  - type: AgenticAccess
+    url: agentic-access/openpipe-agentic-access.yml
   - type: DomainSecurity
     url: security/openpipe-domain-security.yml
   - type: Authentication
