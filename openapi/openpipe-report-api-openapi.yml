@@ -1,0 +1,107 @@
+openapi: 3.0.3
+info:
+  title: OpenPipe Chat Report API
+  description: The public API for reporting API calls to OpenPipe
+  version: 0.1.1
+servers:
+- url: https://api.openpipe.ai/api/v1
+tags:
+- name: Report
+paths:
+  /report:
+    post:
+      operationId: report
+      description: Record request logs from OpenAI models
+      security:
+      - Authorization: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                requestedAt:
+                  type: number
+                  description: Unix timestamp in milliseconds
+                receivedAt:
+                  type: number
+                  description: Unix timestamp in milliseconds
+                reqPayload:
+                  description: JSON-encoded request payload
+                respPayload:
+                  description: JSON-encoded response payload
+                statusCode:
+                  type: number
+                  description: HTTP status code of response
+                errorMessage:
+                  type: string
+                  description: User-friendly error message
+                tags:
+                  type: object
+                  additionalProperties:
+                    anyOf:
+                    - type: string
+                    - type: number
+                    - type: boolean
+                    - enum:
+                      - 'null'
+                      nullable: true
+                  description: 'DEPRECATED: use "reqPayload.metadata" to attach extra metadata tags to the call for filtering. Eg { "userId": "123", "prompt_id": "populate-title" }'
+                  default: {}
+              additionalProperties: false
+      parameters: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    anyOf:
+                    - type: string
+                      enum:
+                      - ok
+                    - type: string
+                      enum:
+                      - error
+                required:
+                - status
+                additionalProperties: false
+        default:
+          $ref: '#/components/responses/error'
+      tags:
+      - Report
+components:
+  responses:
+    error:
+      description: Error response
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+              code:
+                type: string
+              issues:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    message:
+                      type: string
+                  required:
+                  - message
+                  additionalProperties: false
+            required:
+            - message
+            - code
+            additionalProperties: false
+  securitySchemes:
+    Authorization:
+      type: http
+      scheme: bearer

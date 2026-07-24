@@ -1,0 +1,166 @@
+openapi: 3.0.3
+info:
+  title: OpenPipe Chat Logs API
+  description: The public API for reporting API calls to OpenPipe
+  version: 0.1.1
+servers:
+- url: https://api.openpipe.ai/api/v1
+tags:
+- name: Logs
+paths:
+  /logs/update-tags:
+    post:
+      operationId: updateLogTags
+      description: 'DEPRECATED: use "/logs/update-metadata" instead'
+      security:
+      - Authorization: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                filters:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      field:
+                        type: string
+                        description: 'The field to filter on. Possible fields include: `model`, `completionId`, and `tags.your_tag_name`.'
+                      equals:
+                        anyOf:
+                        - type: string
+                        - type: number
+                        - type: boolean
+                    required:
+                    - field
+                    - equals
+                    additionalProperties: false
+                tags:
+                  type: object
+                  additionalProperties:
+                    anyOf:
+                    - type: string
+                    - type: number
+                    - type: boolean
+                    - enum:
+                      - 'null'
+                      nullable: true
+                  description: 'Extra tags to attach to the call for filtering. Eg { "userId": "123", "prompt_id": "populate-title" }'
+              required:
+              - filters
+              - tags
+              additionalProperties: false
+      parameters: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  matchedLogs:
+                    type: number
+                required:
+                - matchedLogs
+                additionalProperties: false
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      tags:
+      - Logs
+  /logs/update-metadata:
+    post:
+      operationId: updateLogMetadata
+      description: Update tags metadata for logged calls matching the provided filters.
+      security:
+      - Authorization: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                filters:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      field:
+                        type: string
+                        description: 'The field to filter on. Possible fields include: `model`, `completionId`, and `metadata.your_tag_name`.'
+                      equals:
+                        anyOf:
+                        - type: string
+                        - type: number
+                        - type: boolean
+                    required:
+                    - field
+                    - equals
+                    additionalProperties: false
+                metadata:
+                  type: object
+                  additionalProperties:
+                    anyOf:
+                    - type: string
+                    - enum:
+                      - 'null'
+                      nullable: true
+                  description: 'Extra metadata to attach to the call for filtering. Eg { "userId": "123", "prompt_id": "populate-title" }'
+              required:
+              - filters
+              - metadata
+              additionalProperties: false
+      parameters: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  matchedLogs:
+                    type: number
+                required:
+                - matchedLogs
+                additionalProperties: false
+        default:
+          $ref: '#/components/responses/error'
+      tags:
+      - Logs
+components:
+  responses:
+    error:
+      description: Error response
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+              code:
+                type: string
+              issues:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    message:
+                      type: string
+                  required:
+                  - message
+                  additionalProperties: false
+            required:
+            - message
+            - code
+            additionalProperties: false
+  securitySchemes:
+    Authorization:
+      type: http
+      scheme: bearer

@@ -1,0 +1,92 @@
+openapi: 3.0.3
+info:
+  title: OpenPipe Chat Local Testing Only Get Latest Logged Call API
+  description: The public API for reporting API calls to OpenPipe
+  version: 0.1.1
+servers:
+- url: https://api.openpipe.ai/api/v1
+tags:
+- name: Local Testing Only Get Latest Logged Call
+paths:
+  /local-testing-only-get-latest-logged-call:
+    get:
+      operationId: localTestingOnlyGetLatestLoggedCall
+      description: Get the latest logged call (only for local testing)
+      security:
+      - Authorization: []
+      parameters: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  createdAt:
+                    type: string
+                    format: date-time
+                  cacheHit:
+                    type: boolean
+                  statusCode:
+                    type: number
+                    nullable: true
+                  errorMessage:
+                    type: string
+                    nullable: true
+                  reqPayload: {}
+                  respPayload: {}
+                  tags:
+                    type: object
+                    additionalProperties:
+                      type: string
+                      nullable: true
+                  metadata:
+                    type: object
+                    additionalProperties:
+                      type: string
+                      nullable: true
+                required:
+                - createdAt
+                - cacheHit
+                - statusCode
+                - errorMessage
+                - tags
+                - metadata
+                additionalProperties: false
+                nullable: true
+        default:
+          $ref: '#/components/responses/error'
+      tags:
+      - Local Testing Only Get Latest Logged Call
+components:
+  responses:
+    error:
+      description: Error response
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+              code:
+                type: string
+              issues:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    message:
+                      type: string
+                  required:
+                  - message
+                  additionalProperties: false
+            required:
+            - message
+            - code
+            additionalProperties: false
+  securitySchemes:
+    Authorization:
+      type: http
+      scheme: bearer
