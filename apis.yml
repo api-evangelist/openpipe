@@ -6,7 +6,20 @@ description: >-
   OpenPipe is a fine-tuning and inference platform for distilling expensive frontier-LLM workloads into smaller, cheaper
   specialized models. Captures production traces (OpenAI and Anthropic), fine-tunes, evaluates with judges, caches
   results, and serves the result via OpenAI-compatible API. Also supports proxying to external models.
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/openpipe.png
 tags:
   - AI
   - LLM
@@ -20,35 +33,188 @@ created: '2026-05-08'
 modified: '2026-05-19'
 specificationVersion: '0.19'
 apis:
-  - aid: openpipe:platform
-    name: OpenPipe Platform API
-    description: >-
-      OpenAI-compatible chat completions, model and dataset management, training jobs, criteria-based judging, request
-      reporting (OpenAI and Anthropic), tag/metadata updates, caching, and Anthropic proxying. Base URL
-      https://api.openpipe.ai/api/v1.
-    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-    humanURL: https://docs.openpipe.ai/
-    baseURL: https://api.openpipe.ai/api/v1
-    tags:
-      - AI
-      - LLM
-      - Chat Completions
-      - Fine Tuning
-      - Datasets
-      - Judges
-      - Reporting
-      - Caching
-    properties:
-      - type: Documentation
-        url: https://docs.openpipe.ai/
-      - type: OpenAPI
-        url: openapi/openpipe-openapi.json
-      - type: Signup
-        url: https://app.openpipe.ai/
-      - type: Pricing
-        url: https://openpipe.ai/pricing
-      - type: BaseModels
-        url: https://docs.openpipe.ai/base-models
+- aid: openpipe:openpipe-chat-api
+  name: OpenPipe Chat API
+  description: The Chat API from OpenPipe — 1 operation(s) for chat.
+  humanURL: https://docs.openpipe.ai/
+  baseURL: https://api.openpipe.ai/api/v1
+  tags:
+  - Chat
+  properties:
+  - type: OpenAPI
+    url: openapi/openpipe-chat-api-openapi.yml
+  - type: Documentation
+    url: https://docs.openpipe.ai/
+  - type: Signup
+    url: https://app.openpipe.ai/
+  - type: Pricing
+    url: https://openpipe.ai/pricing
+  - type: BaseModels
+    url: https://docs.openpipe.ai/base-models
+- aid: openpipe:openpipe-check-cache-api
+  name: OpenPipe Check Cache API
+  description: The Check Cache API from OpenPipe — 1 operation(s) for check cache.
+  humanURL: https://docs.openpipe.ai/
+  baseURL: https://api.openpipe.ai/api/v1
+  tags:
+  - Check Cache
+  properties:
+  - type: OpenAPI
+    url: openapi/openpipe-check-cache-api-openapi.yml
+  - type: Documentation
+    url: https://docs.openpipe.ai/
+  - type: Signup
+    url: https://app.openpipe.ai/
+  - type: Pricing
+    url: https://openpipe.ai/pricing
+  - type: BaseModels
+    url: https://docs.openpipe.ai/base-models
+- aid: openpipe:openpipe-criteria-api
+  name: OpenPipe Criteria API
+  description: The Criteria API from OpenPipe — 1 operation(s) for criteria.
+  humanURL: https://docs.openpipe.ai/
+  baseURL: https://api.openpipe.ai/api/v1
+  tags:
+  - Criteria
+  properties:
+  - type: OpenAPI
+    url: openapi/openpipe-criteria-api-openapi.yml
+  - type: Documentation
+    url: https://docs.openpipe.ai/
+  - type: Signup
+    url: https://app.openpipe.ai/
+  - type: Pricing
+    url: https://openpipe.ai/pricing
+  - type: BaseModels
+    url: https://docs.openpipe.ai/base-models
+- aid: openpipe:openpipe-datasets-api
+  name: OpenPipe Datasets API
+  description: The Datasets API from OpenPipe — 3 operation(s) for datasets.
+  humanURL: https://docs.openpipe.ai/
+  baseURL: https://api.openpipe.ai/api/v1
+  tags:
+  - Datasets
+  properties:
+  - type: OpenAPI
+    url: openapi/openpipe-datasets-api-openapi.yml
+  - type: Documentation
+    url: https://docs.openpipe.ai/
+  - type: Signup
+    url: https://app.openpipe.ai/
+  - type: Pricing
+    url: https://openpipe.ai/pricing
+  - type: BaseModels
+    url: https://docs.openpipe.ai/base-models
+- aid: openpipe:openpipe-local-testing-only-get-latest-logged-call-api
+  name: OpenPipe Local Testing Only Get Latest Logged Call API
+  description: >-
+    The Local Testing Only Get Latest Logged Call API from OpenPipe — 1 operation(s) for local testing
+    only get latest logged call.
+  humanURL: https://docs.openpipe.ai/
+  baseURL: https://api.openpipe.ai/api/v1
+  tags:
+  - Local Testing Only Get Latest Logged Call
+  properties:
+  - type: OpenAPI
+    url: openapi/openpipe-local-testing-only-get-latest-logged-call-api-openapi.yml
+  - type: Documentation
+    url: https://docs.openpipe.ai/
+  - type: Signup
+    url: https://app.openpipe.ai/
+  - type: Pricing
+    url: https://openpipe.ai/pricing
+  - type: BaseModels
+    url: https://docs.openpipe.ai/base-models
+- aid: openpipe:openpipe-logs-api
+  name: OpenPipe Logs API
+  description: The Logs API from OpenPipe — 2 operation(s) for logs.
+  humanURL: https://docs.openpipe.ai/
+  baseURL: https://api.openpipe.ai/api/v1
+  tags:
+  - Logs
+  properties:
+  - type: OpenAPI
+    url: openapi/openpipe-logs-api-openapi.yml
+  - type: Documentation
+    url: https://docs.openpipe.ai/
+  - type: Signup
+    url: https://app.openpipe.ai/
+  - type: Pricing
+    url: https://openpipe.ai/pricing
+  - type: BaseModels
+    url: https://docs.openpipe.ai/base-models
+- aid: openpipe:openpipe-models-api
+  name: OpenPipe Models API
+  description: The Models API from OpenPipe — 2 operation(s) for models.
+  humanURL: https://docs.openpipe.ai/
+  baseURL: https://api.openpipe.ai/api/v1
+  tags:
+  - Models
+  properties:
+  - type: OpenAPI
+    url: openapi/openpipe-models-api-openapi.yml
+  - type: Documentation
+    url: https://docs.openpipe.ai/
+  - type: Signup
+    url: https://app.openpipe.ai/
+  - type: Pricing
+    url: https://openpipe.ai/pricing
+  - type: BaseModels
+    url: https://docs.openpipe.ai/base-models
+- aid: openpipe:openpipe-report-anthropic-api
+  name: OpenPipe Report Anthropic API
+  description: The Report Anthropic API from OpenPipe — 1 operation(s) for report anthropic.
+  humanURL: https://docs.openpipe.ai/
+  baseURL: https://api.openpipe.ai/api/v1
+  tags:
+  - Report Anthropic
+  properties:
+  - type: OpenAPI
+    url: openapi/openpipe-report-anthropic-api-openapi.yml
+  - type: Documentation
+    url: https://docs.openpipe.ai/
+  - type: Signup
+    url: https://app.openpipe.ai/
+  - type: Pricing
+    url: https://openpipe.ai/pricing
+  - type: BaseModels
+    url: https://docs.openpipe.ai/base-models
+- aid: openpipe:openpipe-report-api
+  name: OpenPipe Report API
+  description: The Report API from OpenPipe — 1 operation(s) for report.
+  humanURL: https://docs.openpipe.ai/
+  baseURL: https://api.openpipe.ai/api/v1
+  tags:
+  - Report
+  properties:
+  - type: OpenAPI
+    url: openapi/openpipe-report-api-openapi.yml
+  - type: Documentation
+    url: https://docs.openpipe.ai/
+  - type: Signup
+    url: https://app.openpipe.ai/
+  - type: Pricing
+    url: https://openpipe.ai/pricing
+  - type: BaseModels
+    url: https://docs.openpipe.ai/base-models
+- aid: openpipe:openpipe-unstable-api
+  name: OpenPipe Unstable API
+  description: The Unstable API from OpenPipe — 7 operation(s) for unstable.
+  humanURL: https://docs.openpipe.ai/
+  baseURL: https://api.openpipe.ai/api/v1
+  tags:
+  - Unstable
+  properties:
+  - type: OpenAPI
+    url: openapi/openpipe-unstable-api-openapi.yml
+  - type: Documentation
+    url: https://docs.openpipe.ai/
+  - type: Signup
+    url: https://app.openpipe.ai/
+  - type: Pricing
+    url: https://openpipe.ai/pricing
+  - type: BaseModels
+    url: https://docs.openpipe.ai/base-models
 common:
   - type: AgenticAccess
     url: agentic-access/openpipe-agentic-access.yml
