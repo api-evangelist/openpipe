@@ -1,0 +1,32 @@
+{
+  "provider": "openpipe",
+  "sources": [
+    "openpipe-chat-api-openapi.yml",
+    "openpipe-check-cache-api-openapi.yml",
+    "openpipe-criteria-api-openapi.yml",
+    "openpipe-datasets-api-openapi.yml",
+    "openpipe-local-testing-only-get-latest-logged-call-api-openapi.yml",
+    "openpipe-logs-api-openapi.yml",
+    "openpipe-models-api-openapi.yml",
+    "openpipe-report-anthropic-api-openapi.yml",
+    "openpipe-report-api-openapi.yml",
+    "openpipe-unstable-api-openapi.yml"
+  ],
+  "outputs": [
+    "openpipe-chat-api-openapi.yml",
+    "openpipe-check-cache-api-openapi.yml",
+    "openpipe-criteria-api-openapi.yml",
+    "openpipe-datasets-api-openapi.yml",
+    "openpipe-local-testing-only-get-latest-logged-call-api-openapi.yml",
+    "openpipe-logs-api-openapi.yml",
+    "openpipe-models-api-openapi.yml",
+    "openpipe-report-anthropic-api-openapi.yml",
+    "openpipe-report-api-openapi.yml",
+    "openpipe-unstable-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
