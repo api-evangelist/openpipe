@@ -1,0 +1,193 @@
+{
+  "item": [
+    {
+      "id": "6c161c1f-44bc-4d37-a9dc-84178f86dec0",
+      "name": "Criteria",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "d1a07b9d-3e41-4233-98f5-ae40ee55385b",
+          "name": "get Criterion Judgement",
+          "request": {
+            "name": "get Criterion Judgement",
+            "description": {
+              "content": "Get a judgement of a completion against the specified criterion",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "criteria",
+                "judge"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"criterion_id\": \"<string>\",\n  \"output\": {\n    \"role\": \"<string>\",\n    \"reasoning_content\": \"<string>\",\n    \"content\": null,\n    \"refusal\": \"<string>\",\n    \"function_call\": {\n      \"name\": \"\",\n      \"arguments\": \"\"\n    },\n    \"tool_calls\": [\n      {\n        \"id\": \"<string>\",\n        \"function\": {\n          \"name\": \"<string>\",\n          \"arguments\": \"<string>\"\n        },\n        \"type\": \"<string>\"\n      },\n      {\n        \"id\": \"<string>\",\n        \"function\": {\n          \"name\": \"<string>\",\n          \"arguments\": \"<string>\"\n        },\n        \"type\": \"<string>\"\n      }\n    ]\n  },\n  \"input\": {\n    \"messages\": [\n      {\n        \"role\": \"<string>\",\n        \"content\": \"<string>\",\n        \"name\": \"<string>\"\n      },\n      {\n        \"role\": \"<string>\",\n        \"content\": \"<string>\",\n        \"name\": \"<string>\"\n      }\n    ],\n    \"tool_choice\": \"<string>\",\n    \"tools\": [\n      {\n        \"function\": {\n          \"name\": \"<string>\",\n          \"parameters\": {\n            \"key_0\": {},\n            \"key_1\": {}\n          },\n          \"description\": \"<string>\",\n          \"strict\": \"<boolean>\"\n        },\n        \"type\": \"<string>\"\n      },\n      {\n        \"function\": {\n          \"name\": \"<string>\",\n          \"parameters\": {\n            \"key_0\": {},\n            \"key_1\": {}\n          },\n          \"description\": \"<string>\",\n          \"strict\": \"<boolean>\"\n        },\n        \"type\": \"<string>\"\n      }\n    ]\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "8b9afabf-891c-4d6e-961c-862169330c5c",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "criteria",
+                    "judge"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"criterion_id\": \"<string>\",\n  \"output\": {\n    \"role\": \"<string>\",\n    \"reasoning_content\": \"<string>\",\n    \"content\": null,\n    \"refusal\": \"<string>\",\n    \"function_call\": {\n      \"name\": \"\",\n      \"arguments\": \"\"\n    },\n    \"tool_calls\": [\n      {\n        \"id\": \"<string>\",\n        \"function\": {\n          \"name\": \"<string>\",\n          \"arguments\": \"<string>\"\n        },\n        \"type\": \"<string>\"\n      },\n      {\n        \"id\": \"<string>\",\n        \"function\": {\n          \"name\": \"<string>\",\n          \"arguments\": \"<string>\"\n        },\n        \"type\": \"<string>\"\n      }\n    ]\n  },\n  \"input\": {\n    \"messages\": [\n      {\n        \"role\": \"<string>\",\n        \"content\": \"<string>\",\n        \"name\": \"<string>\"\n      },\n      {\n        \"role\": \"<string>\",\n        \"content\": \"<string>\",\n        \"name\": \"<string>\"\n      }\n    ],\n    \"tool_choice\": \"<string>\",\n    \"tools\": [\n      {\n        \"function\": {\n          \"name\": \"<string>\",\n          \"parameters\": {\n            \"key_0\": {},\n            \"key_1\": {}\n          },\n          \"description\": \"<string>\",\n          \"strict\": \"<boolean>\"\n        },\n        \"type\": \"<string>\"\n      },\n      {\n        \"function\": {\n          \"name\": \"<string>\",\n          \"parameters\": {\n            \"key_0\": {},\n            \"key_1\": {}\n          },\n          \"description\": \"<string>\",\n          \"strict\": \"<boolean>\"\n        },\n        \"type\": \"<string>\"\n      }\n    ]\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"score\": 3812.468613941872,\n  \"explanation\": \"string\",\n  \"usage\": {\n    \"total_tokens\": 1348.7050514798505\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f330ae1a-2996-437a-8271-6253d0608683",
+              "name": "Error response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "criteria",
+                    "judge"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"criterion_id\": \"<string>\",\n  \"output\": {\n    \"role\": \"<string>\",\n    \"reasoning_content\": \"<string>\",\n    \"content\": null,\n    \"refusal\": \"<string>\",\n    \"function_call\": {\n      \"name\": \"\",\n      \"arguments\": \"\"\n    },\n    \"tool_calls\": [\n      {\n        \"id\": \"<string>\",\n        \"function\": {\n          \"name\": \"<string>\",\n          \"arguments\": \"<string>\"\n        },\n        \"type\": \"<string>\"\n      },\n      {\n        \"id\": \"<string>\",\n        \"function\": {\n          \"name\": \"<string>\",\n          \"arguments\": \"<string>\"\n        },\n        \"type\": \"<string>\"\n      }\n    ]\n  },\n  \"input\": {\n    \"messages\": [\n      {\n        \"role\": \"<string>\",\n        \"content\": \"<string>\",\n        \"name\": \"<string>\"\n      },\n      {\n        \"role\": \"<string>\",\n        \"content\": \"<string>\",\n        \"name\": \"<string>\"\n      }\n    ],\n    \"tool_choice\": \"<string>\",\n    \"tools\": [\n      {\n        \"function\": {\n          \"name\": \"<string>\",\n          \"parameters\": {\n            \"key_0\": {},\n            \"key_1\": {}\n          },\n          \"description\": \"<string>\",\n          \"strict\": \"<boolean>\"\n        },\n        \"type\": \"<string>\"\n      },\n      {\n        \"function\": {\n          \"name\": \"<string>\",\n          \"parameters\": {\n            \"key_0\": {},\n            \"key_1\": {}\n          },\n          \"description\": \"<string>\",\n          \"strict\": \"<boolean>\"\n        },\n        \"type\": \"<string>\"\n      }\n    ]\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"string\",\n  \"code\": \"string\",\n  \"issues\": [\n    {\n      \"message\": \"string\"\n    },\n    {\n      \"message\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.openpipe.ai/api/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "5bf8eb51-d8b4-44ea-9569-1119e27843f7",
+    "name": "OpenPipe Chat Criteria API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The public API for reporting API calls to OpenPipe",
+      "type": "text/plain"
+    }
+  }
+}

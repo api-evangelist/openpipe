@@ -1,0 +1,190 @@
+{
+  "item": [
+    {
+      "id": "14d322a8-224d-45f5-a345-4ad2fae662b7",
+      "name": "Report Anthropic",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "c6112ea6-00cd-4780-8197-8f89b414dc7e",
+          "name": "report Anthropic",
+          "request": {
+            "name": "report Anthropic",
+            "description": {
+              "content": "Record request logs from Anthropic models",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "report-anthropic"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"requestedAt\": \"<number>\",\n  \"receivedAt\": \"<number>\",\n  \"reqPayload\": {\n    \"max_tokens\": \"<number>\",\n    \"messages\": [\n      {\n        \"content\": \"<string>\",\n        \"role\": \"<string>\"\n      },\n      {\n        \"content\": \"<string>\",\n        \"role\": \"<string>\"\n      }\n    ],\n    \"model\": \"<string>\",\n    \"stream\": \"<boolean>\",\n    \"metadata\": {\n      \"user_id\": \"<string>\"\n    },\n    \"stop_sequences\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"system\": \"<string>\",\n    \"temperature\": \"<number>\",\n    \"top_k\": \"<number>\",\n    \"top_p\": \"<number>\",\n    \"thinking\": {\n      \"budget_tokens\": \"<number>\",\n      \"type\": \"<string>\"\n    },\n    \"tool_choice\": {\n      \"type\": \"<string>\",\n      \"disable_parallel_tool_use\": \"<boolean>\"\n    },\n    \"tools\": [\n      {\n        \"name\": \"<string>\",\n        \"input_schema\": {\n          \"type\": \"<string>\",\n          \"properties\": {}\n        },\n        \"description\": \"<string>\",\n        \"cache_control\": {\n          \"type\": \"<string>\"\n        }\n      },\n      {\n        \"name\": \"<string>\",\n        \"input_schema\": {\n          \"type\": \"<string>\",\n          \"properties\": {}\n        },\n        \"description\": \"<string>\",\n        \"cache_control\": {\n          \"type\": \"<string>\"\n        }\n      }\n    ]\n  },\n  \"respPayload\": {\n    \"id\": \"<string>\",\n    \"content\": [\n      {\n        \"text\": \"<string>\",\n        \"type\": \"<string>\",\n        \"citations\": null\n      },\n      {\n        \"text\": \"<string>\",\n        \"type\": \"<string>\",\n        \"citations\": null\n      }\n    ],\n    \"model\": \"<string>\",\n    \"role\": \"<string>\",\n    \"stop_reason\": \"<string>\",\n    \"stop_sequence\": \"<string>\",\n    \"type\": \"<string>\",\n    \"usage\": {\n      \"input_tokens\": \"<number>\",\n      \"output_tokens\": \"<number>\",\n      \"cache_creation_input_tokens\": \"<number>\",\n      \"cache_read_input_tokens\": \"<number>\"\n    }\n  },\n  \"statusCode\": \"<number>\",\n  \"errorMessage\": \"<string>\",\n  \"metadata\": {},\n  \"tags\": {}\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "b3bea2d6-240a-48e3-b962-d8604a257ade",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "report-anthropic"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"requestedAt\": \"<number>\",\n  \"receivedAt\": \"<number>\",\n  \"reqPayload\": {\n    \"max_tokens\": \"<number>\",\n    \"messages\": [\n      {\n        \"content\": \"<string>\",\n        \"role\": \"<string>\"\n      },\n      {\n        \"content\": \"<string>\",\n        \"role\": \"<string>\"\n      }\n    ],\n    \"model\": \"<string>\",\n    \"stream\": \"<boolean>\",\n    \"metadata\": {\n      \"user_id\": \"<string>\"\n    },\n    \"stop_sequences\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"system\": \"<string>\",\n    \"temperature\": \"<number>\",\n    \"top_k\": \"<number>\",\n    \"top_p\": \"<number>\",\n    \"thinking\": {\n      \"budget_tokens\": \"<number>\",\n      \"type\": \"<string>\"\n    },\n    \"tool_choice\": {\n      \"type\": \"<string>\",\n      \"disable_parallel_tool_use\": \"<boolean>\"\n    },\n    \"tools\": [\n      {\n        \"name\": \"<string>\",\n        \"input_schema\": {\n          \"type\": \"<string>\",\n          \"properties\": {}\n        },\n        \"description\": \"<string>\",\n        \"cache_control\": {\n          \"type\": \"<string>\"\n        }\n      },\n      {\n        \"name\": \"<string>\",\n        \"input_schema\": {\n          \"type\": \"<string>\",\n          \"properties\": {}\n        },\n        \"description\": \"<string>\",\n        \"cache_control\": {\n          \"type\": \"<string>\"\n        }\n      }\n    ]\n  },\n  \"respPayload\": {\n    \"id\": \"<string>\",\n    \"content\": [\n      {\n        \"text\": \"<string>\",\n        \"type\": \"<string>\",\n        \"citations\": null\n      },\n      {\n        \"text\": \"<string>\",\n        \"type\": \"<string>\",\n        \"citations\": null\n      }\n    ],\n    \"model\": \"<string>\",\n    \"role\": \"<string>\",\n    \"stop_reason\": \"<string>\",\n    \"stop_sequence\": \"<string>\",\n    \"type\": \"<string>\",\n    \"usage\": {\n      \"input_tokens\": \"<number>\",\n      \"output_tokens\": \"<number>\",\n      \"cache_creation_input_tokens\": \"<number>\",\n      \"cache_read_input_tokens\": \"<number>\"\n    }\n  },\n  \"statusCode\": \"<number>\",\n  \"errorMessage\": \"<string>\",\n  \"metadata\": {},\n  \"tags\": {}\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"ok\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "92dd2f40-5254-465d-9093-42d091edbbf5",
+              "name": "Error response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "report-anthropic"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"requestedAt\": \"<number>\",\n  \"receivedAt\": \"<number>\",\n  \"reqPayload\": {\n    \"max_tokens\": \"<number>\",\n    \"messages\": [\n      {\n        \"content\": \"<string>\",\n        \"role\": \"<string>\"\n      },\n      {\n        \"content\": \"<string>\",\n        \"role\": \"<string>\"\n      }\n    ],\n    \"model\": \"<string>\",\n    \"stream\": \"<boolean>\",\n    \"metadata\": {\n      \"user_id\": \"<string>\"\n    },\n    \"stop_sequences\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"system\": \"<string>\",\n    \"temperature\": \"<number>\",\n    \"top_k\": \"<number>\",\n    \"top_p\": \"<number>\",\n    \"thinking\": {\n      \"budget_tokens\": \"<number>\",\n      \"type\": \"<string>\"\n    },\n    \"tool_choice\": {\n      \"type\": \"<string>\",\n      \"disable_parallel_tool_use\": \"<boolean>\"\n    },\n    \"tools\": [\n      {\n        \"name\": \"<string>\",\n        \"input_schema\": {\n          \"type\": \"<string>\",\n          \"properties\": {}\n        },\n        \"description\": \"<string>\",\n        \"cache_control\": {\n          \"type\": \"<string>\"\n        }\n      },\n      {\n        \"name\": \"<string>\",\n        \"input_schema\": {\n          \"type\": \"<string>\",\n          \"properties\": {}\n        },\n        \"description\": \"<string>\",\n        \"cache_control\": {\n          \"type\": \"<string>\"\n        }\n      }\n    ]\n  },\n  \"respPayload\": {\n    \"id\": \"<string>\",\n    \"content\": [\n      {\n        \"text\": \"<string>\",\n        \"type\": \"<string>\",\n        \"citations\": null\n      },\n      {\n        \"text\": \"<string>\",\n        \"type\": \"<string>\",\n        \"citations\": null\n      }\n    ],\n    \"model\": \"<string>\",\n    \"role\": \"<string>\",\n    \"stop_reason\": \"<string>\",\n    \"stop_sequence\": \"<string>\",\n    \"type\": \"<string>\",\n    \"usage\": {\n      \"input_tokens\": \"<number>\",\n      \"output_tokens\": \"<number>\",\n      \"cache_creation_input_tokens\": \"<number>\",\n      \"cache_read_input_tokens\": \"<number>\"\n    }\n  },\n  \"statusCode\": \"<number>\",\n  \"errorMessage\": \"<string>\",\n  \"metadata\": {},\n  \"tags\": {}\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"string\",\n  \"code\": \"string\",\n  \"issues\": [\n    {\n      \"message\": \"string\"\n    },\n    {\n      \"message\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.openpipe.ai/api/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "f54abc23-5a82-4b11-9682-75450f7dae9e",
+    "name": "OpenPipe Chat Report Anthropic API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The public API for reporting API calls to OpenPipe",
+      "type": "text/plain"
+    }
+  }
+}

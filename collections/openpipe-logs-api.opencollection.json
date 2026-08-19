@@ -1,0 +1,56 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "OpenPipe Chat Logs API",
+    "version": "0.1.1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Logs",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "updateLogTags",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.openpipe.ai/api/v1/logs/update-tags",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "DEPRECATED: use \"/logs/update-metadata\" instead"
+        },
+        {
+          "info": {
+            "name": "updateLogMetadata",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.openpipe.ai/api/v1/logs/update-metadata",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Update tags metadata for logged calls matching the provided filters."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

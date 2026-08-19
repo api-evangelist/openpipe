@@ -1,0 +1,96 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "OpenPipe Chat Models API",
+    "version": "0.1.1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Models",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "listModels",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.openpipe.ai/api/v1/models",
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "List all models for a project."
+        },
+        {
+          "info": {
+            "name": "createModel",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.openpipe.ai/api/v1/models",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Train a new model."
+        },
+        {
+          "info": {
+            "name": "getModel",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.openpipe.ai/api/v1/models/:modelSlug",
+            "params": [
+              {
+                "name": "modelSlug",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Get a model by ID."
+        },
+        {
+          "info": {
+            "name": "deleteModel",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.openpipe.ai/api/v1/models/:modelSlug",
+            "params": [
+              {
+                "name": "modelSlug",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Delete an existing model."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

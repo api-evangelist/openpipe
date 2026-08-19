@@ -1,0 +1,37 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "OpenPipe Chat Check Cache API",
+    "version": "0.1.1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Check Cache",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "checkCache",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.openpipe.ai/api/v1/check-cache",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "DEPRECATED: we no longer support prompt caching."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

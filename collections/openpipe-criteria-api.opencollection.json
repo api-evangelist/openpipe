@@ -1,0 +1,37 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "OpenPipe Chat Criteria API",
+    "version": "0.1.1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Criteria",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "getCriterionJudgement",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.openpipe.ai/api/v1/criteria/judge",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Get a judgement of a completion against the specified criterion"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,33 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "OpenPipe Chat Local Testing Only Get Latest Logged Call API",
+    "version": "0.1.1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Local Testing Only Get Latest Logged Call",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "localTestingOnlyGetLatestLoggedCall",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.openpipe.ai/api/v1/local-testing-only-get-latest-logged-call",
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Get the latest logged call (only for local testing)"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

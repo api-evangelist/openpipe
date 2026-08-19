@@ -1,0 +1,193 @@
+{
+  "item": [
+    {
+      "id": "4ade9dfb-d8d1-4603-92de-36b29d8d0a57",
+      "name": "Chat",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "ba09a095-3623-403d-9f9e-bd107f17e00f",
+          "name": "create Chat Completion",
+          "request": {
+            "name": "create Chat Completion",
+            "description": {
+              "content": "OpenAI-compatible route for generating inference and optionally logging the request.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "chat",
+                "completions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"messages\": [\n    {\n      \"role\": \"<string>\",\n      \"content\": \"<string>\",\n      \"name\": \"<string>\"\n    },\n    {\n      \"role\": \"<string>\",\n      \"content\": \"<string>\",\n      \"name\": \"<string>\"\n    }\n  ],\n  \"model\": \"<string>\",\n  \"audio\": {\n    \"format\": \"<string>\",\n    \"voice\": \"<string>\"\n  },\n  \"function_call\": \"<string>\",\n  \"functions\": [\n    {\n      \"name\": \"<string>\",\n      \"parameters\": {\n        \"key_0\": {}\n      },\n      \"description\": \"<string>\",\n      \"strict\": \"<boolean>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"parameters\": {\n        \"key_0\": {},\n        \"key_1\": {}\n      },\n      \"description\": \"<string>\",\n      \"strict\": \"<boolean>\"\n    }\n  ],\n  \"tool_choice\": \"<string>\",\n  \"tools\": [\n    {\n      \"function\": {\n        \"name\": \"<string>\",\n        \"parameters\": {\n          \"key_0\": {},\n          \"key_1\": {}\n        },\n        \"description\": \"<string>\",\n        \"strict\": \"<boolean>\"\n      },\n      \"type\": \"<string>\"\n    },\n    {\n      \"function\": {\n        \"name\": \"<string>\",\n        \"parameters\": {\n          \"key_0\": {}\n        },\n        \"description\": \"<string>\",\n        \"strict\": \"<boolean>\"\n      },\n      \"type\": \"<string>\"\n    }\n  ],\n  \"n\": \"<number>\",\n  \"max_tokens\": \"<number>\",\n  \"max_completion_tokens\": \"<number>\",\n  \"temperature\": \"<number>\",\n  \"top_p\": \"<number>\",\n  \"presence_penalty\": \"<number>\",\n  \"frequency_penalty\": \"<number>\",\n  \"stop\": \"<string>\",\n  \"response_format\": {\n    \"type\": \"<string>\"\n  },\n  \"logprobs\": \"<boolean>\",\n  \"top_logprobs\": \"<number>\",\n  \"stream_options\": {\n    \"include_usage\": \"<boolean>\"\n  },\n  \"store\": \"<boolean>\",\n  \"metadata\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  },\n  \"stream\": false\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "dff6086e-8f29-4da5-841e-31815614f008",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "chat",
+                    "completions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"messages\": [\n    {\n      \"role\": \"<string>\",\n      \"content\": \"<string>\",\n      \"name\": \"<string>\"\n    },\n    {\n      \"role\": \"<string>\",\n      \"content\": \"<string>\",\n      \"name\": \"<string>\"\n    }\n  ],\n  \"model\": \"<string>\",\n  \"audio\": {\n    \"format\": \"<string>\",\n    \"voice\": \"<string>\"\n  },\n  \"function_call\": \"<string>\",\n  \"functions\": [\n    {\n      \"name\": \"<string>\",\n      \"parameters\": {\n        \"key_0\": {},\n        \"key_1\": {}\n      },\n      \"description\": \"<string>\",\n      \"strict\": \"<boolean>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"parameters\": {\n        \"key_0\": {},\n        \"key_1\": {}\n      },\n      \"description\": \"<string>\",\n      \"strict\": \"<boolean>\"\n    }\n  ],\n  \"tool_choice\": \"<string>\",\n  \"tools\": [\n    {\n      \"function\": {\n        \"name\": \"<string>\",\n        \"parameters\": {\n          \"key_0\": {},\n          \"key_1\": {}\n        },\n        \"description\": \"<string>\",\n        \"strict\": \"<boolean>\"\n      },\n      \"type\": \"<string>\"\n    },\n    {\n      \"function\": {\n        \"name\": \"<string>\",\n        \"parameters\": {\n          \"key_0\": {}\n        },\n        \"description\": \"<string>\",\n        \"strict\": \"<boolean>\"\n      },\n      \"type\": \"<string>\"\n    }\n  ],\n  \"n\": \"<number>\",\n  \"max_tokens\": \"<number>\",\n  \"max_completion_tokens\": \"<number>\",\n  \"temperature\": \"<number>\",\n  \"top_p\": \"<number>\",\n  \"presence_penalty\": \"<number>\",\n  \"frequency_penalty\": \"<number>\",\n  \"stop\": \"<string>\",\n  \"response_format\": {\n    \"type\": \"<string>\"\n  },\n  \"logprobs\": \"<boolean>\",\n  \"top_logprobs\": \"<number>\",\n  \"stream_options\": {\n    \"include_usage\": \"<boolean>\"\n  },\n  \"store\": \"<boolean>\",\n  \"metadata\": {\n    \"key_0\": \"<string>\"\n  },\n  \"stream\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"object\": \"chat.completion\",\n  \"created\": 512.1622591789377,\n  \"model\": \"string\",\n  \"choices\": [\n    {\n      \"finish_reason\": \"length\",\n      \"index\": 1795.0365294019743,\n      \"message\": {\n        \"role\": \"assistant\",\n        \"reasoning_content\": \"string\",\n        \"content\": null,\n        \"refusal\": \"string\",\n        \"function_call\": {\n          \"name\": \"\",\n          \"arguments\": \"\"\n        },\n        \"tool_calls\": [\n          {\n            \"id\": \"string\",\n            \"function\": {\n              \"name\": \"string\",\n              \"arguments\": \"string\"\n            },\n            \"type\": \"function\"\n          },\n          {\n            \"id\": \"string\",\n            \"function\": {\n              \"name\": \"string\",\n              \"arguments\": \"string\"\n            },\n            \"type\": \"function\"\n          }\n        ]\n      },\n      \"logprobs\": null,\n      \"content_filter_results\": {\n        \"key_0\": 4029,\n        \"key_1\": 7474,\n        \"key_2\": true\n      },\n      \"criteria_results\": {\n        \"key_0\": {\n          \"status\": \"success\",\n          \"score\": 1255.4692285029446,\n          \"explanation\": \"string\",\n          \"errorCode\": 4673.928678060984,\n          \"errorMessage\": \"string\"\n        },\n        \"key_1\": {\n          \"status\": \"success\",\n          \"score\": 5722.077958238357,\n          \"explanation\": \"string\",\n          \"errorCode\": 4635.277299050877,\n          \"errorMessage\": \"string\"\n        }\n      }\n    },\n    {\n      \"finish_reason\": \"length\",\n      \"index\": 8941.807076808986,\n      \"message\": {\n        \"role\": \"assistant\",\n        \"reasoning_content\": \"string\",\n        \"content\": null,\n        \"refusal\": \"string\",\n        \"function_call\": {\n          \"name\": \"\",\n          \"arguments\": \"\"\n        },\n        \"tool_calls\": [\n          {\n            \"id\": \"string\",\n            \"function\": {\n              \"name\": \"string\",\n              \"arguments\": \"string\"\n            },\n            \"type\": \"function\"\n          },\n          {\n            \"id\": \"string\",\n            \"function\": {\n              \"name\": \"string\",\n              \"arguments\": \"string\"\n            },\n            \"type\": \"function\"\n          }\n        ]\n      },\n      \"logprobs\": null,\n      \"content_filter_results\": {\n        \"key_0\": \"string\",\n        \"key_1\": 8459.4438476527,\n        \"key_2\": 9315\n      },\n      \"criteria_results\": {\n        \"key_0\": {\n          \"status\": \"success\",\n          \"score\": 3304.840464396218,\n          \"explanation\": \"string\",\n          \"errorCode\": 132.66853521166743,\n          \"errorMessage\": \"string\"\n        }\n      }\n    }\n  ],\n  \"usage\": {\n    \"prompt_tokens\": 9715.344190657344,\n    \"completion_tokens\": 2194.1665038179112,\n    \"total_tokens\": 6978.266381940356,\n    \"prompt_cache_hit_tokens\": 5332.397156583298,\n    \"prompt_cache_miss_tokens\": 9931.307784377965,\n    \"completion_tokens_details\": {\n      \"reasoning_tokens\": 4111.904651504476,\n      \"audio_tokens\": 2758.8110237937167,\n      \"text_tokens\": 8361.110368055568,\n      \"accepted_prediction_tokens\": 7612.689998211955,\n      \"rejected_prediction_tokens\": 6784.8232155352225\n    },\n    \"prompt_tokens_details\": {\n      \"cached_tokens\": 4775.1100628776285,\n      \"audio_tokens\": 5810.477281385521\n    },\n    \"criteria\": {\n      \"key_0\": {\n        \"total_tokens\": 4763.185020505926\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "3d149d8e-a899-4faf-9df7-6977a3f5060e",
+              "name": "Error response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "chat",
+                    "completions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"messages\": [\n    {\n      \"role\": \"<string>\",\n      \"content\": \"<string>\",\n      \"name\": \"<string>\"\n    },\n    {\n      \"role\": \"<string>\",\n      \"content\": \"<string>\",\n      \"name\": \"<string>\"\n    }\n  ],\n  \"model\": \"<string>\",\n  \"audio\": {\n    \"format\": \"<string>\",\n    \"voice\": \"<string>\"\n  },\n  \"function_call\": \"<string>\",\n  \"functions\": [\n    {\n      \"name\": \"<string>\",\n      \"parameters\": {\n        \"key_0\": {},\n        \"key_1\": {}\n      },\n      \"description\": \"<string>\",\n      \"strict\": \"<boolean>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"parameters\": {\n        \"key_0\": {},\n        \"key_1\": {}\n      },\n      \"description\": \"<string>\",\n      \"strict\": \"<boolean>\"\n    }\n  ],\n  \"tool_choice\": \"<string>\",\n  \"tools\": [\n    {\n      \"function\": {\n        \"name\": \"<string>\",\n        \"parameters\": {\n          \"key_0\": {},\n          \"key_1\": {}\n        },\n        \"description\": \"<string>\",\n        \"strict\": \"<boolean>\"\n      },\n      \"type\": \"<string>\"\n    },\n    {\n      \"function\": {\n        \"name\": \"<string>\",\n        \"parameters\": {\n          \"key_0\": {}\n        },\n        \"description\": \"<string>\",\n        \"strict\": \"<boolean>\"\n      },\n      \"type\": \"<string>\"\n    }\n  ],\n  \"n\": \"<number>\",\n  \"max_tokens\": \"<number>\",\n  \"max_completion_tokens\": \"<number>\",\n  \"temperature\": \"<number>\",\n  \"top_p\": \"<number>\",\n  \"presence_penalty\": \"<number>\",\n  \"frequency_penalty\": \"<number>\",\n  \"stop\": \"<string>\",\n  \"response_format\": {\n    \"type\": \"<string>\"\n  },\n  \"logprobs\": \"<boolean>\",\n  \"top_logprobs\": \"<number>\",\n  \"stream_options\": {\n    \"include_usage\": \"<boolean>\"\n  },\n  \"store\": \"<boolean>\",\n  \"metadata\": {\n    \"key_0\": \"<string>\"\n  },\n  \"stream\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"string\",\n  \"code\": \"string\",\n  \"issues\": [\n    {\n      \"message\": \"string\"\n    },\n    {\n      \"message\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.openpipe.ai/api/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "807c2bfd-cfaf-4e22-a624-3a96da64f9bc",
+    "name": "OpenPipe Chat API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The public API for reporting API calls to OpenPipe",
+      "type": "text/plain"
+    }
+  }
+}

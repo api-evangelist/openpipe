@@ -1,0 +1,1151 @@
+{
+  "item": [
+    {
+      "id": "b7fd6579-358d-48ce-97fd-b5abd00137bc",
+      "name": "Unstable",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "f328daa7-16f4-4924-ba12-6a8e99d287df",
+          "name": "unstable Dataset Create",
+          "request": {
+            "name": "unstable Dataset Create",
+            "description": {
+              "content": "DEPRECATED: use the `/datasets` endpoint instead",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "unstable",
+                "dataset",
+                "create"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "56d70b30-f715-4e06-9adf-60f48b2ed72e",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "unstable",
+                    "dataset",
+                    "create"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"datasetId\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "da2a10d0-5aa8-4204-a1d7-b016e1f19094",
+              "name": "Error response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "unstable",
+                    "dataset",
+                    "create"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"string\",\n  \"code\": \"string\",\n  \"issues\": [\n    {\n      \"message\": \"string\"\n    },\n    {\n      \"message\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5bbbe280-3bdc-4c4d-b20d-71330f12392d",
+          "name": "unstable Dataset Delete",
+          "request": {
+            "name": "unstable Dataset Delete",
+            "description": {
+              "content": "DEPRECATED: use the `/datasets/{dataset}` endpoint instead",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "unstable",
+                "dataset",
+                "delete"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"datasetId\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "db8b1ee3-0997-4bde-93d1-5f451e9c3dae",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "unstable",
+                    "dataset",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"datasetId\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"datasetId\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a26a379c-2838-4cd4-9f33-7ae7e7bc10cd",
+              "name": "Error response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "unstable",
+                    "dataset",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"datasetId\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"string\",\n  \"code\": \"string\",\n  \"issues\": [\n    {\n      \"message\": \"string\"\n    },\n    {\n      \"message\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c5f98ce3-0f48-4efe-ab30-6969e992ec41",
+          "name": "unstable Dataset List",
+          "request": {
+            "name": "unstable Dataset List",
+            "description": {
+              "content": "DEPRECATED: use the `/datasets` endpoint instead",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "unstable",
+                "dataset",
+                "list"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "85568135-028f-4abd-9ad0-8220ed1a8da0",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "unstable",
+                    "dataset",
+                    "list"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": \"string\",\n    \"name\": \"string\",\n    \"createdAt\": \"1986-12-10T10:31:56.128Z\",\n    \"updatedAt\": \"1986-06-17T18:23:19.895Z\",\n    \"datasetEntryCount\": 8885.031253046513,\n    \"fineTuneCount\": 3012.6859444431575\n  },\n  {\n    \"id\": \"string\",\n    \"name\": \"string\",\n    \"createdAt\": \"2025-10-30T15:48:46.426Z\",\n    \"updatedAt\": \"1947-04-12T21:06:25.783Z\",\n    \"datasetEntryCount\": 7790.061269373213,\n    \"fineTuneCount\": 7048.455792563626\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "2c711f7f-8bde-4a2b-93ab-6e699dd3913d",
+              "name": "Error response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "unstable",
+                    "dataset",
+                    "list"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"string\",\n  \"code\": \"string\",\n  \"issues\": [\n    {\n      \"message\": \"string\"\n    },\n    {\n      \"message\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "46c48d37-2f61-499d-aa2e-9284e3dc11ae",
+          "name": "unstable Dataset Entry Create",
+          "request": {
+            "name": "unstable Dataset Entry Create",
+            "description": {
+              "content": "DEPRECATED: use the `/datasets/{dataset}/entries` endpoint instead",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "unstable",
+                "dataset-entry",
+                "create"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"datasetId\": \"<string>\",\n  \"entries\": [\n    {\n      \"messages\": [\n        {\n          \"role\": \"<string>\",\n          \"content\": \"<string>\",\n          \"name\": \"<string>\"\n        },\n        {\n          \"role\": \"<string>\",\n          \"content\": \"<string>\",\n          \"name\": \"<string>\"\n        }\n      ],\n      \"rejected_message\": {\n        \"role\": \"<string>\",\n        \"reasoning_content\": \"<string>\",\n        \"content\": null,\n        \"refusal\": \"<string>\",\n        \"function_call\": {\n          \"name\": \"\",\n          \"arguments\": \"\"\n        },\n        \"tool_calls\": [\n          {\n            \"id\": \"<string>\",\n            \"function\": {\n              \"name\": \"<string>\",\n              \"arguments\": \"<string>\"\n            },\n            \"type\": \"<string>\"\n          },\n          {\n            \"id\": \"<string>\",\n            \"function\": {\n              \"name\": \"<string>\",\n              \"arguments\": \"<string>\"\n            },\n            \"type\": \"<string>\"\n          }\n        ]\n      },\n      \"function_call\": \"<string>\",\n      \"functions\": [\n        {\n          \"name\": \"<string>\",\n          \"parameters\": {\n            \"key_0\": {}\n          },\n          \"description\": \"<string>\",\n          \"strict\": \"<boolean>\"\n        },\n        {\n          \"name\": \"<string>\",\n          \"parameters\": {\n            \"key_0\": {}\n          },\n          \"description\": \"<string>\",\n          \"strict\": \"<boolean>\"\n        }\n      ],\n      \"tool_choice\": \"<string>\",\n      \"tools\": [\n        {\n          \"function\": {\n            \"name\": \"<string>\",\n            \"parameters\": {\n              \"key_0\": {}\n            },\n            \"description\": \"<string>\",\n            \"strict\": \"<boolean>\"\n          },\n          \"type\": \"<string>\"\n        },\n        {\n          \"function\": {\n            \"name\": \"<string>\",\n            \"parameters\": {\n              \"key_0\": {},\n              \"key_1\": {},\n              \"key_2\": {},\n              \"key_3\": {}\n            },\n            \"description\": \"<string>\",\n            \"strict\": \"<boolean>\"\n          },\n          \"type\": \"<string>\"\n        }\n      ],\n      \"response_format\": {\n        \"type\": \"<string>\"\n      },\n      \"split\": \"<string>\",\n      \"judgement\": \"<string>\",\n      \"metadata\": {\n        \"key_0\": \"<string>\",\n        \"key_1\": \"<string>\"\n      }\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "31b2f1dd-cdc8-4527-8f91-3d77c72b6a69",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "unstable",
+                    "dataset-entry",
+                    "create"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"datasetId\": \"<string>\",\n  \"entries\": [\n    {\n      \"messages\": [\n        {\n          \"role\": \"<string>\",\n          \"content\": \"<string>\",\n          \"name\": \"<string>\"\n        },\n        {\n          \"role\": \"<string>\",\n          \"content\": \"<string>\",\n          \"name\": \"<string>\"\n        }\n      ],\n      \"rejected_message\": {\n        \"role\": \"<string>\",\n        \"reasoning_content\": \"<string>\",\n        \"content\": null,\n        \"refusal\": \"<string>\",\n        \"function_call\": {\n          \"name\": \"\",\n          \"arguments\": \"\"\n        },\n        \"tool_calls\": [\n          {\n            \"id\": \"<string>\",\n            \"function\": {\n              \"name\": \"<string>\",\n              \"arguments\": \"<string>\"\n            },\n            \"type\": \"<string>\"\n          },\n          {\n            \"id\": \"<string>\",\n            \"function\": {\n              \"name\": \"<string>\",\n              \"arguments\": \"<string>\"\n            },\n            \"type\": \"<string>\"\n          }\n        ]\n      },\n      \"function_call\": \"<string>\",\n      \"functions\": [\n        {\n          \"name\": \"<string>\",\n          \"parameters\": {\n            \"key_0\": {},\n            \"key_1\": {},\n            \"key_2\": {},\n            \"key_3\": {}\n          },\n          \"description\": \"<string>\",\n          \"strict\": \"<boolean>\"\n        },\n        {\n          \"name\": \"<string>\",\n          \"parameters\": {\n            \"key_0\": {}\n          },\n          \"description\": \"<string>\",\n          \"strict\": \"<boolean>\"\n        }\n      ],\n      \"tool_choice\": \"<string>\",\n      \"tools\": [\n        {\n          \"function\": {\n            \"name\": \"<string>\",\n            \"parameters\": {\n              \"key_0\": {},\n              \"key_1\": {}\n            },\n            \"description\": \"<string>\",\n            \"strict\": \"<boolean>\"\n          },\n          \"type\": \"<string>\"\n        },\n        {\n          \"function\": {\n            \"name\": \"<string>\",\n            \"parameters\": {\n              \"key_0\": {},\n              \"key_1\": {},\n              \"key_2\": {}\n            },\n            \"description\": \"<string>\",\n            \"strict\": \"<boolean>\"\n          },\n          \"type\": \"<string>\"\n        }\n      ],\n      \"response_format\": {\n        \"type\": \"<string>\"\n      },\n      \"split\": \"<string>\",\n      \"judgement\": \"<string>\",\n      \"metadata\": {\n        \"key_0\": \"<string>\",\n        \"key_1\": \"<string>\"\n      }\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"createdEntries\": 9283.691779073692,\n  \"errors\": [\n    {\n      \"index\": 736.4129168104649,\n      \"message\": \"string\"\n    },\n    {\n      \"index\": 1530.518588995422,\n      \"message\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "24a09f6e-f174-4ee8-b2f4-a53e3da60be3",
+              "name": "Error response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "unstable",
+                    "dataset-entry",
+                    "create"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"datasetId\": \"<string>\",\n  \"entries\": [\n    {\n      \"messages\": [\n        {\n          \"role\": \"<string>\",\n          \"content\": \"<string>\",\n          \"name\": \"<string>\"\n        },\n        {\n          \"role\": \"<string>\",\n          \"content\": \"<string>\",\n          \"name\": \"<string>\"\n        }\n      ],\n      \"rejected_message\": {\n        \"role\": \"<string>\",\n        \"reasoning_content\": \"<string>\",\n        \"content\": null,\n        \"refusal\": \"<string>\",\n        \"function_call\": {\n          \"name\": \"\",\n          \"arguments\": \"\"\n        },\n        \"tool_calls\": [\n          {\n            \"id\": \"<string>\",\n            \"function\": {\n              \"name\": \"<string>\",\n              \"arguments\": \"<string>\"\n            },\n            \"type\": \"<string>\"\n          },\n          {\n            \"id\": \"<string>\",\n            \"function\": {\n              \"name\": \"<string>\",\n              \"arguments\": \"<string>\"\n            },\n            \"type\": \"<string>\"\n          }\n        ]\n      },\n      \"function_call\": \"<string>\",\n      \"functions\": [\n        {\n          \"name\": \"<string>\",\n          \"parameters\": {\n            \"key_0\": {},\n            \"key_1\": {},\n            \"key_2\": {},\n            \"key_3\": {}\n          },\n          \"description\": \"<string>\",\n          \"strict\": \"<boolean>\"\n        },\n        {\n          \"name\": \"<string>\",\n          \"parameters\": {\n            \"key_0\": {}\n          },\n          \"description\": \"<string>\",\n          \"strict\": \"<boolean>\"\n        }\n      ],\n      \"tool_choice\": \"<string>\",\n      \"tools\": [\n        {\n          \"function\": {\n            \"name\": \"<string>\",\n            \"parameters\": {\n              \"key_0\": {},\n              \"key_1\": {}\n            },\n            \"description\": \"<string>\",\n            \"strict\": \"<boolean>\"\n          },\n          \"type\": \"<string>\"\n        },\n        {\n          \"function\": {\n            \"name\": \"<string>\",\n            \"parameters\": {\n              \"key_0\": {},\n              \"key_1\": {},\n              \"key_2\": {}\n            },\n            \"description\": \"<string>\",\n            \"strict\": \"<boolean>\"\n          },\n          \"type\": \"<string>\"\n        }\n      ],\n      \"response_format\": {\n        \"type\": \"<string>\"\n      },\n      \"split\": \"<string>\",\n      \"judgement\": \"<string>\",\n      \"metadata\": {\n        \"key_0\": \"<string>\",\n        \"key_1\": \"<string>\"\n      }\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"string\",\n  \"code\": \"string\",\n  \"issues\": [\n    {\n      \"message\": \"string\"\n    },\n    {\n      \"message\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "53b21e0a-2db8-49a7-b4f6-fa48c7f5fac6",
+          "name": "unstable Finetune Create",
+          "request": {
+            "name": "unstable Finetune Create",
+            "description": {
+              "content": "DEPRECATED",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "unstable",
+                "finetune",
+                "create"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"datasetId\": \"<string>\",\n  \"slug\": \"<string>\",\n  \"baseModel\": \"<string>\",\n  \"overrides\": {}\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "f8c44871-1b49-4a6a-a353-80aaada9e950",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "unstable",
+                    "finetune",
+                    "create"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"datasetId\": \"<string>\",\n  \"slug\": \"<string>\",\n  \"baseModel\": \"<string>\",\n  \"overrides\": {}\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0c8193ac-5bec-4998-b284-20a93783567f",
+              "name": "Error response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "unstable",
+                    "finetune",
+                    "create"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"datasetId\": \"<string>\",\n  \"slug\": \"<string>\",\n  \"baseModel\": \"<string>\",\n  \"overrides\": {}\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"string\",\n  \"code\": \"string\",\n  \"issues\": [\n    {\n      \"message\": \"string\"\n    },\n    {\n      \"message\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "71dc94c7-d573-43f6-8c36-2ecc16a2324b",
+          "name": "unstable Finetune Get",
+          "request": {
+            "name": "unstable Finetune Get",
+            "description": {
+              "content": "DEPRECATED: use the `/models/{model}` endpoint instead",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "unstable",
+                "finetune",
+                "get"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "id",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "slug",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "97394269-99af-47ae-ac8a-f35f6cca7109",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "unstable",
+                    "finetune",
+                    "get"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "slug",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"status\": \"PENDING\",\n  \"slug\": \"string\",\n  \"baseModel\": \"string\",\n  \"errorMessage\": \"string\",\n  \"datasetId\": \"string\",\n  \"createdAt\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "531614bd-eead-489e-be44-c7f3421fc1ac",
+              "name": "Error response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "unstable",
+                    "finetune",
+                    "get"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "slug",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"string\",\n  \"code\": \"string\",\n  \"issues\": [\n    {\n      \"message\": \"string\"\n    },\n    {\n      \"message\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c01ba826-2230-4938-8bee-46b4363d5cca",
+          "name": "unstable Finetune Delete",
+          "request": {
+            "name": "unstable Finetune Delete",
+            "description": {
+              "content": "DEPRECATED: use the `/models/{model}` endpoint instead",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "unstable",
+                "finetune",
+                "delete"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": \"<string>\",\n  \"slug\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "750c63b1-f67f-4fef-996e-114b468ce2ef",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "unstable",
+                    "finetune",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"<string>\",\n  \"slug\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"deleted\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a2a5503e-46ec-4c5a-a8e7-701495e7403d",
+              "name": "Error response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "unstable",
+                    "finetune",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"<string>\",\n  \"slug\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"string\",\n  \"code\": \"string\",\n  \"issues\": [\n    {\n      \"message\": \"string\"\n    },\n    {\n      \"message\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.openpipe.ai/api/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "7077f10d-ba23-4e31-b6a0-bcebeecb0a91",
+    "name": "OpenPipe Chat Unstable API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The public API for reporting API calls to OpenPipe",
+      "type": "text/plain"
+    }
+  }
+}

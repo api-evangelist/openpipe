@@ -1,0 +1,161 @@
+{
+  "item": [
+    {
+      "id": "4029ab3e-da5a-4b96-a24a-ec191c7e2188",
+      "name": "Local Testing Only Get Latest Logged Call",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "337c8218-adef-4051-81e6-ec9c42aa650b",
+          "name": "local Testing Only Get Latest Logged Call",
+          "request": {
+            "name": "local Testing Only Get Latest Logged Call",
+            "description": {
+              "content": "Get the latest logged call (only for local testing)",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "local-testing-only-get-latest-logged-call"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "1714cd3f-1f02-4683-8f4c-182c4e3af7d2",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "local-testing-only-get-latest-logged-call"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"createdAt\": \"2010-06-28T01:21:09.358Z\",\n  \"cacheHit\": true,\n  \"statusCode\": 8500.335248112791,\n  \"errorMessage\": \"string\",\n  \"tags\": {\n    \"key_0\": \"string\"\n  },\n  \"metadata\": {\n    \"key_0\": \"string\"\n  },\n  \"reqPayload\": \"\",\n  \"respPayload\": \"\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "8ab8de35-a0ac-4d6c-9a12-2065d8857be4",
+              "name": "Error response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "local-testing-only-get-latest-logged-call"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"string\",\n  \"code\": \"string\",\n  \"issues\": [\n    {\n      \"message\": \"string\"\n    },\n    {\n      \"message\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.openpipe.ai/api/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "bf7924b3-7eb6-40d5-881b-878a64aa2b67",
+    "name": "OpenPipe Chat Local Testing Only Get Latest Logged Call API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The public API for reporting API calls to OpenPipe",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,631 @@
+{
+  "item": [
+    {
+      "id": "9aeeb78e-1620-4096-bc15-8eb6c327da91",
+      "name": "Models",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "7a6b7f40-680e-414e-b73f-d3e462e74398",
+          "name": "create Model",
+          "request": {
+            "name": "create Model",
+            "description": {
+              "content": "Train a new model.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "models"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"datasetId\": \"<string>\",\n  \"slug\": \"<string>\",\n  \"trainingConfig\": {\n    \"provider\": \"<string>\",\n    \"baseModel\": \"<string>\",\n    \"enable_sft\": true,\n    \"enable_preference_tuning\": false,\n    \"sft_hyperparameters\": {},\n    \"preference_hyperparameters\": {},\n    \"hyperparameters\": {\n      \"is_sft_enabled\": true,\n      \"batch_size\": \"<string>\",\n      \"learning_rate_multiplier\": \"<number>\",\n      \"num_epochs\": \"<number>\",\n      \"is_preference_tuning_enabled\": \"<boolean>\",\n      \"preference_tuning_variant\": \"<string>\",\n      \"preference_tuning_learning_rate_multiplier\": \"<number>\",\n      \"preference_tuning_num_epochs\": \"<number>\",\n      \"preference_tuning_training_beta\": \"<number>\",\n      \"preference_tuning_adapter_weight\": \"<number>\"\n    }\n  },\n  \"defaultTemperature\": \"<number>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "361d6bc9-94d4-46d7-8899-cd4c0198b709",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "models"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"datasetId\": \"<string>\",\n  \"slug\": \"<string>\",\n  \"trainingConfig\": {\n    \"provider\": \"<string>\",\n    \"baseModel\": \"<string>\",\n    \"enable_sft\": true,\n    \"enable_preference_tuning\": false,\n    \"sft_hyperparameters\": {},\n    \"preference_hyperparameters\": {},\n    \"hyperparameters\": {\n      \"is_sft_enabled\": true,\n      \"batch_size\": \"<string>\",\n      \"learning_rate_multiplier\": \"<number>\",\n      \"num_epochs\": \"<number>\",\n      \"is_preference_tuning_enabled\": \"<boolean>\",\n      \"preference_tuning_variant\": \"<string>\",\n      \"preference_tuning_learning_rate_multiplier\": \"<number>\",\n      \"preference_tuning_num_epochs\": \"<number>\",\n      \"preference_tuning_training_beta\": \"<number>\",\n      \"preference_tuning_adapter_weight\": \"<number>\"\n    }\n  },\n  \"defaultTemperature\": \"<number>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"name\": \"string\",\n  \"object\": \"model\",\n  \"description\": \"string\",\n  \"created\": \"string\",\n  \"updated\": \"string\",\n  \"openpipe\": {\n    \"baseModel\": \"string\",\n    \"hyperparameters\": {\n      \"key_0\": {}\n    },\n    \"status\": \"TRAINING\",\n    \"datasetId\": \"string\",\n    \"errorMessage\": \"string\"\n  },\n  \"contextWindow\": 3736.4862310290346,\n  \"maxCompletionTokens\": 3402.1573506052673,\n  \"capabilities\": [\n    \"tools\",\n    \"chat\"\n  ],\n  \"pricing\": {\n    \"chatIn\": 5262.494853583843,\n    \"chatOut\": 1322.8992056769673\n  },\n  \"owned_by\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "67b6216b-e8e2-462f-b906-a603e4d128a7",
+              "name": "Error response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "models"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"datasetId\": \"<string>\",\n  \"slug\": \"<string>\",\n  \"trainingConfig\": {\n    \"provider\": \"<string>\",\n    \"baseModel\": \"<string>\",\n    \"enable_sft\": true,\n    \"enable_preference_tuning\": false,\n    \"sft_hyperparameters\": {},\n    \"preference_hyperparameters\": {},\n    \"hyperparameters\": {\n      \"is_sft_enabled\": true,\n      \"batch_size\": \"<string>\",\n      \"learning_rate_multiplier\": \"<number>\",\n      \"num_epochs\": \"<number>\",\n      \"is_preference_tuning_enabled\": \"<boolean>\",\n      \"preference_tuning_variant\": \"<string>\",\n      \"preference_tuning_learning_rate_multiplier\": \"<number>\",\n      \"preference_tuning_num_epochs\": \"<number>\",\n      \"preference_tuning_training_beta\": \"<number>\",\n      \"preference_tuning_adapter_weight\": \"<number>\"\n    }\n  },\n  \"defaultTemperature\": \"<number>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"string\",\n  \"code\": \"string\",\n  \"issues\": [\n    {\n      \"message\": \"string\"\n    },\n    {\n      \"message\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6684352f-0986-4886-bc16-bbe252c4460d",
+          "name": "list Models",
+          "request": {
+            "name": "list Models",
+            "description": {
+              "content": "List all models for a project.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "models"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "0af2bda1-caa1-4a42-8bbb-9666fdaaa580",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "models"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"object\": \"list\",\n  \"data\": [\n    {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"object\": \"model\",\n      \"description\": \"string\",\n      \"created\": \"string\",\n      \"updated\": \"string\",\n      \"openpipe\": {\n        \"baseModel\": \"string\",\n        \"hyperparameters\": {\n          \"key_0\": {},\n          \"key_1\": {}\n        },\n        \"status\": \"PENDING_DEPRECATION\",\n        \"datasetId\": \"string\",\n        \"errorMessage\": \"string\"\n      },\n      \"contextWindow\": 1088.0035095472763,\n      \"maxCompletionTokens\": 9008.75866863124,\n      \"capabilities\": [\n        \"tools\",\n        \"tools\"\n      ],\n      \"pricing\": {\n        \"chatIn\": 1853.9124718850908,\n        \"chatOut\": 3567.2744514898523\n      },\n      \"owned_by\": \"string\"\n    },\n    {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"object\": \"model\",\n      \"description\": \"string\",\n      \"created\": \"string\",\n      \"updated\": \"string\",\n      \"openpipe\": {\n        \"baseModel\": \"string\",\n        \"hyperparameters\": {\n          \"key_0\": {},\n          \"key_1\": {}\n        },\n        \"status\": \"QUEUED\",\n        \"datasetId\": \"string\",\n        \"errorMessage\": \"string\"\n      },\n      \"contextWindow\": 3281.113999790739,\n      \"maxCompletionTokens\": 7426.004090086817,\n      \"capabilities\": [\n        \"json\",\n        \"tools\"\n      ],\n      \"pricing\": {\n        \"chatIn\": 3541.558456922592,\n        \"chatOut\": 5936.664265613617\n      },\n      \"owned_by\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "751f2897-7ace-4ddb-9090-e9113b20a411",
+              "name": "Error response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "models"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"string\",\n  \"code\": \"string\",\n  \"issues\": [\n    {\n      \"message\": \"string\"\n    },\n    {\n      \"message\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f31d1187-2310-4cc4-8c02-50dba3e8bf62",
+          "name": "get Model",
+          "request": {
+            "name": "get Model",
+            "description": {
+              "content": "Get a model by ID.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "models",
+                ":modelSlug"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "modelSlug",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "b7975975-a772-40a5-a444-9406ff5f4a4a",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "models",
+                    ":modelSlug"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "modelSlug",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"name\": \"string\",\n  \"object\": \"model\",\n  \"description\": \"string\",\n  \"created\": \"string\",\n  \"updated\": \"string\",\n  \"openpipe\": {\n    \"baseModel\": \"string\",\n    \"hyperparameters\": {\n      \"key_0\": {}\n    },\n    \"status\": \"TRAINING\",\n    \"datasetId\": \"string\",\n    \"errorMessage\": \"string\"\n  },\n  \"contextWindow\": 3736.4862310290346,\n  \"maxCompletionTokens\": 3402.1573506052673,\n  \"capabilities\": [\n    \"tools\",\n    \"chat\"\n  ],\n  \"pricing\": {\n    \"chatIn\": 5262.494853583843,\n    \"chatOut\": 1322.8992056769673\n  },\n  \"owned_by\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "63072455-8381-42d7-b0be-1d1251f5195a",
+              "name": "Error response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "models",
+                    ":modelSlug"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "modelSlug",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"string\",\n  \"code\": \"string\",\n  \"issues\": [\n    {\n      \"message\": \"string\"\n    },\n    {\n      \"message\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "43eb008c-1d2a-4211-932d-0e647990692a",
+          "name": "delete Model",
+          "request": {
+            "name": "delete Model",
+            "description": {
+              "content": "Delete an existing model.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "models",
+                ":modelSlug"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "modelSlug",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "ef055b26-a1eb-4f89-9b88-06dfb4fac126",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "models",
+                    ":modelSlug"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "modelSlug",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"object\": \"model\",\n  \"deleted\": true\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b6da4615-965a-490e-879c-d741ad841904",
+              "name": "Error response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "models",
+                    ":modelSlug"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "modelSlug",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"string\",\n  \"code\": \"string\",\n  \"issues\": [\n    {\n      \"message\": \"string\"\n    },\n    {\n      \"message\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.openpipe.ai/api/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "d2b3c76c-99f5-4e73-b18c-1374bd669156",
+    "name": "OpenPipe Chat Models API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The public API for reporting API calls to OpenPipe",
+      "type": "text/plain"
+    }
+  }
+}

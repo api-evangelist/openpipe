@@ -1,0 +1,100 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "OpenPipe Chat Datasets API",
+    "version": "0.1.1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Datasets",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "listDatasets",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.openpipe.ai/api/v1/datasets",
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "List datasets for a project."
+        },
+        {
+          "info": {
+            "name": "createDataset",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.openpipe.ai/api/v1/datasets",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Create a new dataset."
+        },
+        {
+          "info": {
+            "name": "deleteDataset",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.openpipe.ai/api/v1/datasets/:datasetId",
+            "params": [
+              {
+                "name": "datasetId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Delete a dataset."
+        },
+        {
+          "info": {
+            "name": "createDatasetEntries",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.openpipe.ai/api/v1/datasets/:datasetId/entries",
+            "params": [
+              {
+                "name": "datasetId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Add new dataset entries."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
