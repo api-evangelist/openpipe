@@ -21,6 +21,15 @@ accessModel:
   method: derived
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/openpipe.png
 tags:
+  - Artificial Intelligence
+  - LLM
+  - Fine-Tuning
+  - Distillation
+  - Inference
+  - OpenAI-Compatible
+  - Anthropic Compatible
+  - Caching
+tags_raw:
   - AI
   - LLM
   - Fine-Tuning
@@ -112,7 +121,8 @@ apis:
     only get latest logged call.
   humanURL: https://docs.openpipe.ai/
   baseURL: https://api.openpipe.ai/api/v1
-  tags:
+  tags: []
+  tags_raw:
   - Local Testing Only Get Latest Logged Call
   properties:
   - type: OpenAPI
