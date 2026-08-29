@@ -6,6 +6,18 @@ description: >-
   OpenPipe is a fine-tuning and inference platform for distilling expensive frontier-LLM workloads into smaller, cheaper
   specialized models. Captures production traces (OpenAI and Anthropic), fine-tunes, evaluates with judges, caches
   results, and serves the result via OpenAI-compatible API. Also supports proxying to external models.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: medium
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: unknown
   onboarding: self-serve
