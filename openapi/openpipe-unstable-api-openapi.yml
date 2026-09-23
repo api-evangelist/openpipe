@@ -1,6 +1,6 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: OpenPipe Chat Unstable API
+  title: OpenPipe Unstable API
   description: The public API for reporting API calls to OpenPipe
   version: 0.1.1
 servers:
@@ -45,6 +45,8 @@ paths:
       deprecated: true
       tags:
       - Unstable
+      summary: Unstable dataset create
+      x-summary-source: derived
   /unstable/dataset/delete:
     post:
       operationId: unstableDatasetDelete
@@ -82,6 +84,8 @@ paths:
       deprecated: true
       tags:
       - Unstable
+      summary: Unstable dataset delete
+      x-summary-source: derived
   /unstable/dataset/list:
     get:
       operationId: unstableDatasetList
@@ -126,6 +130,8 @@ paths:
       deprecated: true
       tags:
       - Unstable
+      summary: Unstable dataset list
+      x-summary-source: derived
   /unstable/dataset-entry/create:
     post:
       operationId: unstableDatasetEntryCreate
@@ -269,14 +275,15 @@ paths:
                                 enum:
                                 - assistant
                               audio:
-                                type: object
+                                type:
+                                - object
+                                - 'null'
                                 properties:
                                   id:
                                     type: string
                                 required:
                                 - id
                                 additionalProperties: false
-                                nullable: true
                               content:
                                 anyOf:
                                 - type: string
@@ -309,10 +316,11 @@ paths:
                                       additionalProperties: false
                                 - enum:
                                   - 'null'
-                                  nullable: true
                                 default: null
                               function_call:
-                                type: object
+                                type:
+                                - object
+                                - 'null'
                                 properties:
                                   name:
                                     type: string
@@ -321,9 +329,10 @@ paths:
                                     type: string
                                     default: ''
                                 additionalProperties: false
-                                nullable: true
                               tool_calls:
-                                type: array
+                                type:
+                                - array
+                                - 'null'
                                 items:
                                   type: object
                                   properties:
@@ -349,12 +358,12 @@ paths:
                                   - function
                                   - type
                                   additionalProperties: false
-                                nullable: true
                               name:
                                 type: string
                               refusal:
-                                type: string
-                                nullable: true
+                                type:
+                                - string
+                                - 'null'
                               annotations:
                                 type: array
                                 items:
@@ -460,7 +469,6 @@ paths:
                                 - type: string
                                 - enum:
                                   - 'null'
-                                  nullable: true
                             required:
                             - role
                             - name
@@ -470,21 +478,26 @@ paths:
                         type: object
                         properties:
                           reasoning_content:
-                            type: string
-                            nullable: true
+                            type:
+                            - string
+                            - 'null'
                           content:
-                            type: string
-                            nullable: true
+                            type:
+                            - string
+                            - 'null'
                             default: null
                           refusal:
-                            type: string
-                            nullable: true
+                            type:
+                            - string
+                            - 'null'
                           role:
                             type: string
                             enum:
                             - assistant
                           function_call:
-                            type: object
+                            type:
+                            - object
+                            - 'null'
                             properties:
                               name:
                                 type: string
@@ -493,9 +506,10 @@ paths:
                                 type: string
                                 default: ''
                             additionalProperties: false
-                            nullable: true
                           tool_calls:
-                            type: array
+                            type:
+                            - array
+                            - 'null'
                             items:
                               type: object
                               properties:
@@ -521,7 +535,6 @@ paths:
                               - function
                               - type
                               additionalProperties: false
-                            nullable: true
                         required:
                         - role
                         additionalProperties: false
@@ -553,8 +566,9 @@ paths:
                             description:
                               type: string
                             strict:
-                              type: boolean
-                              nullable: true
+                              type:
+                              - boolean
+                              - 'null'
                           required:
                           - name
                           additionalProperties: false
@@ -603,8 +617,9 @@ paths:
                                 description:
                                   type: string
                                 strict:
-                                  type: boolean
-                                  nullable: true
+                                  type:
+                                  - boolean
+                                  - 'null'
                               required:
                               - name
                               additionalProperties: false
@@ -653,8 +668,9 @@ paths:
                                   type: object
                                   additionalProperties: {}
                                 strict:
-                                  type: boolean
-                                  nullable: true
+                                  type:
+                                  - boolean
+                                  - 'null'
                               required:
                               - name
                               additionalProperties: false
@@ -718,6 +734,8 @@ paths:
       deprecated: true
       tags:
       - Unstable
+      summary: Unstable dataset entry create
+      x-summary-source: derived
   /unstable/finetune/create:
     post:
       operationId: unstableFinetuneCreate
@@ -798,6 +816,8 @@ paths:
       deprecated: true
       tags:
       - Unstable
+      summary: Unstable finetune create
+      x-summary-source: derived
   /unstable/finetune/get:
     get:
       operationId: unstableFinetuneGet
@@ -865,8 +885,9 @@ paths:
                   baseModel:
                     type: string
                   errorMessage:
-                    type: string
-                    nullable: true
+                    type:
+                    - string
+                    - 'null'
                   datasetId:
                     type: string
                   createdAt:
@@ -885,6 +906,8 @@ paths:
       deprecated: true
       tags:
       - Unstable
+      summary: Unstable finetune get
+      x-summary-source: derived
   /unstable/finetune/delete:
     post:
       operationId: unstableFinetuneDelete
@@ -922,6 +945,8 @@ paths:
       deprecated: true
       tags:
       - Unstable
+      summary: Unstable finetune delete
+      x-summary-source: derived
 components:
   responses:
     error:

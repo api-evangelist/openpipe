@@ -1,6 +1,6 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: OpenPipe Chat Models API
+  title: OpenPipe Models API
   description: The public API for reporting API calls to OpenPipe
   version: 0.1.1
 servers:
@@ -298,8 +298,9 @@ paths:
                     enum:
                     - model
                   description:
-                    type: string
-                    nullable: true
+                    type:
+                    - string
+                    - 'null'
                   created:
                     type: string
                   updated:
@@ -310,9 +311,10 @@ paths:
                       baseModel:
                         type: string
                       hyperparameters:
-                        type: object
+                        type:
+                        - object
+                        - 'null'
                         additionalProperties: {}
-                        nullable: true
                       status:
                         type: string
                         enum:
@@ -327,8 +329,9 @@ paths:
                       datasetId:
                         type: string
                       errorMessage:
-                        type: string
-                        nullable: true
+                        type:
+                        - string
+                        - 'null'
                     required:
                     - baseModel
                     - hyperparameters
@@ -381,6 +384,8 @@ paths:
           $ref: '#/components/responses/error'
       tags:
       - Models
+      summary: Create model
+      x-summary-source: derived
     get:
       operationId: listModels
       description: List all models for a project.
@@ -413,8 +418,9 @@ paths:
                           enum:
                           - model
                         description:
-                          type: string
-                          nullable: true
+                          type:
+                          - string
+                          - 'null'
                         created:
                           type: string
                         updated:
@@ -425,9 +431,10 @@ paths:
                             baseModel:
                               type: string
                             hyperparameters:
-                              type: object
+                              type:
+                              - object
+                              - 'null'
                               additionalProperties: {}
-                              nullable: true
                             status:
                               type: string
                               enum:
@@ -442,8 +449,9 @@ paths:
                             datasetId:
                               type: string
                             errorMessage:
-                              type: string
-                              nullable: true
+                              type:
+                              - string
+                              - 'null'
                           required:
                           - baseModel
                           - hyperparameters
@@ -500,6 +508,8 @@ paths:
           $ref: '#/components/responses/error'
       tags:
       - Models
+      summary: List models
+      x-summary-source: derived
   /models/{modelSlug}:
     get:
       operationId: getModel
@@ -529,8 +539,9 @@ paths:
                     enum:
                     - model
                   description:
-                    type: string
-                    nullable: true
+                    type:
+                    - string
+                    - 'null'
                   created:
                     type: string
                   updated:
@@ -541,9 +552,10 @@ paths:
                       baseModel:
                         type: string
                       hyperparameters:
-                        type: object
+                        type:
+                        - object
+                        - 'null'
                         additionalProperties: {}
-                        nullable: true
                       status:
                         type: string
                         enum:
@@ -558,8 +570,9 @@ paths:
                       datasetId:
                         type: string
                       errorMessage:
-                        type: string
-                        nullable: true
+                        type:
+                        - string
+                        - 'null'
                     required:
                     - baseModel
                     - hyperparameters
@@ -612,6 +625,8 @@ paths:
           $ref: '#/components/responses/error'
       tags:
       - Models
+      summary: Get model
+      x-summary-source: derived
     delete:
       operationId: deleteModel
       description: Delete an existing model.
@@ -648,6 +663,8 @@ paths:
           $ref: '#/components/responses/error'
       tags:
       - Models
+      summary: Delete model
+      x-summary-source: derived
 components:
   responses:
     error:

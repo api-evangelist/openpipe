@@ -1,6 +1,6 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: OpenPipe Chat Logs API
+  title: OpenPipe Logs API
   description: The public API for reporting API calls to OpenPipe
   version: 0.1.1
 servers:
@@ -47,7 +47,6 @@ paths:
                     - type: boolean
                     - enum:
                       - 'null'
-                      nullable: true
                   description: 'Extra tags to attach to the call for filtering. Eg { "userId": "123", "prompt_id": "populate-title" }'
               required:
               - filters
@@ -72,6 +71,8 @@ paths:
       deprecated: true
       tags:
       - Logs
+      summary: Update log tags
+      x-summary-source: derived
   /logs/update-metadata:
     post:
       operationId: updateLogMetadata
@@ -109,7 +110,6 @@ paths:
                     - type: string
                     - enum:
                       - 'null'
-                      nullable: true
                   description: 'Extra metadata to attach to the call for filtering. Eg { "userId": "123", "prompt_id": "populate-title" }'
               required:
               - filters
@@ -133,6 +133,8 @@ paths:
           $ref: '#/components/responses/error'
       tags:
       - Logs
+      summary: Update log metadata
+      x-summary-source: derived
 components:
   responses:
     error:

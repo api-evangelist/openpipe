@@ -1,6 +1,6 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: OpenPipe Chat Local Testing Only Get Latest Logged Call API
+  title: OpenPipe Local Testing Only Get Latest Logged Call API
   description: The public API for reporting API calls to OpenPipe
   version: 0.1.1
 servers:
@@ -21,7 +21,9 @@ paths:
           content:
             application/json:
               schema:
-                type: object
+                type:
+                - object
+                - 'null'
                 properties:
                   createdAt:
                     type: string
@@ -29,23 +31,27 @@ paths:
                   cacheHit:
                     type: boolean
                   statusCode:
-                    type: number
-                    nullable: true
+                    type:
+                    - number
+                    - 'null'
                   errorMessage:
-                    type: string
-                    nullable: true
+                    type:
+                    - string
+                    - 'null'
                   reqPayload: {}
                   respPayload: {}
                   tags:
                     type: object
                     additionalProperties:
-                      type: string
-                      nullable: true
+                      type:
+                      - string
+                      - 'null'
                   metadata:
                     type: object
                     additionalProperties:
-                      type: string
-                      nullable: true
+                      type:
+                      - string
+                      - 'null'
                 required:
                 - createdAt
                 - cacheHit
@@ -54,11 +60,12 @@ paths:
                 - tags
                 - metadata
                 additionalProperties: false
-                nullable: true
         default:
           $ref: '#/components/responses/error'
       tags:
       - Local Testing Only Get Latest Logged Call
+      summary: Local testing only get latest logged call
+      x-summary-source: derived
 components:
   responses:
     error:

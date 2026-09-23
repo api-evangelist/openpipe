@@ -1,6 +1,6 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: OpenPipe Chat Report Anthropic API
+  title: OpenPipe Report Anthropic API
   description: The public API for reporting API calls to OpenPipe
   version: 0.1.1
 servers:
@@ -65,9 +65,10 @@ paths:
                                           additionalProperties: false
                                         - enum:
                                           - 'null'
-                                          nullable: true
                                       citations:
-                                        type: array
+                                        type:
+                                        - array
+                                        - 'null'
                                         items:
                                           anyOf:
                                           - type: object
@@ -77,8 +78,9 @@ paths:
                                               document_index:
                                                 type: number
                                               document_title:
-                                                type: string
-                                                nullable: true
+                                                type:
+                                                - string
+                                                - 'null'
                                               end_char_index:
                                                 type: number
                                               start_char_index:
@@ -102,8 +104,9 @@ paths:
                                               document_index:
                                                 type: number
                                               document_title:
-                                                type: string
-                                                nullable: true
+                                                type:
+                                                - string
+                                                - 'null'
                                               end_page_number:
                                                 type: number
                                               start_page_number:
@@ -127,8 +130,9 @@ paths:
                                               document_index:
                                                 type: number
                                               document_title:
-                                                type: string
-                                                nullable: true
+                                                type:
+                                                - string
+                                                - 'null'
                                               end_block_index:
                                                 type: number
                                               start_block_index:
@@ -145,7 +149,6 @@ paths:
                                             - start_block_index
                                             - type
                                             additionalProperties: false
-                                        nullable: true
                                     required:
                                     - text
                                     - type
@@ -197,7 +200,6 @@ paths:
                                           additionalProperties: false
                                         - enum:
                                           - 'null'
-                                          nullable: true
                                     required:
                                     - source
                                     - type
@@ -226,7 +228,6 @@ paths:
                                           additionalProperties: false
                                         - enum:
                                           - 'null'
-                                          nullable: true
                                     required:
                                     - id
                                     - name
@@ -267,9 +268,10 @@ paths:
                                                     additionalProperties: false
                                                   - enum:
                                                     - 'null'
-                                                    nullable: true
                                                 citations:
-                                                  type: array
+                                                  type:
+                                                  - array
+                                                  - 'null'
                                                   items:
                                                     anyOf:
                                                     - type: object
@@ -279,8 +281,9 @@ paths:
                                                         document_index:
                                                           type: number
                                                         document_title:
-                                                          type: string
-                                                          nullable: true
+                                                          type:
+                                                          - string
+                                                          - 'null'
                                                         end_char_index:
                                                           type: number
                                                         start_char_index:
@@ -304,8 +307,9 @@ paths:
                                                         document_index:
                                                           type: number
                                                         document_title:
-                                                          type: string
-                                                          nullable: true
+                                                          type:
+                                                          - string
+                                                          - 'null'
                                                         end_page_number:
                                                           type: number
                                                         start_page_number:
@@ -329,8 +333,9 @@ paths:
                                                         document_index:
                                                           type: number
                                                         document_title:
-                                                          type: string
-                                                          nullable: true
+                                                          type:
+                                                          - string
+                                                          - 'null'
                                                         end_block_index:
                                                           type: number
                                                         start_block_index:
@@ -347,7 +352,6 @@ paths:
                                                       - start_block_index
                                                       - type
                                                       additionalProperties: false
-                                                  nullable: true
                                               required:
                                               - text
                                               - type
@@ -399,7 +403,6 @@ paths:
                                                     additionalProperties: false
                                                   - enum:
                                                     - 'null'
-                                                    nullable: true
                                               required:
                                               - source
                                               - type
@@ -419,7 +422,6 @@ paths:
                                           additionalProperties: false
                                         - enum:
                                           - 'null'
-                                          nullable: true
                                     required:
                                     - tool_use_id
                                     - type
@@ -491,9 +493,10 @@ paths:
                                                           additionalProperties: false
                                                         - enum:
                                                           - 'null'
-                                                          nullable: true
                                                       citations:
-                                                        type: array
+                                                        type:
+                                                        - array
+                                                        - 'null'
                                                         items:
                                                           anyOf:
                                                           - type: object
@@ -503,8 +506,9 @@ paths:
                                                               document_index:
                                                                 type: number
                                                               document_title:
-                                                                type: string
-                                                                nullable: true
+                                                                type:
+                                                                - string
+                                                                - 'null'
                                                               end_char_index:
                                                                 type: number
                                                               start_char_index:
@@ -528,8 +532,9 @@ paths:
                                                               document_index:
                                                                 type: number
                                                               document_title:
-                                                                type: string
-                                                                nullable: true
+                                                                type:
+                                                                - string
+                                                                - 'null'
                                                               end_page_number:
                                                                 type: number
                                                               start_page_number:
@@ -553,8 +558,9 @@ paths:
                                                               document_index:
                                                                 type: number
                                                               document_title:
-                                                                type: string
-                                                                nullable: true
+                                                                type:
+                                                                - string
+                                                                - 'null'
                                                               end_block_index:
                                                                 type: number
                                                               start_block_index:
@@ -571,7 +577,6 @@ paths:
                                                             - start_block_index
                                                             - type
                                                             additionalProperties: false
-                                                        nullable: true
                                                     required:
                                                     - text
                                                     - type
@@ -623,7 +628,6 @@ paths:
                                                           additionalProperties: false
                                                         - enum:
                                                           - 'null'
-                                                          nullable: true
                                                     required:
                                                     - source
                                                     - type
@@ -665,7 +669,6 @@ paths:
                                           additionalProperties: false
                                         - enum:
                                           - 'null'
-                                          nullable: true
                                       citations:
                                         type: object
                                         properties:
@@ -677,13 +680,11 @@ paths:
                                         - type: string
                                         - enum:
                                           - 'null'
-                                          nullable: true
                                       title:
                                         anyOf:
                                         - type: string
                                         - enum:
                                           - 'null'
-                                          nullable: true
                                     required:
                                     - source
                                     - type
@@ -737,7 +738,6 @@ paths:
                             - type: string
                             - enum:
                               - 'null'
-                              nullable: true
                         additionalProperties: false
                       stop_sequences:
                         type: array
@@ -773,9 +773,10 @@ paths:
                                   additionalProperties: false
                                 - enum:
                                   - 'null'
-                                  nullable: true
                               citations:
-                                type: array
+                                type:
+                                - array
+                                - 'null'
                                 items:
                                   anyOf:
                                   - type: object
@@ -785,8 +786,9 @@ paths:
                                       document_index:
                                         type: number
                                       document_title:
-                                        type: string
-                                        nullable: true
+                                        type:
+                                        - string
+                                        - 'null'
                                       end_char_index:
                                         type: number
                                       start_char_index:
@@ -810,8 +812,9 @@ paths:
                                       document_index:
                                         type: number
                                       document_title:
-                                        type: string
-                                        nullable: true
+                                        type:
+                                        - string
+                                        - 'null'
                                       end_page_number:
                                         type: number
                                       start_page_number:
@@ -835,8 +838,9 @@ paths:
                                       document_index:
                                         type: number
                                       document_title:
-                                        type: string
-                                        nullable: true
+                                        type:
+                                        - string
+                                        - 'null'
                                       end_block_index:
                                         type: number
                                       start_block_index:
@@ -853,7 +857,6 @@ paths:
                                     - start_block_index
                                     - type
                                     additionalProperties: false
-                                nullable: true
                             required:
                             - text
                             - type
@@ -968,7 +971,6 @@ paths:
                                   additionalProperties: false
                                 - enum:
                                   - 'null'
-                                  nullable: true
                             required:
                             - name
                             - input_schema
@@ -996,7 +998,6 @@ paths:
                                   additionalProperties: false
                                 - enum:
                                   - 'null'
-                                  nullable: true
                             required:
                             - name
                             - type
@@ -1024,7 +1025,6 @@ paths:
                                   additionalProperties: false
                                 - enum:
                                   - 'null'
-                                  nullable: true
                             required:
                             - name
                             - type
@@ -1071,9 +1071,10 @@ paths:
                                           additionalProperties: false
                                         - enum:
                                           - 'null'
-                                          nullable: true
                                       citations:
-                                        type: array
+                                        type:
+                                        - array
+                                        - 'null'
                                         items:
                                           anyOf:
                                           - type: object
@@ -1083,8 +1084,9 @@ paths:
                                               document_index:
                                                 type: number
                                               document_title:
-                                                type: string
-                                                nullable: true
+                                                type:
+                                                - string
+                                                - 'null'
                                               end_char_index:
                                                 type: number
                                               start_char_index:
@@ -1108,8 +1110,9 @@ paths:
                                               document_index:
                                                 type: number
                                               document_title:
-                                                type: string
-                                                nullable: true
+                                                type:
+                                                - string
+                                                - 'null'
                                               end_page_number:
                                                 type: number
                                               start_page_number:
@@ -1133,8 +1136,9 @@ paths:
                                               document_index:
                                                 type: number
                                               document_title:
-                                                type: string
-                                                nullable: true
+                                                type:
+                                                - string
+                                                - 'null'
                                               end_block_index:
                                                 type: number
                                               start_block_index:
@@ -1151,7 +1155,6 @@ paths:
                                             - start_block_index
                                             - type
                                             additionalProperties: false
-                                        nullable: true
                                     required:
                                     - text
                                     - type
@@ -1203,7 +1206,6 @@ paths:
                                           additionalProperties: false
                                         - enum:
                                           - 'null'
-                                          nullable: true
                                     required:
                                     - source
                                     - type
@@ -1232,7 +1234,6 @@ paths:
                                           additionalProperties: false
                                         - enum:
                                           - 'null'
-                                          nullable: true
                                     required:
                                     - id
                                     - name
@@ -1273,9 +1274,10 @@ paths:
                                                     additionalProperties: false
                                                   - enum:
                                                     - 'null'
-                                                    nullable: true
                                                 citations:
-                                                  type: array
+                                                  type:
+                                                  - array
+                                                  - 'null'
                                                   items:
                                                     anyOf:
                                                     - type: object
@@ -1285,8 +1287,9 @@ paths:
                                                         document_index:
                                                           type: number
                                                         document_title:
-                                                          type: string
-                                                          nullable: true
+                                                          type:
+                                                          - string
+                                                          - 'null'
                                                         end_char_index:
                                                           type: number
                                                         start_char_index:
@@ -1310,8 +1313,9 @@ paths:
                                                         document_index:
                                                           type: number
                                                         document_title:
-                                                          type: string
-                                                          nullable: true
+                                                          type:
+                                                          - string
+                                                          - 'null'
                                                         end_page_number:
                                                           type: number
                                                         start_page_number:
@@ -1335,8 +1339,9 @@ paths:
                                                         document_index:
                                                           type: number
                                                         document_title:
-                                                          type: string
-                                                          nullable: true
+                                                          type:
+                                                          - string
+                                                          - 'null'
                                                         end_block_index:
                                                           type: number
                                                         start_block_index:
@@ -1353,7 +1358,6 @@ paths:
                                                       - start_block_index
                                                       - type
                                                       additionalProperties: false
-                                                  nullable: true
                                               required:
                                               - text
                                               - type
@@ -1405,7 +1409,6 @@ paths:
                                                     additionalProperties: false
                                                   - enum:
                                                     - 'null'
-                                                    nullable: true
                                               required:
                                               - source
                                               - type
@@ -1425,7 +1428,6 @@ paths:
                                           additionalProperties: false
                                         - enum:
                                           - 'null'
-                                          nullable: true
                                     required:
                                     - tool_use_id
                                     - type
@@ -1497,9 +1499,10 @@ paths:
                                                           additionalProperties: false
                                                         - enum:
                                                           - 'null'
-                                                          nullable: true
                                                       citations:
-                                                        type: array
+                                                        type:
+                                                        - array
+                                                        - 'null'
                                                         items:
                                                           anyOf:
                                                           - type: object
@@ -1509,8 +1512,9 @@ paths:
                                                               document_index:
                                                                 type: number
                                                               document_title:
-                                                                type: string
-                                                                nullable: true
+                                                                type:
+                                                                - string
+                                                                - 'null'
                                                               end_char_index:
                                                                 type: number
                                                               start_char_index:
@@ -1534,8 +1538,9 @@ paths:
                                                               document_index:
                                                                 type: number
                                                               document_title:
-                                                                type: string
-                                                                nullable: true
+                                                                type:
+                                                                - string
+                                                                - 'null'
                                                               end_page_number:
                                                                 type: number
                                                               start_page_number:
@@ -1559,8 +1564,9 @@ paths:
                                                               document_index:
                                                                 type: number
                                                               document_title:
-                                                                type: string
-                                                                nullable: true
+                                                                type:
+                                                                - string
+                                                                - 'null'
                                                               end_block_index:
                                                                 type: number
                                                               start_block_index:
@@ -1577,7 +1583,6 @@ paths:
                                                             - start_block_index
                                                             - type
                                                             additionalProperties: false
-                                                        nullable: true
                                                     required:
                                                     - text
                                                     - type
@@ -1629,7 +1634,6 @@ paths:
                                                           additionalProperties: false
                                                         - enum:
                                                           - 'null'
-                                                          nullable: true
                                                     required:
                                                     - source
                                                     - type
@@ -1671,7 +1675,6 @@ paths:
                                           additionalProperties: false
                                         - enum:
                                           - 'null'
-                                          nullable: true
                                       citations:
                                         type: object
                                         properties:
@@ -1683,13 +1686,11 @@ paths:
                                         - type: string
                                         - enum:
                                           - 'null'
-                                          nullable: true
                                       title:
                                         anyOf:
                                         - type: string
                                         - enum:
                                           - 'null'
-                                          nullable: true
                                     required:
                                     - source
                                     - type
@@ -1743,7 +1744,6 @@ paths:
                             - type: string
                             - enum:
                               - 'null'
-                              nullable: true
                         additionalProperties: false
                       stop_sequences:
                         type: array
@@ -1780,9 +1780,10 @@ paths:
                                   additionalProperties: false
                                 - enum:
                                   - 'null'
-                                  nullable: true
                               citations:
-                                type: array
+                                type:
+                                - array
+                                - 'null'
                                 items:
                                   anyOf:
                                   - type: object
@@ -1792,8 +1793,9 @@ paths:
                                       document_index:
                                         type: number
                                       document_title:
-                                        type: string
-                                        nullable: true
+                                        type:
+                                        - string
+                                        - 'null'
                                       end_char_index:
                                         type: number
                                       start_char_index:
@@ -1817,8 +1819,9 @@ paths:
                                       document_index:
                                         type: number
                                       document_title:
-                                        type: string
-                                        nullable: true
+                                        type:
+                                        - string
+                                        - 'null'
                                       end_page_number:
                                         type: number
                                       start_page_number:
@@ -1842,8 +1845,9 @@ paths:
                                       document_index:
                                         type: number
                                       document_title:
-                                        type: string
-                                        nullable: true
+                                        type:
+                                        - string
+                                        - 'null'
                                       end_block_index:
                                         type: number
                                       start_block_index:
@@ -1860,7 +1864,6 @@ paths:
                                     - start_block_index
                                     - type
                                     additionalProperties: false
-                                nullable: true
                             required:
                             - text
                             - type
@@ -1975,7 +1978,6 @@ paths:
                                   additionalProperties: false
                                 - enum:
                                   - 'null'
-                                  nullable: true
                             required:
                             - name
                             - input_schema
@@ -2003,7 +2005,6 @@ paths:
                                   additionalProperties: false
                                 - enum:
                                   - 'null'
-                                  nullable: true
                             required:
                             - name
                             - type
@@ -2031,7 +2032,6 @@ paths:
                                   additionalProperties: false
                                 - enum:
                                   - 'null'
-                                  nullable: true
                             required:
                             - name
                             - type
@@ -2060,7 +2060,9 @@ paths:
                               enum:
                               - text
                             citations:
-                              type: array
+                              type:
+                              - array
+                              - 'null'
                               items:
                                 anyOf:
                                 - type: object
@@ -2070,8 +2072,9 @@ paths:
                                     document_index:
                                       type: number
                                     document_title:
-                                      type: string
-                                      nullable: true
+                                      type:
+                                      - string
+                                      - 'null'
                                     end_char_index:
                                       type: number
                                     start_char_index:
@@ -2095,8 +2098,9 @@ paths:
                                     document_index:
                                       type: number
                                     document_title:
-                                      type: string
-                                      nullable: true
+                                      type:
+                                      - string
+                                      - 'null'
                                     end_page_number:
                                       type: number
                                     start_page_number:
@@ -2120,8 +2124,9 @@ paths:
                                     document_index:
                                       type: number
                                     document_title:
-                                      type: string
-                                      nullable: true
+                                      type:
+                                      - string
+                                      - 'null'
                                     end_block_index:
                                       type: number
                                     start_block_index:
@@ -2138,7 +2143,6 @@ paths:
                                   - start_block_index
                                   - type
                                   additionalProperties: false
-                              nullable: true
                               default: null
                           required:
                           - text
@@ -2209,13 +2213,11 @@ paths:
                         - tool_use
                       - enum:
                         - 'null'
-                        nullable: true
                     stop_sequence:
                       anyOf:
                       - type: string
                       - enum:
                         - 'null'
-                        nullable: true
                     type:
                       type: string
                       enum:
@@ -2228,11 +2230,13 @@ paths:
                         output_tokens:
                           type: number
                         cache_creation_input_tokens:
-                          type: number
-                          nullable: true
+                          type:
+                          - number
+                          - 'null'
                         cache_read_input_tokens:
-                          type: number
-                          nullable: true
+                          type:
+                          - number
+                          - 'null'
                       required:
                       - input_tokens
                       - output_tokens
@@ -2271,7 +2275,6 @@ paths:
                     - type: boolean
                     - enum:
                       - 'null'
-                      nullable: true
                   description: 'Deprecated: use "metadata" instead'
                   default: {}
               additionalProperties: false
@@ -2299,6 +2302,8 @@ paths:
           $ref: '#/components/responses/error'
       tags:
       - Report Anthropic
+      summary: Report anthropic
+      x-summary-source: derived
 components:
   responses:
     error:

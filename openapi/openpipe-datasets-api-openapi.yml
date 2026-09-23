@@ -1,6 +1,6 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: OpenPipe Chat Datasets API
+  title: OpenPipe Datasets API
   description: The public API for reporting API calls to OpenPipe
   version: 0.1.1
 servers:
@@ -64,6 +64,8 @@ paths:
           $ref: '#/components/responses/error'
       tags:
       - Datasets
+      summary: Create dataset
+      x-summary-source: derived
     get:
       operationId: listDatasets
       description: List datasets for a project.
@@ -120,6 +122,8 @@ paths:
           $ref: '#/components/responses/error'
       tags:
       - Datasets
+      summary: List datasets
+      x-summary-source: derived
   /datasets/{datasetId}:
     delete:
       operationId: deleteDataset
@@ -157,6 +161,8 @@ paths:
           $ref: '#/components/responses/error'
       tags:
       - Datasets
+      summary: Delete dataset
+      x-summary-source: derived
   /datasets/{datasetId}/entries:
     post:
       operationId: createDatasetEntries
@@ -298,14 +304,15 @@ paths:
                                 enum:
                                 - assistant
                               audio:
-                                type: object
+                                type:
+                                - object
+                                - 'null'
                                 properties:
                                   id:
                                     type: string
                                 required:
                                 - id
                                 additionalProperties: false
-                                nullable: true
                               content:
                                 anyOf:
                                 - type: string
@@ -338,10 +345,11 @@ paths:
                                       additionalProperties: false
                                 - enum:
                                   - 'null'
-                                  nullable: true
                                 default: null
                               function_call:
-                                type: object
+                                type:
+                                - object
+                                - 'null'
                                 properties:
                                   name:
                                     type: string
@@ -350,9 +358,10 @@ paths:
                                     type: string
                                     default: ''
                                 additionalProperties: false
-                                nullable: true
                               tool_calls:
-                                type: array
+                                type:
+                                - array
+                                - 'null'
                                 items:
                                   type: object
                                   properties:
@@ -378,12 +387,12 @@ paths:
                                   - function
                                   - type
                                   additionalProperties: false
-                                nullable: true
                               name:
                                 type: string
                               refusal:
-                                type: string
-                                nullable: true
+                                type:
+                                - string
+                                - 'null'
                               annotations:
                                 type: array
                                 items:
@@ -489,7 +498,6 @@ paths:
                                 - type: string
                                 - enum:
                                   - 'null'
-                                  nullable: true
                             required:
                             - role
                             - name
@@ -499,21 +507,26 @@ paths:
                         type: object
                         properties:
                           reasoning_content:
-                            type: string
-                            nullable: true
+                            type:
+                            - string
+                            - 'null'
                           content:
-                            type: string
-                            nullable: true
+                            type:
+                            - string
+                            - 'null'
                             default: null
                           refusal:
-                            type: string
-                            nullable: true
+                            type:
+                            - string
+                            - 'null'
                           role:
                             type: string
                             enum:
                             - assistant
                           function_call:
-                            type: object
+                            type:
+                            - object
+                            - 'null'
                             properties:
                               name:
                                 type: string
@@ -522,9 +535,10 @@ paths:
                                 type: string
                                 default: ''
                             additionalProperties: false
-                            nullable: true
                           tool_calls:
-                            type: array
+                            type:
+                            - array
+                            - 'null'
                             items:
                               type: object
                               properties:
@@ -550,7 +564,6 @@ paths:
                               - function
                               - type
                               additionalProperties: false
-                            nullable: true
                         required:
                         - role
                         additionalProperties: false
@@ -599,8 +612,9 @@ paths:
                                 description:
                                   type: string
                                 strict:
-                                  type: boolean
-                                  nullable: true
+                                  type:
+                                  - boolean
+                                  - 'null'
                               required:
                               - name
                               additionalProperties: false
@@ -649,8 +663,9 @@ paths:
                                   type: object
                                   additionalProperties: {}
                                 strict:
-                                  type: boolean
-                                  nullable: true
+                                  type:
+                                  - boolean
+                                  - 'null'
                               required:
                               - name
                               additionalProperties: false
@@ -733,6 +748,8 @@ paths:
           $ref: '#/components/responses/error'
       tags:
       - Datasets
+      summary: Create dataset entries
+      x-summary-source: derived
 components:
   responses:
     error:
