@@ -239,6 +239,9 @@ apis:
   - type: BaseModels
     url: https://docs.openpipe.ai/base-models
 common:
+  - type: CapabilityMap
+    url: capabilities/openpipe-capability-edges.yml
+    name: OpenPipe Business Capability Map
   - type: AgenticAccess
     url: agentic-access/openpipe-agentic-access.yml
   - type: DomainSecurity

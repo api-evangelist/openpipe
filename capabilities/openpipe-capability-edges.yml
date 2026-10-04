@@ -1,0 +1,43 @@
+slug: openpipe
+provider: OpenPipe
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Software & Technology
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 3
+edges:
+- tag: Models
+  spec_file: openpipe-models-api-openapi.yml
+  capability_id: BC-610.60
+  capability_id_l1: BC-610
+  capability_name: Artificial Intelligence Management
+  confidence: 0.85
+  evidence: POST /models  createModel; GET /models  listModels; DELETE /models/{modelSlug}  deleteModel
+    — vendor is a 'fine-tuning and inference platform'
+  reason: CRUD over fine-tuned ML models is squarely AI/ML model lifecycle management (MLOps).
+- tag: Unstable
+  spec_file: openpipe-unstable-api-openapi.yml
+  capability_id: BC-610.60
+  capability_id_l1: BC-610
+  capability_name: Artificial Intelligence Management
+  confidence: 0.85
+  evidence: POST /unstable/finetune/create  unstableFinetuneCreate; POST /unstable/dataset/create  unstableDatasetCreate
+  reason: Operations create and manage training datasets and fine-tune jobs — plainly AI/ML model lifecycle
+    (MLOps) management. The 'Unstable' tag is just an API maturity prefix; the operations carry the meaning.
+- tag: Chat
+  spec_file: openpipe-chat-api-openapi.yml
+  capability_id: BC-610.60
+  capability_id_l1: BC-610
+  capability_name: Artificial Intelligence Management
+  confidence: 0.7
+  evidence: POST /chat/completions  createChatCompletion  Create chat completion — vendor serves fine-tuned
+    models 'via OpenAI-compatible API'
+  reason: This is model inference serving for LLMs, part of the AI/ML model lifecycle and MLOps capability.
+    The single operation is thin context, so confidence is tempered.
