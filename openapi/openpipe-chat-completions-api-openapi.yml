@@ -6,7 +6,7 @@ info:
 servers:
 - url: https://api.openpipe.ai/api/v1
 tags:
-- name: Chat
+- name: Chat Completions
 paths:
   /chat/completions:
     post:
@@ -907,7 +907,7 @@ paths:
         default:
           $ref: '#/components/responses/error'
       tags:
-      - Chat
+      - Chat Completions
       summary: Create chat completion
       x-summary-source: derived
 components:

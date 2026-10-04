@@ -55,24 +55,6 @@ created: '2026-05-08'
 modified: '2026-05-19'
 specificationVersion: '0.23'
 apis:
-- aid: openpipe:openpipe-chat-api
-  name: OpenPipe Chat API
-  description: The Chat API from OpenPipe — 1 operation(s) for chat.
-  humanURL: https://docs.openpipe.ai/
-  baseURL: https://api.openpipe.ai/api/v1
-  tags:
-  - Chat
-  properties:
-  - type: OpenAPI
-    url: openapi/openpipe-chat-api-openapi.yml
-  - type: Documentation
-    url: https://docs.openpipe.ai/
-  - type: Signup
-    url: https://app.openpipe.ai/
-  - type: Pricing
-    url: https://openpipe.ai/pricing
-  - type: BaseModels
-    url: https://docs.openpipe.ai/base-models
 - aid: openpipe:openpipe-check-cache-api
   name: OpenPipe Check Cache API
   description: The Check Cache API from OpenPipe — 1 operation(s) for check cache.
@@ -230,6 +212,24 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/openpipe-unstable-api-openapi.yml
+  - type: Documentation
+    url: https://docs.openpipe.ai/
+  - type: Signup
+    url: https://app.openpipe.ai/
+  - type: Pricing
+    url: https://openpipe.ai/pricing
+  - type: BaseModels
+    url: https://docs.openpipe.ai/base-models
+- aid: openpipe:openpipe-chat-completions-api
+  name: OpenPipe Chat Completions API
+  description: The Chat Completions API from OpenPipe — 1 operation(s) for chat completions.
+  humanURL: https://docs.openpipe.ai/
+  baseURL: https://api.openpipe.ai/api/v1
+  tags:
+  - Chat Completions
+  properties:
+  - type: OpenAPI
+    url: openapi/openpipe-chat-completions-api-openapi.yml
   - type: Documentation
     url: https://docs.openpipe.ai/
   - type: Signup
