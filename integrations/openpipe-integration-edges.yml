@@ -1,0 +1,23 @@
+edges:
+- partner_name: OpenAI
+  partner: openai
+  partner_match: domain
+  type: contract
+  channel: provider-built
+  relationship: compatible
+  direction: provider-built
+  evidence: https://github.com/api-evangelist/openpipe/blob/main/openapi/openpipe-chat-completions-api-openapi.yml#L14
+  contract_reference:
+    repo: openpipe
+    spec_file: openpipe-chat-completions-api-openapi.yml
+    property: description
+    value: OpenAI-compatible
+    note: 'openpipe declares OpenAI compatibility: ''description: OpenAI-compatible route for generating inference
+      and optionally logging the request.'''
+    detected_by: sweep-model-routing.py
+    detected: '2026-10-13'
+  detected_by: sweep-model-routing.py
+  first_seen: '2026-10-13'
+generated: '2026-10-13'
+method: searched
+checked: []
