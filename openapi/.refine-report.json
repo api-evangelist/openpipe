@@ -15,7 +15,9 @@
     "openpipe-report-anthropic-api-openapi.yml",
     "openpipe-unstable-api-openapi.yml"
   ],
-  "archived": [],
+  "archived": [
+    "deleted 1 superseded output(s) from the previous generation"
+  ],
   "errors": [],
   "warnings": [],
   "notes": [
@@ -54,10 +56,11 @@
     "openpipe-openapi.json: declared missing tag: Report",
     "openpipe-openapi.json: declared missing tag: Report Anthropic",
     "openpipe-openapi.json: declared missing tag: Unstable",
-    "apis.yml register: already-registered"
+    "superseded outputs removed: openpipe-chat-completions-api-openapi.yml",
+    "apis.yml register: written (+1 apis, 10 total)"
   ],
   "skipped": [
-    "openpipe-chat-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "openpipe-chat-completions-api-openapi.yml: previously refined output, superseded by openapi/_original/",
     "openpipe-check-cache-api-openapi.yml: previously refined output, superseded by openapi/_original/",
     "openpipe-criteria-api-openapi.yml: previously refined output, superseded by openapi/_original/",
     "openpipe-datasets-api-openapi.yml: previously refined output, superseded by openapi/_original/",
